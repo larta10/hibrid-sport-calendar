@@ -5,7 +5,7 @@ const SUPABASE_URL = "https://ssyljhtganuaanczxeep.supabase.co";
 const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNzeWxqaHRnYW51YWFuY3p4ZWVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5MzA2MDcsImV4cCI6MjA5MjUwNjYwN30.kY5rw5BFXqdMze0IMQmbDQNfh5uXhaI35e4LfMYNOjE";
 
 const PAISES = ["España","Portugal","Francia","Alemania","Italia","Reino Unido","Países Bajos","Bélgica","Suiza","Austria","Estados Unidos","México","Colombia","Argentina","Chile","Brasil"];
-const CCAA = ["Andalucía","Aragón","Asturias","Baleares","Canarias","Cantabria","Castilla-La Mancha","Castilla y León","Cataluña","Ceuta","Comunidad Valenciana","Extremadura","Galicia","La Rioja","Madrid","Melilla","Murcia","Navarra","País Vasco"];
+const CCAA = ["Andalucía","Aragón","Asturias","Baleares","Canarias","Cantabria","Castilla-La Mancha","Castilla y León","Cataluña","Ceuta","Comunidad Valenciana","Extremadura","Galicia","La Rioja","Madrid","Melilla","Murcia","Navarra","País Vasco","La Rioja"];
 const MODALIDADES = [
   { id:"run",   label:"Running",                   icon:"🏃" },
   { id:"tri",   label:"Triatlón",                  icon:"🏊" },
