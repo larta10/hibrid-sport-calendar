@@ -69,17 +69,6 @@ const MODALIDADES = [
   },
 ];
 
-const DISTANCIAS = [
-  { id: "sprint", label: "Sprint",  sub: "< 5 km" },
-  { id: "5k",     label: "5K",      sub: "5 km" },
-  { id: "10k",    label: "10K",     sub: "10 km" },
-  { id: "15k",    label: "15K",     sub: "15 km" },
-  { id: "media",  label: "Media",   sub: "21 km" },
-  { id: "marat",  label: "Maratón", sub: "42 km" },
-  { id: "ultra1", label: "50K+",    sub: "50 km+" },
-  { id: "ultra2", label: "80K+",    sub: "80 km+" },
-];
-
 const MESES = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
 
 const C = {
@@ -98,6 +87,109 @@ MODALIDADES.forEach(m => {
 
 function toggle(arr, setArr, val) {
   setArr(arr.includes(val) ? arr.filter(x => x !== val) : [...arr, val]);
+}
+
+// ── Distance slider — logarithmic scale 0–1000 km ─────────────────────────────
+const SLIDER_MAX = 1000;
+
+function posToKm(pos) {
+  if (pos <= 0) return 0;
+  if (pos >= SLIDER_MAX) return 1000;
+  return Math.round(Math.pow(10, (pos / SLIDER_MAX) * 3));
+}
+function kmToPos(km) {
+  if (km <= 0) return 0;
+  if (km >= 1000) return SLIDER_MAX;
+  return Math.round((Math.log10(Math.max(km, 1)) / 3) * SLIDER_MAX);
+}
+function fmtKm(km) {
+  if (km === 0) return "0 km";
+  if (km >= 1000) return "1000+ km";
+  return `${km} km`;
+}
+
+function DistanceSlider({ minKm, maxKm, onMin, onMax }) {
+  const minPos = kmToPos(minKm);
+  const maxPos = kmToPos(maxKm);
+  const pctL   = (minPos / SLIDER_MAX) * 100;
+  const pctR   = (maxPos / SLIDER_MAX) * 100;
+  const active = minKm > 0 || maxKm < 1000;
+
+  // Scale markers at log positions
+  const marks = [
+    { km: 0,    label: "0" },
+    { km: 10,   label: "10" },
+    { km: 42,   label: "42" },
+    { km: 100,  label: "100" },
+    { km: 1000, label: "1000" },
+  ];
+
+  return (
+    <div>
+      {/* Current range display */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+        <span style={{ fontSize: 12, fontWeight: 500, color: active ? C.accentMid : C.muted,
+          background: active ? C.accentBg : C.card2,
+          border: `0.5px solid ${active ? C.accent : C.border}`,
+          padding: "3px 9px", borderRadius: 6 }}>
+          {fmtKm(minKm)}
+        </span>
+        <span style={{ fontSize: 10, color: C.hint }}>——</span>
+        <span style={{ fontSize: 12, fontWeight: 500, color: active ? C.accentMid : C.muted,
+          background: active ? C.accentBg : C.card2,
+          border: `0.5px solid ${active ? C.accent : C.border}`,
+          padding: "3px 9px", borderRadius: 6 }}>
+          {fmtKm(maxKm)}
+        </span>
+      </div>
+
+      {/* Track + dual thumbs */}
+      <div className="dist-range">
+        {/* Track base */}
+        <div style={{ position: "absolute", top: "50%", transform: "translateY(-50%)",
+          left: 0, right: 0, height: 4, background: C.hint, borderRadius: 2, pointerEvents: "none" }} />
+        {/* Filled segment */}
+        <div style={{ position: "absolute", top: "50%", transform: "translateY(-50%)",
+          left: `${pctL}%`, width: `${pctR - pctL}%`, height: 4,
+          background: active ? C.accent : "#3A3C55", borderRadius: 2, pointerEvents: "none",
+          transition: "background .2s" }} />
+
+        {/* Min thumb */}
+        <input
+          type="range" min={0} max={SLIDER_MAX} value={minPos}
+          onChange={e => {
+            const p = Math.min(Number(e.target.value), maxPos - 10);
+            onMin(posToKm(p));
+          }}
+          className="dist-thumb"
+        />
+        {/* Max thumb */}
+        <input
+          type="range" min={0} max={SLIDER_MAX} value={maxPos}
+          onChange={e => {
+            const p = Math.max(Number(e.target.value), minPos + 10);
+            onMax(posToKm(p));
+          }}
+          className="dist-thumb"
+        />
+      </div>
+
+      {/* Scale markers */}
+      <div style={{ position: "relative", height: 18, marginTop: 4 }}>
+        {marks.map(({ km, label }) => {
+          const pct = (kmToPos(km) / SLIDER_MAX) * 100;
+          return (
+            <span key={km} style={{
+              position: "absolute", left: `${pct}%`, transform: "translateX(-50%)",
+              fontSize: 9, color: C.muted, userSelect: "none",
+            }}>
+              {label}
+            </span>
+          );
+        })}
+      </div>
+    </div>
+  );
 }
 
 // ── RaceCard ──────────────────────────────────────────────────────────────────
@@ -199,7 +291,8 @@ export default function Home() {
   const [ccaa, setCcaa]               = useState([]);
   const [modalParents, setModalParents] = useState([]);
   const [modalSubs, setModalSubs]     = useState([]);
-  const [distancias, setDistancias]   = useState([]);
+  const [distMin, setDistMin]         = useState(0);
+  const [distMax, setDistMax]         = useState(1000);
   const [mesDesde, setMesDesde]       = useState(null);
   const [mesHasta, setMesHasta]       = useState(null);
   const [results, setResults]         = useState(null);
@@ -207,9 +300,10 @@ export default function Home() {
   const [error, setError]             = useState(null);
   const [totalPruebas, setTotalPruebas] = useState(null);
 
+  const distActive = distMin > 0 || distMax < 1000;
   const anyFilter =
     ccaa.length || modalParents.length || modalSubs.length ||
-    distancias.length || mesDesde !== null || mesHasta !== null;
+    distActive || mesDesde !== null || mesHasta !== null;
 
   function toggleParent(id) {
     if (modalParents.includes(id)) {
@@ -249,8 +343,8 @@ export default function Home() {
         else p.append("modalidad_parent", `in.(${modalParents.join(",")})`);
       }
 
-      if (distancias.length === 1) p.append("distancia_id", `eq.${distancias[0]}`);
-      if (distancias.length > 1)   p.append("distancia_id", `in.(${distancias.join(",")})`);
+      if (distMin > 0)    p.append("distancia_km", `gte.${distMin}`);
+      if (distMax < 1000) p.append("distancia_km", `lte.${distMax}`);
 
       if (mesDesde !== null)
         p.append("fecha_iso", `gte.2026-${String(mesDesde + 1).padStart(2, "0")}-01`);
@@ -272,7 +366,8 @@ export default function Home() {
 
   function handleReset() {
     setCcaa([]); setModalParents([]); setModalSubs([]);
-    setDistancias([]); setMesDesde(null); setMesHasta(null);
+    setDistMin(0); setDistMax(1000);
+    setMesDesde(null); setMesHasta(null);
     setResults(null); setError(null);
   }
 
@@ -291,6 +386,35 @@ export default function Home() {
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #2E3040; border-radius: 4px; }
+
+        /* ── Dual-range distance slider ── */
+        .dist-range { position: relative; height: 28px; margin: 2px 0; }
+        .dist-thumb {
+          -webkit-appearance: none; appearance: none;
+          position: absolute; top: 50%; transform: translateY(-50%);
+          width: 100%; height: 28px;
+          background: transparent; pointer-events: none;
+          outline: none; margin: 0;
+        }
+        .dist-thumb::-webkit-slider-runnable-track { background: transparent; height: 4px; }
+        .dist-thumb::-moz-range-track { background: transparent; height: 4px; border: none; }
+        .dist-thumb::-webkit-slider-thumb {
+          -webkit-appearance: none; appearance: none;
+          pointer-events: all;
+          width: 18px; height: 18px; border-radius: 50%;
+          background: #7C6FFF; border: 2.5px solid #0E0F13;
+          cursor: grab; box-shadow: 0 0 0 3px rgba(124,111,255,0.18);
+          transition: box-shadow .15s;
+        }
+        .dist-thumb::-webkit-slider-thumb:hover  { box-shadow: 0 0 0 5px rgba(124,111,255,0.28); }
+        .dist-thumb::-webkit-slider-thumb:active { cursor: grabbing; }
+        .dist-thumb::-moz-range-thumb {
+          pointer-events: all;
+          width: 18px; height: 18px; border-radius: 50%;
+          background: #7C6FFF; border: 2.5px solid #0E0F13;
+          cursor: grab;
+        }
+
         @media (max-width: 768px) {
           html, body { overflow: auto; }
           #sidebar { width: 100% !important; min-width: unset !important; height: auto !important; border-right: none !important; border-bottom: 0.5px solid rgba(255,255,255,0.07); }
@@ -409,27 +533,12 @@ export default function Home() {
               </div>
             </FilterSection>
 
-            {/* Distancias */}
-            <FilterSection title="Distancia" count={distancias.length}>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
-                {DISTANCIAS.map(d => (
-                  <button
-                    key={d.id}
-                    onClick={() => toggle(distancias, setDistancias, d.id)}
-                    style={{
-                      display: "inline-flex", flexDirection: "column", alignItems: "center",
-                      padding: "5px 9px", fontSize: 11, borderRadius: 8, cursor: "pointer",
-                      fontWeight:  distancias.includes(d.id) ? 500 : 400,
-                      border:      distancias.includes(d.id) ? "1.5px solid #FCD34D" : `0.5px solid ${C.border}`,
-                      background:  distancias.includes(d.id) ? "#451A03" : C.card2,
-                      color:       distancias.includes(d.id) ? "#FCD34D" : C.muted,
-                    }}
-                  >
-                    {d.label}
-                    <span style={{ fontSize: 9, opacity: 0.55 }}>{d.sub}</span>
-                  </button>
-                ))}
-              </div>
+            {/* Distancia — slider logarítmico */}
+            <FilterSection title="Distancia" count={distActive ? 1 : 0}>
+              <DistanceSlider
+                minKm={distMin} maxKm={distMax}
+                onMin={setDistMin} onMax={setDistMax}
+              />
             </FilterSection>
 
             {/* Fechas */}
