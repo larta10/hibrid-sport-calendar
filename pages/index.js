@@ -1372,7 +1372,7 @@ export default function Home() {
               ) : (
                 <div className="race-grid">
                   {sorted.map((r,i)=>(
-                    <RaceCard key={r.id||i} race={r} featured={i===0} onClick={()=>setSelectedRace(r)}/>
+                    <RaceCard key={r.id||i} race={r} featured={r.featured === true} onClick={()=>setSelectedRace(r)}/>
                   ))}
                 </div>
               )
