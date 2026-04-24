@@ -376,7 +376,64 @@ function HeroStats({ totalCount, ccaaCount, formatsCount }) {
   );
 }
 
-/* ─── NewsletterSignup ─────────────────────────────────────────────────────── */
+/* ─── FAQ Data ─────────────────────────────────────────────────────────── */
+const FAQ_DATA = [
+  {
+    question: "¿Qué es una carrera OCR?",
+    answer: "OCR (Obstacle Course Race) es una carrera que combina running con obstáculos naturales o artificiales. Las pruebas más populares son Spartan Race, Tough Mudder y sus variantes. Los corredores deben completar tramos de carrera con desafíos físicos como trepar, arrastrase, cargar peso y cruzar elementos de agua."
+  },
+  {
+    question: "¿Qué es HYROX? ¿En qué se diferencia de CrossFit?",
+    answer: "HYROX es una modalidad específica de fitness funcional que consiste en completar una serie de ejercicios técnicos (burpees, saltos, remo, cargada) intercalados con carrera. A diferencia de los Open de CrossFit, los eventos HYROX están estandarizados y tienen un formato fijo (típicamente 8 estaciones + carrera) permitiendo comparar resultados entre eventos."
+  },
+  {
+    question: "¿Cómo me inscribo en una carrera?",
+    answer: "Cada carrera tiene su propio sistema de inscripción. Haz clic en cualquier carrera del calendario para ver los detalles. Encontrarás un enlace directo a la web oficial del evento donde podrás completar tu inscripción. Algunas pruebas permiten inscripción el mismo día (walk-up), pero es recomendable registrarse antes."
+  },
+  {
+    question: "¿Qué nivel necesito para participar?",
+    answer: "Cada evento indica su nivel de dificultad. Los formatos 'Individual' son para todos los niveles, mientras que 'Pro / Elite' requieren experiencia previa. Las distancias varían desde 5km hasta ultra distancias de 50km+. Empieza con eventos locales si es tu primera carrera."
+  },
+  {
+    question: "¿Puedo competir en pareja o equipo?",
+    answer: "Sí, muchos eventos OCR y funcionales ofrecen formatos por parejas (2 personas) o equipos (4+ personas). Estos formatos añaden una dimensión de teamwork donde debéis completar los obstáculos juntos o ayudaros mutuamente. Busca en el filtro 'Formato' las opciones 'Parejas' o 'Equipos'."
+  },
+  {
+    question: "¿Dónde encuentro entrenamientos específicos?",
+    answer: "En la sección 'Comunidad' del Hub encontrarás box de HYROX y CrossFit por toda España. Muchos de estos gyms ofrecen clases específicas para mejorar tu rendimiento en obstáculos y preparación física para carreras OCR. También hay grupos de entrenamiento en plena naturaleza."
+  }
+];
+
+function FAQItem({ question, answer }) {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="faq-item">
+      <button className={`faq-question ${isOpen ? 'faq-question--open' : ''}`} onClick={() => setIsOpen(!isOpen)}>
+        <span>{question}</span>
+        <span className="faq-icon">{isOpen ? '−' : '+'}</span>
+      </button>
+      {isOpen && <div className="faq-answer">{answer}</div>}
+    </div>
+  );
+}
+
+function FAQSection() {
+  return (
+    <section className="faq">
+      <div className="faq-inner">
+        <div className="faq-header">
+          <p className="faq-eyebrow">PREGUNTAS FRECUENTES</p>
+          <h2 className="faq-title">Todo sobre carreras híbridas</h2>
+        </div>
+        <div className="faq-list">
+          {FAQ_DATA.map((item, i) => <FAQItem key={i} question={item.question} answer={item.answer} />)}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── NewsletterSignup ───────────────────────────────���─────────────────────── */
 function NewsletterSignup() {
   const [email, setEmail]   = useState("");
   const [status, setStatus] = useState("idle");
@@ -1097,6 +1154,45 @@ export default function Home() {
           .nl-input { min-width:0; width:100%; }
           .nl-btn { width:100%; text-align:center; }
         }
+
+        /* ── FAQ ── */
+        .faq {
+          background:var(--surface); border-top:1px solid var(--border);
+          padding:4rem 2rem;
+        }
+        .faq-inner { max-width:800px; margin:0 auto; }
+        .faq-header { margin-bottom:2rem; text-align:center; }
+        .faq-eyebrow {
+          font-family:var(--font-mono); font-size:10px; font-weight:600;
+          text-transform:uppercase; letter-spacing:0.16em; color:var(--accent-mid);
+          margin-bottom:8px;
+        }
+        .faq-title {
+          font-family:var(--font-display); font-size:clamp(26px,4vw,40px);
+          font-weight:800; text-transform:uppercase; letter-spacing:-0.01em;
+          color:var(--text); line-height:1.05;
+        }
+        .faq-list { display:flex; flex-direction:column; gap:8px; }
+        .faq-item { border:0.5px solid var(--border); border-radius:var(--radius); overflow:hidden; }
+        .faq-question {
+          width:100%; display:flex; align-items:center; justify-content:space-between;
+          padding:1rem 1.25rem; background:var(--surface2); border:none;
+          cursor:pointer; font-family:var(--font-body); font-size:14px; font-weight:600;
+          color:var(--text); text-align:left; transition:background .15s;
+        }
+        .faq-question:hover { background:var(--border); }
+        .faq-question--open { background:var(--border); }
+        .faq-icon {
+          font-family:var(--font-display); font-size:20px; font-weight:400;
+          color:var(--muted); flex-shrink:0;
+        }
+        .faq-answer {
+          padding:0 1.25rem 1.25rem; font-family:var(--font-body); font-size:14px;
+          color:var(--muted); line-height:1.7;
+        }
+        @media (max-width:720px) {
+          .faq { padding:2.5rem 1rem; }
+        }
       `}</style>
 
       {/* ── HERO ────────────────────────────────────────────────────────── */}
@@ -1287,6 +1383,9 @@ export default function Home() {
 
       {/* Newsletter */}
       <NewsletterSignup/>
+
+      {/* FAQ */}
+      <FAQSection/>
 
       {/* Mobile filter button */}
       <button className="mobile-filter-btn" onClick={()=>setSidebarOpen(o=>!o)}>
