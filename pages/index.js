@@ -100,6 +100,15 @@ const FuncIcon = () => (
   </svg>
 );
 
+const InstagramIcon = ({ size = 14 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+    <circle cx="12" cy="12" r="4"/>
+    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+  </svg>
+);
+
 const CalIcon = () => (
   <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
     <rect x="1" y="2" width="11" height="10" rx="2" stroke="currentColor" strokeWidth="1.3"/>
@@ -234,22 +243,14 @@ function RaceModal({ race, onClose }) {
 
         {/* CTAs */}
         <div className="modal-ctas">
-          {race.url
-            const hasRealUrl = race.url && 
-  (race.url.includes('spartan.com') || 
-   race.url.includes('toughmudder.com') || 
-   race.url.includes('hyrox.com') || 
-   race.url.includes('crossfit.com') ||
-   race.url.includes('dekor') ||
-   race.url.includes('deka'));
-
-{hasRealUrl ? (
-  <a href={race.url} target="_blank" rel="noreferrer" className="btn-primary">
-    INSCRIBIRSE →
-  </a>
-) : (
-  <span className="btn-primary btn-primary--off">PRÓXIMAMENTE</span>
-)}
+          {(() => {
+            const hasValidUrl = race.url &&
+              !race.url.includes('google.com') &&
+              !race.url.includes('carrerasocr.com');
+            return hasValidUrl
+              ? <a href={race.url} target="_blank" rel="noreferrer" className="btn-primary">IR A INSCRIPCIÓN →</a>
+              : <span className="btn-primary btn-primary--off">INSCRIPCIÓN CERRADA</span>;
+          })()}
           {race.fecha_iso && (
             <a href={buildGCalUrl(race)} target="_blank" rel="noreferrer" className="btn-ghost">
               AÑADIR A CALENDARIO 📅
@@ -522,6 +523,173 @@ function NewsletterSignup() {
         )}
       </div>
     </section>
+  );
+}
+
+/* ─── OrganizerContact ──────────────────────────────────────────────────────── */
+function OrganizerContact() {
+  const [form, setForm] = useState({ nombre:"", email:"", prueba:"", mensaje:"" });
+  const [status, setStatus] = useState("idle");
+  const [errMsg, setErrMsg] = useState("");
+
+  function set(field, val) { setForm(f=>({...f,[field]:val})); }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    if(!form.nombre||!form.email||!form.mensaje) return;
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/contact",{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify(form),
+      });
+      if(res.ok) { setStatus("success"); }
+      else {
+        const body = await res.json().catch(()=>({}));
+        throw new Error(body.error||"Error al enviar");
+      }
+    } catch(err) {
+      setStatus("error");
+      setErrMsg(err.message||"No se pudo enviar. Inténtalo de nuevo.");
+    }
+  }
+
+  return (
+    <section className="oc">
+      <div className="oc-inner">
+        <div className="oc-text">
+          <p className="oc-eyebrow">PARA ORGANIZADORES</p>
+          <h2 className="oc-title">¿Organizas<br/>una prueba?</h2>
+          <p className="oc-sub">
+            Consigue visibilidad en Hybrid Race Hub sin coste.
+            Cuéntanos tu evento y negociamos — una inscripción para mis seguidores
+            o para mí a cambio de aparecer en el calendario.
+          </p>
+          <a href="https://www.instagram.com/hybridracehub_spain" target="_blank" rel="noreferrer" className="oc-ig-link">
+            <InstagramIcon size={14}/>
+            <span>O escríbenos un DM · @hybridracehub_spain</span>
+          </a>
+        </div>
+
+        <div className="oc-form-wrap">
+          {status==="success" ? (
+            <div className="oc-success">
+              <span className="oc-check">✓</span>
+              <div>
+                <p className="oc-success-title">¡Mensaje enviado!</p>
+                <p className="oc-success-sub">Te respondemos en menos de 48 h.</p>
+              </div>
+            </div>
+          ) : (
+            <form className="oc-form" onSubmit={handleSubmit}>
+              <div className="oc-field">
+                <label className="oc-label">Nombre *</label>
+                <input className="oc-input" type="text" placeholder="Tu nombre" required
+                  value={form.nombre} onChange={e=>set("nombre",e.target.value)}
+                  disabled={status==="loading"}/>
+              </div>
+              <div className="oc-field">
+                <label className="oc-label">Email de contacto *</label>
+                <input className="oc-input" type="email" placeholder="tu@email.com" required
+                  value={form.email} onChange={e=>set("email",e.target.value)}
+                  disabled={status==="loading"}/>
+              </div>
+              <div className="oc-field">
+                <label className="oc-label">Nombre del evento</label>
+                <input className="oc-input" type="text" placeholder="Nombre de la prueba (opcional)"
+                  value={form.prueba} onChange={e=>set("prueba",e.target.value)}
+                  disabled={status==="loading"}/>
+              </div>
+              <div className="oc-field">
+                <label className="oc-label">Mensaje *</label>
+                <textarea className="oc-input oc-textarea" placeholder="Cuéntanos tu prueba, fecha, lugar…" required
+                  rows={4} value={form.mensaje} onChange={e=>set("mensaje",e.target.value)}
+                  disabled={status==="loading"}/>
+              </div>
+              <button type="submit" className="oc-btn" disabled={status==="loading"}>
+                {status==="loading" ? "Enviando…" : "ENVIAR MENSAJE →"}
+              </button>
+              {status==="error" && <p className="oc-error">{errMsg}</p>}
+            </form>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── SiteFooter ────────────────────────────────────────────────────────────── */
+function SiteFooter() {
+  return (
+    <footer className="site-footer">
+      <div className="sf-inner">
+        <div className="sf-top">
+          <div className="sf-brand">
+            <div className="brand-logo" style={{width:34,height:34,fontSize:17}}>H</div>
+            <div>
+              <div className="brand-name" style={{fontSize:15}}>Hybrid Race Hub</div>
+              <div className="brand-sub">OCR · HYROX · Functional</div>
+            </div>
+          </div>
+          <a href="https://www.instagram.com/hybridracehub_spain" target="_blank" rel="noreferrer" className="sf-ig">
+            <InstagramIcon size={15}/>
+            <span>@hybridracehub_spain</span>
+          </a>
+        </div>
+
+        <div className="sf-divider"/>
+
+        <div className="sf-legal-block">
+          <p className="sf-legal-head">Aviso Legal · Privacidad · Cookies</p>
+          <p className="sf-legal-text">
+            <strong>Responsable del tratamiento:</strong> Hybrid Race Hub ·{" "}
+            <strong>Finalidad:</strong> gestión de consultas de organizadores y envío de alertas de nuevas carreras ·{" "}
+            <strong>Base legal:</strong> consentimiento del interesado (Art. 6.1.a RGPD) ·{" "}
+            <strong>Destinatarios:</strong> no se ceden datos a terceros ·{" "}
+            <strong>Derechos:</strong> acceso, rectificación, supresión, portabilidad y oposición mediante el formulario de contacto ·{" "}
+            <strong>Contacto DPD:</strong> a través del formulario de la sección &quot;Para Organizadores&quot;.
+          </p>
+          <p className="sf-legal-text">
+            Este sitio web utiliza únicamente cookies técnicas esenciales necesarias para su funcionamiento
+            (almacenamiento local de preferencias de filtros y aceptación del aviso de cookies).
+            No se emplean cookies publicitarias ni de seguimiento de terceros.
+            Los datos personales recogidos a través del formulario de contacto y la newsletter
+            se tratan conforme al Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD).
+          </p>
+        </div>
+
+        <p className="sf-copy">© {new Date().getFullYear()} Hybrid Race Hub · Todos los derechos reservados</p>
+      </div>
+    </footer>
+  );
+}
+
+/* ─── CookieBanner ──────────────────────────────────────────────────────────── */
+function CookieBanner() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(()=>{
+    if(typeof window!=="undefined" && !localStorage.getItem("hrh_cookies_ok")) {
+      setVisible(true);
+    }
+  },[]);
+
+  function accept() {
+    if(typeof window!=="undefined") localStorage.setItem("hrh_cookies_ok","1");
+    setVisible(false);
+  }
+
+  if(!visible) return null;
+
+  return (
+    <div className="cookie-banner" role="region" aria-label="Aviso de cookies">
+      <p className="cookie-text">
+        Usamos cookies técnicas esenciales para el funcionamiento del sitio y para recordar tus preferencias.
+        No empleamos cookies publicitarias ni de seguimiento. Al continuar navegando aceptas su uso.
+      </p>
+      <button className="cookie-btn" onClick={accept}>Entendido</button>
+    </div>
   );
 }
 
@@ -1188,6 +1356,21 @@ export default function Home() {
           text-transform:uppercase; letter-spacing:0.16em; color:var(--accent-mid);
           margin-bottom:8px;
         }
+        /* ── ORGANIZER CONTACT ── */
+        .oc {
+          background:var(--bg); border-top:1px solid var(--border);
+          border-bottom:1px solid var(--border); padding:4rem 2rem;
+        }
+        .oc-inner {
+          max-width:900px; margin:0 auto;
+          display:flex; align-items:flex-start; gap:4rem; flex-wrap:wrap;
+        }
+        .oc-text { flex:1; min-width:220px; }
+        .oc-eyebrow {
+          font-family:var(--font-mono); font-size:10px; font-weight:600;
+          text-transform:uppercase; letter-spacing:0.16em; color:var(--accent-mid);
+          margin-bottom:8px;
+        }
         .faq-title {
           font-family:var(--font-display); font-size:clamp(26px,4vw,40px);
           font-weight:800; text-transform:uppercase; letter-spacing:-0.01em;
@@ -1213,6 +1396,142 @@ export default function Home() {
         }
         @media (max-width:720px) {
           .faq { padding:2.5rem 1rem; }
+        }
+        .oc-title {
+          font-family:var(--font-display); font-size:clamp(26px,4vw,40px);
+          font-weight:800; text-transform:uppercase; letter-spacing:-0.01em;
+          color:var(--text); line-height:1.05; margin-bottom:12px;
+        }
+        .oc-sub {
+          font-family:var(--font-body); font-size:14px; color:var(--muted);
+          line-height:1.65; max-width:380px; margin-bottom:20px;
+        }
+        .oc-ig-link {
+          display:inline-flex; align-items:center; gap:7px;
+          font-family:var(--font-mono); font-size:11px; font-weight:500;
+          text-transform:uppercase; letter-spacing:0.08em;
+          color:var(--muted); text-decoration:none;
+          border:0.5px solid var(--border); border-radius:999px;
+          padding:6px 14px; transition:color .15s, border-color .15s;
+        }
+        .oc-ig-link:hover { color:var(--text); border-color:var(--border2); }
+        .oc-form-wrap { flex:1; min-width:280px; }
+        .oc-form { display:flex; flex-direction:column; gap:12px; }
+        .oc-field { display:flex; flex-direction:column; gap:5px; }
+        .oc-label {
+          font-family:var(--font-mono); font-size:9px; font-weight:600;
+          text-transform:uppercase; letter-spacing:0.14em; color:var(--muted);
+        }
+        .oc-input {
+          font-family:var(--font-body); font-size:14px;
+          background:var(--bg2); color:var(--text);
+          border:1px solid var(--border2); border-radius:var(--radius-sm);
+          padding:10px 14px; outline:none; width:100%; box-sizing:border-box;
+          transition:border-color .15s;
+        }
+        .oc-input::placeholder { color:var(--muted2); }
+        .oc-input:focus { border-color:var(--accent); }
+        .oc-input:disabled { opacity:.5; }
+        .oc-textarea { resize:vertical; min-height:96px; }
+        .oc-btn {
+          font-family:var(--font-display); font-size:14px; font-weight:800;
+          text-transform:uppercase; letter-spacing:0.06em;
+          background:var(--accent); color:#08090C;
+          border:none; border-radius:var(--radius-sm);
+          padding:12px 22px; cursor:pointer; width:100%;
+          transition:transform .12s, box-shadow .12s, opacity .12s;
+        }
+        .oc-btn:hover:not(:disabled) {
+          transform:translateY(-1px); box-shadow:0 6px 20px rgba(251,146,60,0.35);
+        }
+        .oc-btn:disabled { opacity:.5; cursor:not-allowed; }
+        .oc-error { font-family:var(--font-body); font-size:12px; color:var(--red); margin-top:4px; }
+        .oc-success {
+          display:flex; align-items:center; gap:14px;
+          font-family:var(--font-display); font-size:18px; font-weight:700;
+          text-transform:uppercase; letter-spacing:0.02em; color:var(--text);
+          padding:1.5rem; background:var(--surface); border-radius:var(--radius);
+          border:0.5px solid var(--border);
+        }
+        .oc-check {
+          width:40px; height:40px; border-radius:50%; flex-shrink:0;
+          background:var(--green-bg); color:var(--green);
+          display:flex; align-items:center; justify-content:center; font-size:20px;
+        }
+        .oc-success-title { margin:0 0 2px; }
+        .oc-success-sub { font-family:var(--font-body); font-size:13px; font-weight:400; color:var(--muted); text-transform:none; margin:0; }
+        @media (max-width:720px) {
+          .oc { padding:2.5rem 1rem; }
+          .oc-inner { flex-direction:column; gap:2rem; }
+          .oc-form-wrap { width:100%; }
+        }
+
+        /* ── SITE FOOTER ── */
+        .site-footer {
+          background:var(--surface); border-top:1px solid var(--border);
+          padding:3rem 2rem 2rem;
+        }
+        .sf-inner { max-width:900px; margin:0 auto; }
+        .sf-top {
+          display:flex; align-items:center; justify-content:space-between;
+          flex-wrap:wrap; gap:16px; margin-bottom:1.5rem;
+        }
+        .sf-brand { display:flex; align-items:center; gap:12px; }
+        .sf-ig {
+          display:inline-flex; align-items:center; gap:7px;
+          font-family:var(--font-mono); font-size:11px; font-weight:500;
+          text-transform:uppercase; letter-spacing:0.08em;
+          color:var(--muted); text-decoration:none;
+          border:0.5px solid var(--border); border-radius:999px;
+          padding:6px 14px; transition:color .15s, border-color .15s;
+        }
+        .sf-ig:hover { color:var(--text); border-color:var(--border2); }
+        .sf-divider { height:0.5px; background:var(--border); margin-bottom:1.5rem; }
+        .sf-legal-block { margin-bottom:1.25rem; }
+        .sf-legal-head {
+          font-family:var(--font-mono); font-size:9px; font-weight:600;
+          text-transform:uppercase; letter-spacing:0.16em;
+          color:var(--accent-mid); margin-bottom:8px;
+        }
+        .sf-legal-text {
+          font-family:var(--font-body); font-size:12px; color:var(--muted2);
+          line-height:1.7; margin-bottom:8px;
+        }
+        .sf-legal-text strong { color:var(--muted); font-weight:600; }
+        .sf-copy {
+          font-family:var(--font-mono); font-size:10px; font-weight:500;
+          text-transform:uppercase; letter-spacing:0.08em; color:var(--muted2);
+        }
+        @media (max-width:720px) {
+          .site-footer { padding:2rem 1rem 1.5rem; }
+          .sf-top { flex-direction:column; align-items:flex-start; gap:12px; }
+        }
+
+        /* ── COOKIE BANNER ── */
+        .cookie-banner {
+          position:fixed; bottom:0; left:0; right:0; z-index:200;
+          background:var(--surface2); border-top:1px solid var(--border2);
+          padding:1rem 2rem; display:flex; align-items:center;
+          justify-content:space-between; gap:1.5rem; flex-wrap:wrap;
+          box-shadow:0 -4px 24px rgba(0,0,0,0.4);
+        }
+        .cookie-text {
+          font-family:var(--font-body); font-size:13px; color:var(--muted);
+          line-height:1.55; flex:1; min-width:220px; margin:0;
+        }
+        .cookie-btn {
+          font-family:var(--font-display); font-size:13px; font-weight:700;
+          text-transform:uppercase; letter-spacing:0.06em;
+          background:var(--accent); color:#08090C;
+          border:none; border-radius:var(--radius-sm);
+          padding:9px 20px; cursor:pointer; white-space:nowrap; flex-shrink:0;
+          transition:transform .12s, box-shadow .12s;
+        }
+        .cookie-btn:hover { transform:translateY(-1px); box-shadow:0 4px 14px rgba(251,146,60,0.35); }
+        @media (max-width:720px) {
+          .cookie-banner { padding:.75rem 1rem; flex-direction:column; align-items:flex-start; gap:.75rem; }
+          .cookie-btn { width:100%; text-align:center; }
+>>>>>>> 84a5fa7 (feat: organizer contact form, GDPR footer, cookie banner)
         }
       `}</style>
 
@@ -1407,6 +1726,15 @@ export default function Home() {
 
       {/* FAQ */}
       <FAQSection/>
+
+      {/* Organizer contact */}
+      <OrganizerContact/>
+
+      {/* Footer */}
+      <SiteFooter/>
+
+      {/* Cookie banner */}
+      <CookieBanner/>
 
       {/* Mobile filter button */}
       <button className="mobile-filter-btn" onClick={()=>setSidebarOpen(o=>!o)}>

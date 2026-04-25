@@ -44,33 +44,3 @@ export default async function handler(req, res) {
     res.status(500).json({ error: error.message });
   }
 }
-      body: JSON.stringify({ formato: 'Individual, Parejas' })
-    });
-    
-    // Update Spartan formats
-    await fetch(`${SUPABASE_URL}/rest/v1/races?modalidad_id=ilike.*spartan*`, {
-      method: 'PATCH',
-      headers: {
-        'apikey': SERVICE_KEY,
-        'Authorization': `Bearer ${SERVICE_KEY}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ formato: 'Individual, Parejas, Equipos, Elite' })
-    });
-    
-    // Update Tough Mudder formats
-    await fetch(`${SUPABASE_URL}/rest/v1/races?modalidad_id=ilike.*mudder*`, {
-      method: 'PATCH',
-      headers: {
-        'apikey': SERVICE_KEY,
-        'Authorization': `Bearer ${SERVICE_KEY}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ formato: 'Individual, Parejas' })
-    });
-    
-    res.json({ success: true, message: 'Formats updated' });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-}
