@@ -786,6 +786,7 @@ export default function Productos() {
                         src={product.img}
                         alt={product.name}
                         loading="lazy"
+                        referrerPolicy="no-referrer"
                         className="product-img"
                         onError={(e) => {
                           e.currentTarget.style.display = "none";
