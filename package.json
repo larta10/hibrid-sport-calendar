@@ -6,7 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "seed": "node scripts/seed-events.mjs"
+    "seed": "node scripts/seed-events.mjs",
+    "scrape-centros-live": "node scripts/scrape-centros-live.js",
+    "scrape-centros-oss": "node scripts/scrape-centros-oss.js",
+    "clean-centros-web": "node scripts/clean-centros-web.js",
+    "validate-centros": "node scripts/validate-centros.js",
+    "test:haversine": "node scripts/test-haversine.js",
+    "test:proximity": "node scripts/test-proximity.js",
+    "seo-report": "node scripts/seo-accessibility-report.js"
   },
   "dependencies": {
     "next": "14.2.3",

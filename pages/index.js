@@ -324,6 +324,14 @@ export default function Home() {
     }).then(r=>{ const c=r.headers.get("content-range"); if(c) setTotalCount(c.split("/")[1]); }).catch(()=>{});
   },[]);
 
+  const [centerQuery, setCenterQuery] = useState("");
+  const router = useRouter();
+  function goCenterSearch() {
+    const q = centerQuery.trim();
+    if (!q) return;
+    router.push(`/centros-entrenamiento?q=${encodeURIComponent(q)}`);
+  }
+
   return (
     <>
       <Head>
@@ -412,8 +420,20 @@ export default function Home() {
             <p className="hero-sub">
               Tu plataforma completa para el <strong>entrenamiento híbrido en España</strong>. Descubre eventos de OCR, HYROX y CrossFit, encuentra centros de entrenamiento cerca de ti y accede a rankings de equipamiento especializado. Todo en un solo lugar.
             </p>
-            <HeroStats totalCount={totalCount} ccaaCount={CCAA.length} formatsCount={FORMATS.length}/>
-            <a href="/calendario" className="hero-cta">VER TODOS LOS EVENTOS →</a>
+            {/* Centro destacado buscador principal (cabecera) */}
+            <div className="center-search-cta" aria-label="Buscar centros de entrenamiento" style={{ marginTop: 16, padding: 12, background: 'rgba(251,146,60,0.14)', borderRadius: 12, display: 'flex', gap: 8, alignItems: 'center', justifyContent: 'center' }}>
+              <input
+                value={centerQuery}
+                onChange={(e)=>setCenterQuery(e.target.value)}
+                placeholder="Buscar centros OCR / HYROX / Funcional..."
+                style={{ background: 'var(--surface2)', border: '1px solid var(--border2)', borderRadius: 8, padding: '10px 12px', width: 320 }}
+              />
+              <button onClick={goCenterSearch} style={{ padding: '10px 14px', borderRadius: 8, background: 'var(--accent)', color: '#08090C', fontWeight: 700, border: 'none' }}>
+                Buscar centros
+              </button>
+            </div>
+          <HeroStats totalCount={totalCount} ccaaCount={CCAA.length} formatsCount={FORMATS.length}/>
+          <a href="/calendario" className="hero-cta">VER TODOS LOS EVENTOS →</a>
           </div>
         </div>
         {/* Search bar: full-width, centered below headline */}

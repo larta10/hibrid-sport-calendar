@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from "react";
+const { haversine } = require("../lib/distance");
 import Head from "next/head";
 import Link from "next/link";
 import centrosJson from "../lib/centros-entrenamiento.json";
@@ -8,18 +9,7 @@ const CCAA_LIST = [...new Set(centrosJson.map((c) => c.ccaa).filter(Boolean))].s
 const TIPO_LIST = [...new Set(centrosJson.map((c) => c.tipo).filter(Boolean))].sort();
 const TOTAL = centrosJson.length;
 
-// Distancia Haversine entre dos coordenadas (km)
-function haversine(lat1, lon1, lat2, lon2) {
-  const R = 6371; // km
-  const dLat = ((lat2 - lat1) * Math.PI) / 180;
-  const dLon = ((lon2 - lon1) * Math.PI) / 180;
-  const a =
-    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos((lat1 * Math.PI) / 180) * Math.cos((lat2 * Math.PI) / 180) *
-    Math.sin(dLon / 2) * Math.sin(dLon / 2);
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c;
-}
+// haversine helper moved to lib/distance.js
 const CIUDADES = [...new Set(centrosJson.map((c) => c.ciudad).filter(Boolean))].length;
 
 const TIPO_COLOR = {

@@ -39,7 +39,8 @@ const TARGET_TIMES = [
 /* ─── Helpers ──────────────────────────────────────────────────────────────── */
 function parseTime(val) {
   if (!val || val.trim() === "") return 0;
-  const parts = val.trim().split(":");
+  // Support MM:SS and MM.SS (or mixed separators)
+  const parts = val.trim().split(/[:.]/);
   if (parts.length === 2) {
     const m = parseInt(parts[0], 10) || 0;
     const s = parseInt(parts[1], 10) || 0;
@@ -79,8 +80,8 @@ export default function CalculadoraHyrox() {
   const [times, setTimes] = useState(initTimes);
 
   const set = useCallback((id, val) => {
-    // Only allow digits and colon
-    const clean = val.replace(/[^0-9:]/g, "").slice(0, 5);
+    // Allow digits, colon and dot separators; allow longer input for MM:SS or MM:SS.xx
+    const clean = val.replace(/[^0-9:.]/g, "").slice(0, 8);
     setTimes(prev => ({ ...prev, [id]: clean }));
   }, []);
 

@@ -337,7 +337,16 @@ export default function BlogPost({ post }) {
           </div>
         </div>
 
-        <Link href="/blog" className="back-link">← Volver al blog</Link>
+      <Link href="/blog" className="back-link">← Volver al blog</Link>
+      {/* Productos recomendados (enlaces a rankings) */}
+      <section className="productos-reco" style={{ maxWidth: '1100px', margin: '2rem auto', padding: '0 2rem' }}>
+        <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 16, fontWeight: 800, textTransform: 'uppercase', marginBottom: 8 }}>Productos recomendados</h3>
+        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+          <Link href="/productos/relojes" className="cta-link" style={{ padding: '8px 12px', borderRadius: 999, border: '1px solid var(--border2)', color: 'var(--text)' }}>Relojes GPS para HYROX</Link>
+          <Link href="/productos/zapatillas-hyrox" className="cta-link" style={{ padding: '8px 12px', borderRadius: 999, border: '1px solid var(--border2)', color: 'var(--text)' }}>Ranking zapatillas HYROX</Link>
+          <Link href="/productos/zapatillas" className="cta-link" style={{ padding: '8px 12px', borderRadius: 999, border: '1px solid var(--border2)', color: 'var(--text)' }}>Ranking zapatillas OCR</Link>
+        </div>
+      </section>
       </div>
     </>
   );
