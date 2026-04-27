@@ -517,6 +517,13 @@ function CentroCard({ centro }) {
   const mapsUrl = `https://maps.google.com?q=${encodeURIComponent(
     [centro.nombre, centro.direccion, centro.ciudad].filter(Boolean).join(" ")
   )}`;
+  // Determine a primary destination link for the center
+  let siteHref = '';
+  if (centro.web && centro.web.trim()) siteHref = centro.web;
+  else if (centro.instagram && centro.instagram.trim()) siteHref = centro.instagram;
+  else if (centro.nombre) {
+    siteHref = `https://www.google.com/search?q=${encodeURIComponent(centro.nombre + ' ' + (centro.ciudad || ''))}`;
+  }
 
   return (
     <article className="centro-card">
@@ -541,7 +548,7 @@ function CentroCard({ centro }) {
         <div className="centro-dist" style={{fontSize: 12, color: 'var(--muted)'}}>A ~{centro.distKm.toFixed(1)} km</div>
       )}
 
-      {((centro.web && !centro.web.includes("buscaunbox.com")) || centro.telefono) && (
+      {((centro.web && !centro.web.includes("buscaunbox.com")) || centro.telefono || siteHref) && (
         <div className="centro-links">
           {centro.web && !centro.web.includes("buscaunbox.com") && (
             <a
@@ -574,9 +581,13 @@ function CentroCard({ centro }) {
               Mapa
             </a>
           )}
+          {siteHref && (
+            <a href={siteHref} target="_blank" rel="noreferrer noopener" className="centro-link" style={{ marginLeft: "auto" }}>
+              Visitar
+            </a>
+          )}
         </div>
-      )}
-      // No se muestran botones cuando no hay web ni teléfono (solo información)
+  )}
     </article>
   );
 }
