@@ -1,5 +1,7 @@
+import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import { posts } from "../../lib/posts";
 
 const CATEGORY_COLORS = {
@@ -8,10 +10,24 @@ const CATEGORY_COLORS = {
   "Equipamiento": { color: "var(--green)",   bg: "var(--green-bg)"       },
 };
 
+const PAGE_SIZE = 6;
+
 export default function BlogIndex() {
   const sorted = [...posts].sort((a, b) => b.date.localeCompare(a.date));
   const featured = sorted[0];
   const rest = sorted.slice(1);
+
+  const [page, setPage] = useState(1);
+
+  // Page 1: featured + first (PAGE_SIZE-1) from rest; page N: rest slice
+  const restPage1 = rest.slice(0, PAGE_SIZE - 1);
+  const restAfterPage1 = rest.slice(PAGE_SIZE - 1);
+  const totalPages = 1 + Math.ceil(restAfterPage1.length / PAGE_SIZE);
+
+  const currentRest = page === 1
+    ? restPage1
+    : restAfterPage1.slice((page - 2) * PAGE_SIZE, (page - 1) * PAGE_SIZE);
+  const showFeatured = page === 1;
 
   return (
     <>
@@ -19,16 +35,38 @@ export default function BlogIndex() {
         <title>Blog — Hybrid Race Hub | OCR, HYROX y Fitness Híbrido</title>
         <meta name="description" content="Guías de entrenamiento, análisis de equipamiento y noticias sobre OCR, HYROX y competiciones funcionales en España." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://hybridracehub.com/blog" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://hybridracehub.com/blog" />
-        <meta property="og:title" content="Blog — Hybrid Race Hub" />
+        <meta property="og:title" content="Blog — Hybrid Race Hub | OCR, HYROX y Fitness Híbrido" />
         <meta property="og:description" content="Guías de entrenamiento, análisis de equipamiento y noticias sobre OCR, HYROX y competiciones funcionales en España." />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content="https://hybridracehub.com/logo.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Blog — Hybrid Race Hub | OCR, HYROX y Fitness Híbrido" />
+        <meta name="twitter:description" content="Guías de entrenamiento, análisis de equipamiento y noticias sobre OCR, HYROX y competiciones funcionales en España." />
+        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{__html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Blog — Hybrid Race Hub",
+            "description": "Artículos sobre OCR, HYROX y fitness funcional en España",
+            "url": "https://hybridracehub.com/blog",
+            "numberOfItems": posts.length,
+            "itemListElement": [...posts].sort((a,b)=>b.date.localeCompare(a.date)).map((p, i) => ({
+              "@type": "ListItem",
+              "position": i + 1,
+              "url": `https://hybridracehub.com/blog/${p.slug}`,
+              "name": p.title,
+            })),
+          })}}
+        />
       </Head>
 
       <style>{`
@@ -199,7 +237,7 @@ export default function BlogIndex() {
       {/* Topbar */}
       <div className="topbar">
         <Link href="/" className="brand">
-          <img src="/logo-icon.svg" className="brand-logo-img" alt="Hybrid Race Hub" width="36" height="36"/>
+          <Image src="/logo-icon.svg" className="brand-logo-img" alt="Hybrid Race Hub" width={36} height={36} priority />
           <div>
             <div className="brand-name">Hybrid Race Hub</div>
             <div className="brand-sub">OCR · HYROX · Functional</div>
@@ -227,8 +265,8 @@ export default function BlogIndex() {
       {/* Content */}
       <div className="blog-body">
 
-        {/* Featured post */}
-        {featured && (
+        {/* Featured post — page 1 only */}
+        {showFeatured && featured && (
           <Link href={`/blog/${featured.slug}`} style={{ display: "block" }}>
             <article className="featured-card">
               <div className="featured-placeholder">
@@ -252,9 +290,9 @@ export default function BlogIndex() {
           </Link>
         )}
 
-        {/* Rest of posts */}
-        <div className="posts-grid">
-          {rest.map((post) => {
+        {/* Post grid */}
+        <div className="posts-grid" style={{ marginBottom: "2rem" }}>
+          {currentRest.map((post) => {
             const colors = CATEGORY_COLORS[post.category] || { color: "var(--accent)", bg: "var(--accent-bg)" };
             return (
               <Link key={post.slug} href={`/blog/${post.slug}`} style={{ display: "block" }}>
@@ -275,6 +313,60 @@ export default function BlogIndex() {
               </Link>
             );
           })}
+        </div>
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginBottom: "2rem" }}>
+            <button
+              onClick={() => { setPage(p => p - 1); window.scrollTo(0, 0); }}
+              disabled={page === 1}
+              style={{
+                fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600,
+                textTransform: "uppercase", letterSpacing: "0.1em",
+                padding: "7px 16px", borderRadius: 999,
+                background: "transparent", border: "0.5px solid var(--border)",
+                color: page === 1 ? "var(--muted2)" : "var(--text)", cursor: page === 1 ? "default" : "pointer",
+              }}
+            >← Anterior</button>
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map(n => (
+              <button
+                key={n}
+                onClick={() => { setPage(n); window.scrollTo(0, 0); }}
+                style={{
+                  fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600,
+                  padding: "7px 14px", borderRadius: 999,
+                  background: n === page ? "var(--accent)" : "transparent",
+                  border: `0.5px solid ${n === page ? "var(--accent)" : "var(--border)"}`,
+                  color: n === page ? "#000" : "var(--muted)", cursor: "pointer",
+                }}
+              >{n}</button>
+            ))}
+            <button
+              onClick={() => { setPage(p => p + 1); window.scrollTo(0, 0); }}
+              disabled={page === totalPages}
+              style={{
+                fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600,
+                textTransform: "uppercase", letterSpacing: "0.1em",
+                padding: "7px 16px", borderRadius: 999,
+                background: "transparent", border: "0.5px solid var(--border)",
+                color: page === totalPages ? "var(--muted2)" : "var(--text)", cursor: page === totalPages ? "default" : "pointer",
+              }}
+            >Siguiente →</button>
+          </div>
+        )}
+
+        {/* Enlazado interno */}
+        <div style={{ borderTop: "0.5px solid rgba(255,255,255,0.08)", paddingTop: "2rem", display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+          <Link href="/calendario" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--accent)", border: "0.5px solid rgba(251,146,60,0.3)", borderRadius: 999, padding: "6px 14px" }}>
+            📅 Ver calendario de eventos →
+          </Link>
+          <Link href="/productos/relojes" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 999, padding: "6px 14px" }}>
+            🏆 Ranking relojes GPS →
+          </Link>
+          <Link href="/productos/zapatillas-hyrox" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 999, padding: "6px 14px" }}>
+            👟 Ranking zapatillas HYROX →
+          </Link>
         </div>
       </div>
     </>

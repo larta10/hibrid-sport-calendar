@@ -60,18 +60,23 @@ export default function ContactOrganizers() {
   return (
     <>
       <Head>
-        <title>Contacto Organizadores — Hybrid Race Hub</title>
-        <meta name="description" content="Promociona tu evento OCR, HYROX o CrossFit en Hybrid Race Hub. Planes de destacado básico y premium." />
+        <title>Contacto Organizadores de Carreras OCR y HYROX | Hybrid Race Hub</title>
+        <meta name="description" content="Promociona tu evento OCR, HYROX o CrossFit en Hybrid Race Hub, el calendario de referencia en España. Planes de destacado básico y premium." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://hybridracehub.com/contacto-organizadores" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://hybridracehub.com/contacto-organizadores" />
         <meta property="og:title" content="Contacto Organizadores — Hybrid Race Hub" />
-        <meta property="og:description" content="Promociona tu evento OCR, HYROX o CrossFit en Hybrid Race Hub." />
+        <meta property="og:description" content="Promociona tu evento OCR, HYROX o CrossFit en Hybrid Race Hub, el calendario de referencia en España." />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content="https://hybridracehub.com/logo.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contacto Organizadores — Hybrid Race Hub" />
+        <meta name="twitter:description" content="Promociona tu evento OCR, HYROX o CrossFit en Hybrid Race Hub, el calendario de referencia en España." />
+        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
       </Head>
 

@@ -1,0 +1,13 @@
+{
+  "name": "Hybrid Race Hub",
+  "short_name": "HybridRaceHub",
+  "description": "Calendario OCR, HYROX y CrossFit en España",
+  "icons": [
+    { "src": "/favicon.ico", "sizes": "48x48", "type": "image/x-icon" },
+    { "src": "/logo-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#F97316",
+  "background_color": "#000000"
+}

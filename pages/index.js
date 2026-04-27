@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import {
   SUPABASE_URL, ANON_KEY, TODAY_ISO, TODAY_YEAR, NICHE_PARENTS, CCAA, FORMATS,
@@ -348,24 +349,58 @@ export default function Home() {
         <title>Hybrid Race Hub — Calendario OCR, HYROX y CrossFit en España</title>
         <meta name="description" content="El calendario de referencia para carreras OCR, HYROX y competiciones funcionales en España. Filtra por formato, comunidad y fecha." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://hybridracehub.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://hybridracehub.com/" />
-        <meta property="og:title" content="Hybrid Race Hub" />
-        <meta property="og:description" content="OCR · HYROX · Functional — Calendario de competiciones híbridas en España" />
+        <meta property="og:title" content="Hybrid Race Hub — Calendario OCR, HYROX y CrossFit en España" />
+        <meta property="og:description" content="El calendario de referencia para carreras OCR, HYROX y competiciones funcionales en España. Filtra por formato, comunidad y fecha." />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content="https://hybridracehub.com/logo.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Hybrid Race Hub — Calendario OCR, HYROX y CrossFit en España" />
+        <meta name="twitter:description" content="El calendario de referencia para carreras OCR, HYROX y competiciones funcionales en España." />
+        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
         <link rel="preconnect" href={SUPABASE_URL} />
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{__html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://hybridracehub.com/#organization",
+                "name": "Hybrid Race Hub",
+                "url": "https://hybridracehub.com/",
+                "logo": { "@type": "ImageObject", "url": "https://hybridracehub.com/logo.svg" },
+                "sameAs": ["https://www.instagram.com/hybridracehub_spain"],
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://hybridracehub.com/#website",
+                "url": "https://hybridracehub.com/",
+                "name": "Hybrid Race Hub",
+                "description": "Calendario OCR, HYROX y CrossFit en España",
+                "publisher": { "@id": "https://hybridracehub.com/#organization" },
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": { "@type": "EntryPoint", "urlTemplate": "https://hybridracehub.com/calendario?q={search_term_string}" },
+                  "query-input": "required name=search_term_string",
+                },
+              },
+            ],
+          })}}
+        />
       </Head>
 
       {/* ── HEADER ── */}
       <header className="hero">
         <div className="hero-inner">
           <div className="brand">
-            <img src="/logo-icon.svg" className="brand-logo-img" alt="Hybrid Race Hub" width="40" height="40"/>
+            <Image src="/logo-icon.svg" className="brand-logo-img" alt="Hybrid Race Hub" width={40} height={40} priority />
             <div>
               <div className="brand-name">Hybrid Race Hub</div>
               <div className="brand-sub">

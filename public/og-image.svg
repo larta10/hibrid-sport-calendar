@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#08090C"/>
+  <rect width="1200" height="4" y="0" fill="#F97316"/>
+  <!-- Grid lines subtle -->
+  <line x1="0" y1="315" x2="1200" y2="315" stroke="#1A1D26" stroke-width="1"/>
+  <line x1="600" y1="0" x2="600" y2="630" stroke="#1A1D26" stroke-width="1"/>
+  <!-- Logo icon -->
+  <g transform="translate(480, 160)">
+    <polygon points="120,20 220,180 20,180" stroke="#F97316" stroke-width="6" fill="none"/>
+    <line x1="60" y1="140" x2="180" y2="140" stroke="#F97316" stroke-width="6"/>
+  </g>
+  <!-- Brand name -->
+  <text x="600" y="290" font-family="Arial Narrow, Arial, sans-serif" font-size="72" font-weight="900" fill="#F5F5F7" text-anchor="middle" letter-spacing="-1">HYBRID RACE HUB</text>
+  <!-- Tagline -->
+  <text x="600" y="360" font-family="Arial, sans-serif" font-size="28" font-weight="400" fill="#8C8E9A" text-anchor="middle" letter-spacing="6">OCR · HYROX · CROSSFIT</text>
+  <!-- Description -->
+  <text x="600" y="430" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#F5F5F7" text-anchor="middle">Calendario de competiciones híbridas en España 2026</text>
+  <!-- URL -->
+  <text x="600" y="560" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#5D5F6B" text-anchor="middle">hybridracehub.com</text>
+</svg>

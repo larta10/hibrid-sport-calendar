@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import Head from "next/head";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import {
   SUPABASE_URL, ANON_KEY, TODAY_ISO, TODAY_YEAR, NICHE_PARENTS,
@@ -139,17 +140,23 @@ export default function Calendario() {
   return (
     <>
       <Head>
-        <title>Calendario OCR, HYROX y CrossFit en España — Hybrid Race Hub</title>
-        <meta name="description" content="Todos los eventos OCR, HYROX y competiciones funcionales en España. Filtra por formato, comunidad autónoma y fecha." />
+        <title>Calendario OCR, HYROX y CrossFit España 2026 | Hybrid Race Hub</title>
+        <meta name="description" content="Todos los eventos OCR, HYROX y competiciones funcionales en España 2026. Filtra por formato, comunidad autónoma y fecha. Actualizado a diario." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://hybridracehub.com/calendario" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://hybridracehub.com/calendario" />
-        <meta property="og:title" content="Calendario · Hybrid Race Hub" />
-        <meta property="og:description" content="OCR · HYROX · Functional — Todos los eventos en España" />
-        <meta property="og:image" content="https://hybridracehub.com/logo.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <meta property="og:title" content="Calendario OCR, HYROX y CrossFit España 2026 | Hybrid Race Hub" />
+        <meta property="og:description" content="Todos los eventos OCR, HYROX y competiciones funcionales en España 2026. Filtra por formato, comunidad autónoma y fecha." />
+        <meta property="og:site_name" content="Hybrid Race Hub" />
+        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Calendario OCR, HYROX y CrossFit España 2026 | Hybrid Race Hub" />
+        <meta name="twitter:description" content="Todos los eventos OCR, HYROX y competiciones funcionales en España 2026." />
+        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
         <link rel="preconnect" href={SUPABASE_URL} />
       </Head>
@@ -159,7 +166,7 @@ export default function Calendario() {
         <div className="hero-inner">
           <div className="brand">
             <a href="/" style={{textDecoration:"none",display:"flex",alignItems:"center",gap:14}}>
-              <img src="/logo-icon.svg" className="brand-logo-img" alt="Hybrid Race Hub" width="40" height="40"/>
+              <Image src="/logo-icon.svg" className="brand-logo-img" alt="Hybrid Race Hub" width={40} height={40} priority />
               <div>
                 <div className="brand-name">Hybrid Race Hub</div>
                 <div className="brand-sub">
@@ -248,6 +255,21 @@ export default function Calendario() {
                 from={dateRange.from} to={dateRange.to}
                 onChange={({from,to})=>setDateRange({from,to})}
               />
+            </FilterSection>
+
+            <FilterSection title="Eventos por ciudad" active={false}>
+              <div className="chips-wrap">
+                {[
+                  ["bilbao","Bilbao"],["barcelona","Barcelona"],["madrid","Madrid"],
+                  ["valencia","Valencia"],["malaga","Málaga"],["sevilla","Sevilla"],
+                  ["zaragoza","Zaragoza"],["murcia","Murcia"],
+                ].map(([slug, label]) => (
+                  <a key={slug} href={`/calendario/${slug}`}
+                    style={{ display:"inline-block", fontFamily:"var(--font-mono)", fontSize:10, fontWeight:500, textTransform:"uppercase", letterSpacing:"0.1em", color:"var(--muted)", border:"0.5px solid rgba(255,255,255,0.08)", borderRadius:999, padding:"4px 10px", textDecoration:"none", transition:"color .15s, border-color .15s" }}>
+                    {label}
+                  </a>
+                ))}
+              </div>
             </FilterSection>
 
           </div>

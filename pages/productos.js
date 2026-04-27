@@ -1,462 +1,8 @@
 ﻿import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
+import { RANKINGS, AZ } from "../lib/rankings";
 
-const TAG = "hybridracehub-21";
-const AZ = (asin) => `https://www.amazon.es/dp/${asin}/?tag=${TAG}`;
-
-/* ─── DATA ─────────────────────────────────────────────────────────────────── */
-
-const RANKINGS = [
-  {
-    id: "relojes",
-    letter: "A",
-    title: "Relojes deportivos para OCR + HYROX",
-    eyebrow: "GPS · AUTONOMÍA · MÉTRICAS",
-    intro: [
-      "Un reloj GPS es la inversión que más impacto tiene en la calidad del entrenamiento híbrido. No se trata de presumir de pulsera — se trata de tener datos reales de carga, recuperación y rendimiento que te permitan tomar decisiones de entrenamiento en vez de adivinar. Para OCR y HYROX, los criterios que más importan son GPS preciso en multibanda (fundamental en zonas de montaña y bajo edificios), autonomía suficiente para carreras largas, métricas de carga de entrenamiento (HRV, Training Readiness, carga aguda/crónica) y mapa de rutas para navegar en terreno desconocido.",
-      "El mercado se ha sofisticado mucho. Garmin sigue liderando en el ecosistema de datos, pero Suunto, Polar y COROS ofrecen alternativas sólidas con puntos fuertes distintos. Apple Watch Ultra 2 entra en la ecuación para quien está ya en el ecosistema Apple. Aquí el ranking de los 6 mejores para deporte híbrido, de mayor a más asequible.",
-    ],
-    table: {
-      headers: ["Reloj", "GPS", "Autonomía GPS", "HRV/Carga", "Precio aprox.", "Nota /10"],
-      rows: [
-        ["Garmin Forerunner 965", "Multibanda", "31 h", "Sí (avanzado)", "~600 €", "9.5"],
-        ["Garmin Fenix 8", "Multibanda", "29 h (AMOLED)", "Sí (avanzado)", "~850 €", "9.4"],
-        ["Suunto Race", "Multibanda", "40 h", "Sí", "~450 €", "8.8"],
-        ["Polar Vantage V3", "Multibanda", "43 h", "Sí (avanzado)", "~490 €", "8.6"],
-        ["COROS PACE 3", "Multibanda", "38 h", "Sí", "~220 €", "8.5"],
-        ["Apple Watch Ultra 2", "Multibanda", "36 h", "Básico", "~900 €", "8.0"],
-      ],
-    },
-    products: [
-      {
-        rank: 1,
-        name: "Garmin Forerunner 965",
-        asin: "B0CFQ1NQPG",
-        img: "https://tse1.mm.bing.net/th?q=Garmin+Forerunner+965+smartwatch&w=400&h=400&c=7",
-        price: "~600 €",
-        desc: "La referencia de los atletas de OCR y triatlón. Pantalla AMOLED brillante, GPS multibanda preciso incluso bajo árboles y montaña, métricas de carga avanzadas (HRV Status, Training Readiness, Race Predictor), mapas TopoCom precargados y 31 h de autonomía con GPS activo. El ecosistema Garmin Connect es el más completo del mercado.",
-        pros: ["GPS multibanda más preciso del mercado para trail", "Métricas de carga y recuperación muy avanzadas", "Mapas topo integrados — navegación sin teléfono"],
-        cons: ["Precio elevado", "Pantalla AMOLED afecta autonomía vs modelos anteriores"],
-      },
-      {
-        rank: 2,
-        name: "Garmin Fenix 8",
-        asin: "B0D1PZBYF2",
-        img: "https://tse1.mm.bing.net/th?q=Garmin+Fenix+8+GPS+watch&w=400&h=400&c=7",
-        price: "~850 €",
-        desc: "El tope de gama de Garmin. Construcción en titanio o acero, pantalla AMOLED o MIP según modelo, altavoz y micrófono integrados, GPS multibanda. Todo lo del Forerunner 965 más materiales premium y mayor resistencia a golpes. Para atletas que compiten en condiciones extremas o quieren el reloj definitivo.",
-        pros: ["Materiales de construcción premium", "Altavoz/micrófono para responder llamadas", "Compatible con todas las aplicaciones Garmin"],
-        cons: ["El más caro del ranking", "Muy similar al FR965 en métricas deportivas"],
-      },
-      {
-        rank: 3,
-        name: "Suunto Race",
-        asin: "B0C6T5BD9H",
-        img: "https://tse1.mm.bing.net/th?q=Suunto+Race+GPS+watch+black&w=400&h=400&c=7",
-        price: "~450 €",
-        desc: "Suunto ha vuelto con fuerza con el Race. GPS multibanda preciso, pantalla AMOLED de alta resolución, 40 h de autonomía con GPS, y Suunto App que facilita la planificación de rutas en montaña. Especialmente bueno para OCR en trail — la interfaz de mapas es más limpia que la de Garmin.",
-        pros: ["40 h GPS multibanda — autonomía líder en su precio", "Pantalla AMOLED excelente bajo sol directo", "Diseño más compacto y ligero que el Fenix"],
-        cons: ["Ecosistema de datos menos completo que Garmin", "Menos métricas avanzadas de recuperación"],
-      },
-      {
-        rank: 4,
-        name: "Polar Vantage V3",
-        asin: "B0CFMXF3NH",
-        img: "https://tse1.mm.bing.net/th?q=Polar+Vantage+V3+GPS+watch&w=400&h=400&c=7",
-        price: "~490 €",
-        desc: "Polar sigue siendo el rey de las métricas fisiológicas. El Vantage V3 tiene el mejor sensor de FC óptica del mercado, HRV nocturno más preciso que Garmin, y métricas de carga (Training Load Pro) especialmente útiles para atletas con volumen alto. GPS multibanda y 43 h de autonomía.",
-        pros: ["Mejor sensor óptico de FC del mercado", "HRV nocturno más fiable", "43 h de autonomía GPS — líder absoluto"],
-        cons: ["Mapas menos intuitivos que Garmin/Suunto", "Ecosistema de apps limitado"],
-      },
-      {
-        rank: 5,
-        name: "COROS PACE 3",
-        asin: "B0CFQQ9FDL",
-        img: "https://tse1.mm.bing.net/th?q=Coros+Pace+3+GPS+watch&w=400&h=400&c=7",
-        price: "~220 €",
-        desc: "La mejor relación calidad/precio por debajo de 250 €. GPS multibanda, 38 h de autonomía, sensor óptico de FC preciso y la app COROS que mejora versión a versión. Lo que pierde frente a Garmin es profundidad de análisis de datos — pero para la mayoría de atletas no de élite es más que suficiente.",
-        pros: ["Precio muy competitivo", "38 h GPS multibanda — excepcional para su precio", "Ligero (39 g) — ideal para running rápido"],
-        cons: ["Métricas avanzadas menos desarrolladas que Garmin", "Ecosistema de apps más limitado"],
-      },
-      {
-        rank: 6,
-        name: "Apple Watch Ultra 2",
-        asin: "B0CHX8B914",
-        img: "https://tse1.mm.bing.net/th?q=Apple+Watch+Ultra+2+titanium&w=400&h=400&c=7",
-        price: "~900 €",
-        desc: "El más caro y el más potente tecnológicamente, pero no el mejor para rendimiento deportivo puro. GPS de doble chip preciso, 36 h de autonomía, integración total con iPhone y apps del ecosistema Apple. Si ya estás en el ecosistema Apple y usas muchas apps de salud, es una opción válida — pero para métricas deportivas avanzadas, Garmin gana.",
-        pros: ["Integración total ecosistema Apple/iPhone", "Titanio de aviación — muy robusto", "GPS de doble chip muy preciso"],
-        cons: ["El más caro del ranking", "Ecosistema de entrenamiento deportivo inferior a Garmin", "Autonomía limitada frente a su precio"],
-      },
-    ],
-    conclusion: "Para OCR y HYROX, el Garmin Forerunner 965 es el referente indiscutible si el presupuesto lo permite. Si buscas la mejor relación calidad/precio, el COROS PACE 3 a ~220 € es difícil de superar. Para principiantes: el COROS. Para atletas de rendimiento: el FR965 o el Polar Vantage V3.",
-  },
-
-  {
-    id: "trail-gtx",
-    letter: "B",
-    title: "Zapatillas trail running para OCR — con Gore-Tex",
-    eyebrow: "AGARRE · IMPERMEABILIDAD · DURABILIDAD",
-    intro: [
-      "En OCR, la zapatilla es la decisión de equipamiento que más afecta al rendimiento. El terreno cambia cada kilómetro — barro, agua, roca, hierba mojada, obstáculos con madera — y la zapatilla tiene que aguantar todo eso durante horas. La versión Gore-Tex (GTX) añade impermeabilidad, lo que en carreras de primavera y otoño en España puede ser la diferencia entre llegar con los pies en condiciones o con ampollas desde el km 5.",
-      "El debate trail GTX vs trail estándar en OCR: la impermeabilidad ayuda cuando el agua es escasa o moderada. En obstáculos donde te metes de lleno en el agua (zanjas, cruces de río), la GTX puede llenarse y tardar más en drenar que una trail estándar con buenas aberturas de drenaje. Para OCR de temporada húmeda sin agua profunda: GTX. Para OCR veraniego con obstáculos de agua: considera la versión estándar.",
-    ],
-    table: {
-      headers: ["Zapatilla", "Impermeabilidad", "Agarre barro", "Peso aprox.", "Precio aprox.", "Nota /10"],
-      rows: [
-        ["Salomon Speedcross 6 GTX", "Gore-Tex", "Excelente", "320 g", "~150 €", "9.3"],
-        ["Salomon XA Pro 3D v9 GTX", "Gore-Tex", "Muy bueno", "340 g", "~160 €", "8.8"],
-        ["Hoka Speedgoat 6 GTX", "Gore-Tex", "Bueno", "310 g", "~180 €", "8.5"],
-        ["Brooks Cascadia 17 GTX", "Gore-Tex", "Bueno", "330 g", "~160 €", "8.3"],
-        ["Inov-8 Mudclaw G 260", "No (grip extremo)", "Excepcional", "260 g", "~130 €", "8.6"],
-      ],
-    },
-    products: [
-      {
-        rank: 1,
-        name: "Salomon Speedcross 6 GTX",
-        asin: "B0CGJHZGPV",
-        img: "https://tse1.mm.bing.net/th?q=Salomon+Speedcross+6+GTX+trail+shoe&w=400&h=400&c=7",
-        price: "~150 €",
-        desc: "La referencia del OCR con impermeabilidad. Los chevrones agresivos de la Speedcross clavan en barro con precisión, el sistema Quicklace garantiza un ajuste perfecto bajo presión y la membrana Gore-Tex mantiene el pie seco en terrenos húmedos. Usada por la mayoría de atletas de Spartan en categorías de rendimiento cuando el terreno es barro y roca.",
-        pros: ["Agarre en barro sin competencia en su gama", "Gore-Tex ExtendedComfort — impermeabilidad real en prolongado", "Sistema Quicklace rápido y seguro en carrera"],
-        cons: ["Más pesada que la versión sin GTX", "Drenaje más lento si se llena de agua"],
-      },
-      {
-        rank: 2,
-        name: "Salomon XA Pro 3D v9 GTX",
-        asin: "B0C9THPXGB",
-        img: "https://tse1.mm.bing.net/th?q=Salomon+XA+Pro+3D+v9+GTX&w=400&h=400&c=7",
-        price: "~160 €",
-        desc: "Más versátil que la Speedcross — la suela Contagrip MA está diseñada para una gama más amplia de terrenos (no solo barro) y el sistema 3D Advanced Chassis protege el pie de impactos en roca. Ideal para OCR con terreno mixto o para atletas que van a usarlas también en trail entrenamiento.",
-        pros: ["Más versátil en terreno mixto que la Speedcross", "Protección lateral excelente para rocas y raíces", "Diseño más conservador — sirve también para trail recreativo"],
-        cons: ["Menos agarre específico en barro profundo que la Speedcross", "Más pesada que otras opciones de la gama"],
-      },
-      {
-        rank: 3,
-        name: "Hoka Speedgoat 6 GTX",
-        asin: "B0CS5LBMHV",
-        img: "https://tse1.mm.bing.net/th?q=Hoka+Speedgoat+6+GTX+trail&w=400&h=400&c=7",
-        price: "~180 €",
-        desc: "Si tu punto fuerte es el running y los obstáculos no son tu preocupación principal, la Speedgoat 6 GTX te da el amortiguamiento más generoso del ranking. La suela Vibram® Megagrip ofrece agarre sólido incluso en roca mojada, y el stack de espuma Meta-Rocker hace que los kilómetros pasen con menos fatiga de pies y tobillos.",
-        pros: ["Amortiguamiento líder — ideal para OCR de larga distancia", "Vibram Megagrip — agarre excepcional en roca mojada", "Muy estable en descensos técnicos"],
-        cons: ["La más cara del ranking", "Menos drenaje que zapatillas trail sin GTX"],
-      },
-      {
-        rank: 4,
-        name: "Brooks Cascadia 17 GTX",
-        asin: "B0CPN3B9PP",
-        img: "https://tse1.mm.bing.net/th?q=Brooks+Cascadia+17+GTX+trail&w=400&h=400&c=7",
-        price: "~160 €",
-        desc: "La Cascadia lleva décadas siendo referente en trail y la versión 17 mantiene ese equilibrio entre protección, agarre y confort. La GTX añade impermeabilidad sin sacrificar demasiado transpirabilidad. Especialmente buena para atletas con pie ancho o que hacen OCR de más de 15 km.",
-        pros: ["Horma amplia — cómoda en distancias largas", "Muy resistente y duradera", "Buen equilibrio protección/peso"],
-        cons: ["Agarre en barro menos agresivo que la Speedcross", "La versión GTX es significativamente más cara que la estándar"],
-      },
-      {
-        rank: 5,
-        name: "Inov-8 Mudclaw G 260",
-        asin: "B07DWRBMQL",
-        img: "https://tse1.mm.bing.net/th?q=Inov-8+Mudclaw+G+260+trail&w=400&h=400&c=7",
-        price: "~130 €",
-        desc: "La única del ranking sin Gore-Tex — pero la incluimos porque su agarre en barro es tan excepcional que merece mención especial. Los clavos de grafeno de 8 mm penetran en barro blando mejor que cualquier otra zapatilla del mercado. La usan prácticamente todos los atletas de élite de Spartan Race World Championship. Sin impermeabilidad pero con drenaje superior.",
-        pros: ["El mejor agarre en barro del mercado — sin discusión", "Más ligera que las GTX (260 g)", "Drenaje superior cuando hay agua"],
-        cons: ["Sin impermeabilidad", "Clavos muy agresivos — incómodos en roca y asfalto"],
-      },
-    ],
-    conclusion: "Para OCR de temporada húmeda en España (otoño-invierno-primavera): Salomon Speedcross 6 GTX. Para OCR de verano con agua o para atletas de élite que priorizan agarre sobre impermeabilidad: Inov-8 Mudclaw G 260. Para distancias largas (Spartan Beast, OCR ultra): Hoka Speedgoat 6 GTX.",
-  },
-
-  {
-    id: "hibridas",
-    letter: "C",
-    title: "Zapatillas para pruebas híbridas tipo HYROX",
-    eyebrow: "VERSATILIDAD · AMORTIGUACIÓN · PESO",
-    intro: [
-      "HYROX plantea un reto específico para el calzado: necesitas una zapatilla que sea rápida en los 8 km de carrera pero que también aguante el sled push, los wall balls y las sandbag lunges sin destrozarte las rodillas ni resbalar en el suelo de la arena cubierta. Esto descarta tanto las zapatillas ultraminimalistas (duras en los ejercicios de fuerza) como las maximalistas de running (inestables en el trabajo funcional).",
-      "El punto dulce está en el medio: stack moderado de 20–30 mm, drop de 8–10 mm, suela plana en el talón para los ejercicios y suficiente amortiguamiento para los km de carrera. Hay vida más allá de la Nike Metcon — aunque la Metcon sigue siendo la referencia.",
-    ],
-    table: {
-      headers: ["Zapatilla", "Versatilidad gym", "Running km", "Peso aprox.", "Precio aprox.", "Nota /10"],
-      rows: [
-        ["Nike Metcon 9", "Excelente", "Bueno", "288 g", "~140 €", "9.2"],
-        ["Reebok Nano X4", "Excelente", "Bueno", "310 g", "~120 €", "8.8"],
-        ["New Balance FuelCell SC Trainer", "Bueno", "Muy bueno", "250 g", "~170 €", "8.6"],
-        ["On Cloudsurfer", "Bueno", "Excelente", "270 g", "~180 €", "8.4"],
-        ["Saucony Kinvara Pro", "Regular", "Excelente", "220 g", "~150 €", "8.0"],
-      ],
-    },
-    products: [
-      {
-        rank: 1,
-        name: "Nike Metcon 9",
-        asin: "B0CZF9KMPZ",
-        img: "https://tse1.mm.bing.net/th?q=Nike+Metcon+9+HYROX+training&w=400&h=400&c=7",
-        price: "~140 €",
-        desc: "La reina indiscutida de HYROX. Suela plana y estable para sled push y wall balls, amortiguamiento suficiente para los 8 km de carrera, y la confianza de ser la zapatilla más vista en el podio de HYROX a nivel mundial. La versión 9 es la más ligera hasta la fecha (288 g) sin perder estabilidad.",
-        pros: ["La más versátil entre running y trabajo funcional", "Muy estable en sled push y ejercicios de fuerza", "La más probada en competición HYROX"],
-        cons: ["No es la más rápida en la parte de running puro", "Precio elevado para su nivel de amortiguamiento"],
-      },
-      {
-        rank: 2,
-        name: "Reebok Nano X4",
-        asin: "B0DHPWRSM5",
-        img: "https://tse1.mm.bing.net/th?q=Reebok+Nano+X4+training&w=400&h=400&c=7",
-        price: "~120 €",
-        desc: "La alternativa directa a la Metcon con un punto más de amortiguamiento en el talón — ventaja real en las sandbag lunges de 100 m y el farmer's carry de 200 m. Muchos atletas la prefieren para HYROX si vienen del CrossFit donde ya la tienen y conocen su comportamiento.",
-        pros: ["Más amortiguamiento que la Metcon — mejor en ejercicios de impacto", "Precio más competitivo", "Muy durable — aguanta mucho entrenamiento"],
-        cons: ["Ligeramente más pesada que la Metcon 9", "Suela un poco menos plana en los ejercicios de halterofilia"],
-      },
-      {
-        rank: 3,
-        name: "New Balance FuelCell SuperComp Trainer",
-        asin: "B0BHR41ML4",
-        img: "https://tse1.mm.bing.net/th?q=New+Balance+FuelCell+SuperComp+Trainer&w=400&h=400&c=7",
-        price: "~170 €",
-        desc: "Si tu punto fuerte es el running y los ejercicios los controlas bien, la FuelCell SC Trainer te da una ventaja real en los km de carrera. La placa de carbono hace que los 8 km de HYROX pasen más rápido, y la suela tiene suficiente base para no ser inestable en los ejercicios de fuerza.",
-        pros: ["Placa de carbono — ventaja en running", "Ligera (250 g) — reduce fatiga en carrera", "Buen equilibrio running/gym"],
-        cons: ["La más cara del ranking", "La placa de carbono puede ser incómoda en ejercicios muy estáticos"],
-      },
-      {
-        rank: 4,
-        name: "On Cloudsurfer",
-        asin: "B0B9VB86FQ",
-        img: "https://tse1.mm.bing.net/th?q=On+Cloudsurfer+running+shoe&w=400&h=400&c=7",
-        price: "~180 €",
-        desc: "On ha entrado con fuerza en el mundo HYROX. La tecnología CloudTec absorbe impactos en running y sorprende en los ejercicios de fuerza — más estable de lo que su aspecto sugiere. Para atletas que priorizan la parte de running del HYROX y quieren algo por encima del nivel de la Metcon en ese componente.",
-        pros: ["Excelente en running — entre las más cómodas del ranking", "Diseño premium", "Buena respuesta en ejercicios de impacto (burpee broad jump)"],
-        cons: ["La más cara de las de running dominante", "Menos estable que la Metcon en sled push"],
-      },
-      {
-        rank: 5,
-        name: "Saucony Kinvara Pro",
-        asin: "B0BJVWJGXB",
-        img: "https://tse1.mm.bing.net/th?q=Saucony+Kinvara+Pro+running&w=400&h=400&c=7",
-        price: "~150 €",
-        desc: "La más ligera del ranking (220 g) y la más orientada al running puro. Una placa de nylon la hace propulsiva sin el coste de la placa de carbono completa. Válida para HYROX si tu running es tu ventaja competitiva y los ejercicios de fuerza no son tu punto débil. Para atletas que se acercan a HYROX desde el running de competición.",
-        pros: ["La más ligera del ranking", "Muy propulsiva en running", "Precio competitivo para su nivel"],
-        cons: ["La menos estable en ejercicios de fuerza", "No recomendable si el sled push o los wall balls son tu punto débil"],
-      },
-    ],
-    conclusion: "Para la mayoría de atletas: Nike Metcon 9. Para los que vienen del CrossFit: Reebok Nano X4. Para runners que se pasan a HYROX: New Balance FuelCell SC Trainer. Para debutantes con presupuesto ajustado: Reebok Nano X4.",
-  },
-
-  {
-    id: "crossfit",
-    letter: "D",
-    title: "Zapatillas crossfit / halterofilia",
-    eyebrow: "ESTABILIDAD · SUELA PLANA · AGARRE LATERAL",
-    intro: [
-      "Las zapatillas de CrossFit tienen requerimientos muy distintos a las de running o trail. Necesitas suela plana y dura para levantamientos (un stack de espuma blanda hace que el talón se hunda en un clean o una sentadilla pesada, comprometiendo la mecánica), excelente agarre lateral para los movimientos en cuerda y los cambios de dirección, y suficiente flexibilidad en el antepié para los movimientos de gimnasia.",
-      "El peso importa menos aquí que en running — 300–350 g es completamente normal y aceptable. Lo que no es aceptable es una zapatilla que no te dé base en un snatch de competición o que resbale en la rope climb. Estas son las cinco mejores para entrenamiento funcional y competición de CrossFit.",
-    ],
-    table: {
-      headers: ["Zapatilla", "Estabilidad lift", "Rope climb", "Lateral", "Precio aprox.", "Nota /10"],
-      rows: [
-        ["Nike Metcon 9", "Muy alta", "Excelente", "Muy bueno", "~140 €", "9.3"],
-        ["Reebok Nano X4", "Alta", "Muy bueno", "Bueno", "~120 €", "8.9"],
-        ["NoBull Trainer+", "Alta", "Bueno", "Muy bueno", "~140 €", "8.6"],
-        ["Under Armour TriBase Reign 6", "Alta", "Bueno", "Bueno", "~110 €", "8.3"],
-        ["Inov-8 FastLift 360", "Muy alta", "Regular", "Bueno", "~130 €", "8.5"],
-      ],
-    },
-    products: [
-      {
-        rank: 1,
-        name: "Nike Metcon 9",
-        asin: "B0CZF9KMPZ",
-        img: "https://tse1.mm.bing.net/th?q=Nike+Metcon+9+CrossFit&w=400&h=400&c=7",
-        price: "~140 €",
-        desc: "La doble función de la Metcon: es la mejor zapatilla para HYROX Y la mejor para CrossFit, lo que la convierte en la más versátil del mercado. Para CrossFit específicamente, el heel clip de plástico duro proporciona una estabilidad en levantamientos que pocas zapatillas igualan, y el agarre lateral en rope climb es excepcional.",
-        pros: ["Heel clip — máxima estabilidad en sentadilla y clean", "El mejor agarre en rope climb del mercado", "Doble uso: CrossFit + HYROX"],
-        cons: ["No es la más cómoda para volúmenes altos de running dentro del WOD", "Precio elevado"],
-      },
-      {
-        rank: 2,
-        name: "Reebok Nano X4",
-        asin: "B0DHPWRSM5",
-        img: "https://tse1.mm.bing.net/th?q=Reebok+Nano+X4+CrossFit&w=400&h=400&c=7",
-        price: "~120 €",
-        desc: "La alternativa de referencia a la Metcon en el mundo CrossFit. Suela NanoWeave resistente, estabilidad lateral en movimientos explosivos y una durabilidad legendaria — las Nano aguantan más volumen de entrenamiento semanal que casi cualquier otra zapatilla de CrossFit. La opción preferida de muchos atletas de box que entrenan 5–6 veces por semana.",
-        pros: ["Durabilidad muy superior a la competencia", "Precio más competitivo que la Metcon", "Buena para volúmenes altos de entrenamiento"],
-        cons: ["Menos estabilidad en levantamientos pesados que la Metcon", "Menos agarre en rope climb"],
-      },
-      {
-        rank: 3,
-        name: "NoBull Trainer+",
-        asin: "B08JQLW47K",
-        img: "https://tse1.mm.bing.net/th?q=NoBull+Trainer+Plus+black&w=400&h=400&c=7",
-        price: "~140 €",
-        desc: "La favorita de la comunidad CrossFit independiente. El SuperFabric que recubre la parte exterior es prácticamente indestructible — especialmente en rope climb donde otras zapatillas se deterioran en pocas semanas. Suela plana, estabilidad alta en levantamientos y un diseño discreto que no grita 'crossfitter' si también la usas en la calle.",
-        pros: ["SuperFabric — el más resistente en rope climb", "Diseño más discreto y versátil para uso diario", "Muy buena estabilidad lateral"],
-        cons: ["Running dentro del WOD es su punto débil", "Menos conocida — difícil de encontrar en tiendas físicas en España"],
-      },
-      {
-        rank: 4,
-        name: "Under Armour TriBase Reign 6",
-        asin: "B0CLDM2H9F",
-        img: "https://tse1.mm.bing.net/th?q=Under+Armour+TriBase+Reign+6&w=400&h=400&c=7",
-        price: "~110 €",
-        desc: "La opción de mejor precio del ranking. El sistema TriBase de tres puntos de apoyo maximiza la base de contacto con el suelo en sentadillas y peso muerto, y la goma de la parte exterior aguanta bien el rope climb. Para atletas que buscan una zapatilla de CrossFit sólida sin gastar 140 €.",
-        pros: ["La mejor relación calidad/precio del ranking", "Sistema TriBase — buena distribución de carga en levantamientos", "Buena para sentadilla y peso muerto"],
-        cons: ["Menos durable que Metcon/Nano en rope climb intenso", "Opciones de talla limitadas en España"],
-      },
-      {
-        rank: 5,
-        name: "Inov-8 FastLift 360",
-        asin: "B07MR2R97N",
-        img: "https://tse1.mm.bing.net/th?q=Inov-8+FastLift+360+CrossFit&w=400&h=400&c=7",
-        price: "~130 €",
-        desc: "La más especializada en levantamiento de potencia del ranking. El tacón de 4 mm optimizado para sentadilla y cargadas, combinado con la suela de grafeno de Inov-8, crea una zapatilla excepcionalmente estable bajo carga máxima. Para atletas que priorizan los levantamientos sobre los movimientos de gimnasia y running.",
-        pros: ["Tacón específico para sentadilla olímpica y cargadas", "Grafeno en suela — agarre excepcional en plataformas", "Muy buena para WODs con carga pesada"],
-        cons: ["Rope climb no es su punto fuerte", "Menos versatilidad para WODs mixtos con running"],
-      },
-    ],
-    conclusion: "Para la mayoría de atletas de CrossFit: Nike Metcon 9 (si el presupuesto lo permite) o Reebok Nano X4. Para rope climb intenso: NoBull Trainer+. Para levantamiento de potencia puro: Inov-8 FastLift 360. Para presupuesto ajustado: Under Armour TriBase Reign 6.",
-  },
-
-  {
-    id: "pulsometros",
-    letter: "E",
-    title: "Pulsómetros / bandas de frecuencia cardíaca",
-    eyebrow: "PRECISIÓN · CONECTIVIDAD · MEMORIA INTERNA",
-    intro: [
-      "Los relojes con sensor óptico en muñeca son suficientemente precisos para running suave y entrenamiento de fuerza ligero. Pero en ejercicios de alta intensidad con movimiento de brazos — burpees, sled push, wall balls, rope climb — la señal óptica pierde precisión porque el movimiento del brazo crea artefactos en la señal. Un sensor de pecho o de brazo (óptico en posición fija) elimina ese problema y te da datos de FC fiables en los momentos que más importan.",
-      "Para HYROX y OCR, tener datos de FC precisos durante las estaciones de fuerza es lo que te permite calibrar el esfuerzo en carrera y evitar salir demasiado rápido. El sensor de pecho comunica con el reloj por ANT+ o Bluetooth — asegúrate de que tu reloj es compatible antes de comprar.",
-    ],
-    table: {
-      headers: ["Sensor", "Precisión", "Memoria int.", "Conectividad", "Precio aprox.", "Nota /10"],
-      rows: [
-        ["Garmin HRM-Pro Plus", "Excelente", "Sí", "ANT+/BT", "~110 €", "9.4"],
-        ["Polar H10", "Excelente", "Sí (1 sesión)", "ANT+/BT", "~80 €", "9.2"],
-        ["Wahoo TICKR X", "Muy bueno", "Sí", "ANT+/BT", "~80 €", "8.8"],
-        ["Polar Verity Sense", "Muy bueno", "Sí", "BT/ANT+", "~90 €", "8.5"],
-        ["Garmin HRM-Fit", "Bueno", "No", "ANT+/BT", "~80 €", "8.0"],
-      ],
-    },
-    products: [
-      {
-        rank: 1,
-        name: "Garmin HRM-Pro Plus",
-        asin: "B0B3PNFK9H",
-        img: "https://tse1.mm.bing.net/th?q=Garmin+HRM-Pro+Plus+chest+strap&w=400&h=400&c=7",
-        price: "~110 €",
-        desc: "El referente para atletas de triatlón y HYROX. Mide FC con precisión excepcional, registra métricas de running dinámico (cadencia, longitud de zancada, oscillación vertical, tiempo de contacto con el suelo), tiene memoria interna para guardar sesiones sin reloj, y se sincroniza con dispositivos Garmin, Zwift y Wahoo.",
-        pros: ["Métricas de running dinámico — nivel élite", "Compatible con todo el ecosistema Garmin", "Memoria interna — funciona sin reloj"],
-        cons: ["El más caro del ranking", "Algunas métricas avanzadas solo funcionan con relojes Garmin"],
-      },
-      {
-        rank: 2,
-        name: "Polar H10",
-        asin: "B07WHLR63Y",
-        img: "https://tse1.mm.bing.net/th?q=Polar+H10+heart+rate+monitor&w=400&h=400&c=7",
-        price: "~80 €",
-        desc: "El estándar de oro en precisión de FC de pecho. Los estudios clínicos independientes lo colocan sistemáticamente como el más preciso del mercado — es el sensor de referencia en investigación de ciencias del deporte. Dual ANT+/Bluetooth, memoria de 1 sesión interna, banda cómoda que no se desplaza ni con barro.",
-        pros: ["Precisión de FC líder según estudios independientes", "Muy buena sujeción — no se mueve en OCR con barro", "Precio muy competitivo para su nivel"],
-        cons: ["Memoria solo de 1 sesión (no acumula historial)", "Sin métricas adicionales de running"],
-      },
-      {
-        rank: 3,
-        name: "Wahoo TICKR X",
-        asin: "B07T64LZMB",
-        img: "https://tse1.mm.bing.net/th?q=Wahoo+TICKR+X+heart+rate&w=400&h=400&c=7",
-        price: "~80 €",
-        desc: "El favorito de los ciclistas y triatletas que también compiten en HYROX. El TICKR X añade a la FC básica métricas de running (cadencia, oscillación vertical) y acelerómetro integrado para métricas de entrenamiento de fuerza. Excelente compatibilidad con todas las apps (Wahoo, Garmin, Zwift, TrainingPeaks).",
-        pros: ["Métricas de running + fuerza — el más completo por su precio", "Compatibilidad universal con todas las apps", "Memoria interna extendida"],
-        cons: ["Métricas de running menos precisas que el HRM-Pro Plus", "La app Wahoo requiere configuración inicial"],
-      },
-      {
-        rank: 4,
-        name: "Polar Verity Sense",
-        asin: "B08T1WV9BJ",
-        img: "https://tse1.mm.bing.net/th?q=Polar+Verity+Sense+optical&w=400&h=400&c=7",
-        price: "~90 €",
-        desc: "El único sensor óptico de brazo del ranking — se lleva en el antebrazo o la sien, no en el pecho. Ideal para deportes donde la banda de pecho resulta incómoda (natación, remo, escalada en OCR). Precisión muy alta para ser óptico en posición fija — sin los artefactos que genera el sensor de muñeca del reloj.",
-        pros: ["Sensor de brazo — más cómodo que el pecho para algunos deportes", "Muy buena precisión para sensor óptico", "Apto para natación (inmersión)"],
-        cons: ["Precio elevado para un sensor óptico", "Puede desplazarse en movimientos de brazos muy intensos"],
-      },
-      {
-        rank: 5,
-        name: "Garmin HRM-Fit",
-        asin: "B09XL58BSY",
-        img: "https://tse1.mm.bing.net/th?q=Garmin+HRM-Fit+heart+rate&w=400&h=400&c=7",
-        price: "~80 €",
-        desc: "Diseñado específicamente para mujeres — se engancha al sujetador deportivo sin necesidad de banda de pecho adicional. FC precisa con compatibilidad total con el ecosistema Garmin. La solución más cómoda para atletas femeninas que encuentran la banda de pecho incómoda durante el ejercicio intenso.",
-        pros: ["Sin banda — máxima comodidad para atletas femeninas", "Compatible con todos los relojes Garmin", "Buena precisión de FC"],
-        cons: ["Solo para atletas femeninas", "Sin memoria interna ni métricas adicionales"],
-      },
-    ],
-    conclusion: "Para atletas HYROX que quieren el máximo de datos: Garmin HRM-Pro Plus (especialmente si tienes reloj Garmin). Para la mejor precisión de FC al mejor precio: Polar H10. Para mujeres: Garmin HRM-Fit. Para compatibilidad máxima entre apps: Wahoo TICKR X.",
-  },
-
-  {
-    id: "ropa",
-    letter: "F",
-    title: "Ropa deportiva funcional (pantalones, shorts y mallas)",
-    eyebrow: "LIBERTAD DE MOVIMIENTO · COMPRESIÓN · BOLSILLOS",
-    intro: [
-      "La ropa en OCR y HYROX no es solo estética — tiene un impacto real en el rendimiento. En OCR, las mallas largas protegen de arañazos en alambradas, muros y vegetación, y reducen la fricción del barro en la piel. En HYROX, los shorts ligeros y los pantalones de compresión reducen la oscilación muscular durante los km de carrera y el farmer's carry.",
-      "Los criterios que más importan: libertad de movimiento total en sentadilla y saltos (ningún tirón en la ingle ni en las corvas), compresión suficiente sin restricción, bolsillos seguros para el chip de cronometraje y un gel, y materiales que sequen rápido y no retangan el barro en OCR. Aquí el top 5.",
-    ],
-    table: {
-      headers: ["Prenda", "Compresión", "Libertad mov.", "Bolsillos", "Precio aprox.", "Nota /10"],
-      rows: [
-        ["2XU Core Compression Tights", "Alta", "Muy buena", "No", "~60 €", "9.0"],
-        ["Compressport Trail shorts", "Media", "Excelente", "Sí (4)", "~70 €", "8.8"],
-        ["Saysky Combat Tights", "Media-alta", "Excelente", "Sí (2)", "~90 €", "8.7"],
-        ["Salomon Cross shorts", "Baja", "Excelente", "Sí (3)", "~55 €", "8.4"],
-        ["Hoka Performance shorts", "Baja", "Muy buena", "Sí (2)", "~50 €", "8.0"],
-      ],
-    },
-    products: [
-      {
-        rank: 1,
-        name: "2XU Core Compression Tights",
-        asin: "B01IFKR5FY",
-        price: "~60 €",
-        desc: "El estándar de compresión para OCR. Compresión graduada que protege de arañazos en alambradas, muros y vegetación, y mejora el retorno venoso durante las horas de carrera. Resisten el barro sin perder forma y secan más rápido que la mayoría de mallas del mercado. Imprescindibles para Spartan Beast y cualquier OCR de larga distancia.",
-        pros: ["Compresión graduada real — no solo estética", "Resistencia al barro excepcional", "Protección de piel en obstáculos con alambre y madera"],
-        cons: ["Sin bolsillos — necesitas cinturón o chaleco para geles", "Precio elevado para malla de compresión básica"],
-      },
-      {
-        rank: 2,
-        name: "Compressport Trail shorts",
-        asin: "B0B9VR9NKS",
-        price: "~70 €",
-        desc: "El short de trail más completo del ranking. Cuatro bolsillos (dos laterales + dos en la parte trasera) para chips de cronometraje, geles y llaves, malla interior de compresión integrada, y tejido trail-specific que repele el agua y el barro sin absorberlo. El complemento ideal para HYROX y OCR estaciones intermedias.",
-        pros: ["4 bolsillos — el más completo para carreras autosuficientes", "Malla interior integrada — sin roces ni arrastres", "Tejido que no retiene barro"],
-        cons: ["El más caro del ranking", "El short interior puede ser incómodo para algunos atletas"],
-      },
-      {
-        rank: 3,
-        name: "Saysky Combat Tights",
-        asin: "B07YQW6KGH",
-        price: "~90 €",
-        desc: "La opción premium para atletas que no quieren comprometer en nada. Tejido de alta elasticidad con compresión media-alta, bolsillos laterales para geles, y un acabado que hace que la malla mantenga su forma sesión tras sesión. Especialmente buenas para HYROX donde el aspecto también tiene su importancia en la arena.",
-        pros: ["Calidad de materiales premium", "Bolsillos integrados bien posicionados", "Muy buena gestión de la humedad"],
-        cons: ["El más caro del ranking", "La marca es menos conocida — difícil de encontrar en España"],
-      },
-      {
-        rank: 4,
-        name: "Salomon Cross shorts",
-        asin: "B0B4L8B75Z",
-        price: "~55 €",
-        desc: "El short ligero de Salomon para trail y OCR. Tejido Dryfit que evacúa la humedad rápidamente, tres bolsillos bien distribuidos, y la libertad de movimiento total que caracteriza a Salomon en sus prendas de trail. Sin compresión alta — para atletas que prefieren libertad sobre sujeción muscular.",
-        pros: ["Libertad de movimiento total", "Secado muy rápido", "Precio muy competitivo"],
-        cons: ["Compresión baja — no aporta recuperación muscular", "Sin malla interior en algunos modelos"],
-      },
-      {
-        rank: 5,
-        name: "Hoka Performance shorts",
-        asin: "B0C9THXXT2",
-        price: "~50 €",
-        desc: "El short más ligero y asequible del ranking. Tejido ultraligero y fluido que no molesta en ningún movimiento, dos bolsillos laterales con cremallera y una malla interior que minimiza los roces en los km de running. El complemento ideal para un atleta que empieza y quiere algo funcional sin gastar mucho.",
-        pros: ["El más asequible del ranking", "Muy ligero — apenas se nota en carrera", "Buena relación calidad/precio"],
-        cons: ["Compresión casi inexistente", "Menos bolsillos que la competencia"],
-      },
-    ],
-    conclusion: "Para OCR (protección + compresión): 2XU Core Compression Tights. Para HYROX (versatilidad + bolsillos): Compressport Trail shorts. Para principiantes con presupuesto ajustado: Salomon Cross shorts o Hoka Performance shorts. Para el que no quiere comprometer en nada: Saysky Combat Tights.",
-  },
-];
 
 /* ─── COMPONENT ─────────────────────────────────────────────────────────────── */
 
@@ -464,19 +10,57 @@ export default function Productos() {
   return (
     <>
       <Head>
-        <title>Productos Recomendados — Hybrid Race Hub | OCR, HYROX y Fitness Híbrido</title>
+        <title>Rankings de Equipamiento OCR y HYROX 2026 | Hybrid Race Hub</title>
         <meta name="description" content="Rankings honestos de relojes GPS, zapatillas trail, pulsómetros y ropa deportiva para OCR e HYROX. Con precios y enlaces a Amazon España." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://hybridracehub.com/productos" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://hybridracehub.com/productos" />
-        <meta property="og:title" content="Productos Recomendados — Hybrid Race Hub" />
-        <meta property="og:description" content="Rankings de relojes GPS, zapatillas trail, pulsómetros y ropa para OCR e HYROX." />
+        <meta property="og:title" content="Rankings de Equipamiento OCR y HYROX 2026 | Hybrid Race Hub" />
+        <meta property="og:description" content="Rankings honestos de relojes GPS, zapatillas trail, pulsómetros y ropa deportiva para OCR e HYROX. Con precios y enlaces a Amazon España." />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content="https://hybridracehub.com/logo.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Rankings de Equipamiento OCR y HYROX 2026 | Hybrid Race Hub" />
+        <meta name="twitter:description" content="Rankings honestos de relojes GPS, zapatillas trail, pulsómetros y ropa deportiva para OCR e HYROX." />
+        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{__html: JSON.stringify(
+            RANKINGS.flatMap((ranking, ri) =>
+              ranking.products.map((product, i) => {
+                const ratingValue = ranking.table.rows[i]?.[ranking.table.rows[i].length - 1] ?? null;
+                const price = product.price.match(/\d+/)?.[0] ?? "";
+                return {
+                  "@context": "https://schema.org",
+                  "@type": "Product",
+                  "name": product.name,
+                  "description": product.desc,
+                  "brand": { "@type": "Brand", "name": product.brand || product.name.split(" ")[0] },
+                  "url": `https://hybridracehub.com/productos/${ranking.slug}`,
+                  "offers": {
+                    "@type": "Offer",
+                    "url": AZ(product.asin),
+                    "priceCurrency": "EUR",
+                    "price": price,
+                    "availability": "https://schema.org/InStock",
+                    "seller": { "@type": "Organization", "name": "Amazon" },
+                  },
+                  ...(ratingValue ? { "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": ratingValue,
+                    "bestRating": "10",
+                    "ratingCount": "1",
+                  }} : {}),
+                };
+              })
+            )
+          )}}
+        />
       </Head>
 
       <style>{`
@@ -707,7 +291,7 @@ export default function Productos() {
       {/* Topbar */}
       <div className="topbar">
         <Link href="/" className="brand">
-          <img src="/logo-icon.svg" className="brand-logo-img" alt="Hybrid Race Hub" width="36" height="36"/>
+          <Image src="/logo-icon.svg" className="brand-logo-img" alt="Hybrid Race Hub" width={36} height={36} priority />
           <div>
             <div className="brand-name">Hybrid Race Hub</div>
             <div className="brand-sub">OCR · HYROX · Functional</div>
@@ -782,10 +366,11 @@ export default function Productos() {
 
                   {product.img && (
                     <div className="product-img-wrap">
-                      <img
+                      <Image
                         src={product.img}
                         alt={product.name}
-                        loading="lazy"
+                        width={220}
+                        height={220}
                         className="product-img"
                       />
                     </div>
@@ -827,6 +412,16 @@ export default function Productos() {
             <div className="ranking-conclusion">
               <div className="ranking-conclusion-label">Recomendación según perfil</div>
               <p>{ranking.conclusion}</p>
+            </div>
+
+            {/* Enlazado interno */}
+            <div style={{ marginTop: "1.25rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+              <Link href="/calendario" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--accent)", border: "0.5px solid rgba(251,146,60,0.3)", borderRadius: 999, padding: "5px 12px" }}>
+                📅 ¿Listo para competir? Ver calendario →
+              </Link>
+              <Link href="/blog" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 999, padding: "5px 12px" }}>
+                📖 Leer artículos del blog →
+              </Link>
             </div>
           </section>
         ))}

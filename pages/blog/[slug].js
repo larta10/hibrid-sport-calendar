@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import { getPostBySlug, getAllSlugs, posts } from "../../lib/posts";
 
 const CATEGORY_COLORS = {
@@ -25,19 +26,56 @@ export default function BlogPost({ post }) {
   return (
     <>
       <Head>
-        <title>{post.title} — Hybrid Race Hub Blog</title>
+        <title>{post.title} | Hybrid Race Hub</title>
         <meta name="description" content={post.excerpt} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`https://hybridracehub.com/blog/${post.slug}`} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://hybridracehub.com/blog/${post.slug}`} />
-        <meta property="og:title" content={post.title} />
+        <meta property="og:title" content={`${post.title} | Hybrid Race Hub`} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content="https://hybridracehub.com/logo.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="article:published_time" content={post.date} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${post.title} | Hybrid Race Hub`} />
+        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{__html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": post.title,
+            "description": post.excerpt,
+            "datePublished": post.date,
+            "dateModified": post.date,
+            "author": { "@type": "Organization", "name": "Hybrid Race Hub", "url": "https://hybridracehub.com/" },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Hybrid Race Hub",
+              "logo": { "@type": "ImageObject", "url": "https://hybridracehub.com/logo.svg" },
+            },
+            "mainEntityOfPage": { "@type": "WebPage", "@id": `https://hybridracehub.com/blog/${post.slug}` },
+            "url": `https://hybridracehub.com/blog/${post.slug}`,
+          })}}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{__html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://hybridracehub.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://hybridracehub.com/blog" },
+              { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://hybridracehub.com/blog/${post.slug}` },
+            ],
+          })}}
+        />
       </Head>
 
       <style>{`
@@ -205,7 +243,7 @@ export default function BlogPost({ post }) {
       {/* Topbar */}
       <div className="topbar">
         <Link href="/" className="brand">
-          <img src="/logo-icon.svg" className="brand-logo-img" alt="Hybrid Race Hub" width="36" height="36"/>
+          <Image src="/logo-icon.svg" className="brand-logo-img" alt="Hybrid Race Hub" width={36} height={36} priority />
           <div>
             <div className="brand-name">Hybrid Race Hub</div>
             <div className="brand-sub">OCR · HYROX · Functional</div>
@@ -268,6 +306,36 @@ export default function BlogPost({ post }) {
             </div>
           </div>
         )}
+
+        {/* Enlazado interno por categoría */}
+        <div className="related-section" style={{ marginTop: "2rem" }}>
+          <p className="related-title">Te puede interesar</p>
+          <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+            <Link href="/calendario" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--accent)", border: "0.5px solid rgba(251,146,60,0.3)", borderRadius: 999, padding: "6px 14px", textDecoration: "none" }}>
+              📅 Ver calendario de eventos →
+            </Link>
+            {post.category === "Equipamiento" && (
+              <>
+                <Link href="/productos/relojes" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 999, padding: "6px 14px", textDecoration: "none" }}>
+                  🏆 Ranking relojes GPS →
+                </Link>
+                <Link href="/productos/zapatillas-hyrox" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 999, padding: "6px 14px", textDecoration: "none" }}>
+                  👟 Ranking zapatillas HYROX →
+                </Link>
+              </>
+            )}
+            {post.category === "Guías" && (
+              <Link href="/productos/pulsometros" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 999, padding: "6px 14px", textDecoration: "none" }}>
+                ❤️ Ranking pulsómetros →
+              </Link>
+            )}
+            {post.category === "Eventos" && (
+              <Link href="/productos/zapatillas-trail" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 999, padding: "6px 14px", textDecoration: "none" }}>
+                👟 Zapatillas trail OCR →
+              </Link>
+            )}
+          </div>
+        </div>
 
         <Link href="/blog" className="back-link">← Volver al blog</Link>
       </div>
