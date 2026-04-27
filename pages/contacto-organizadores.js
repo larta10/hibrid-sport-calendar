@@ -3,7 +3,7 @@ import Head from "next/head";
 
 
 export default function ContactOrganizers() {
-  const [form, setForm] = useState({ name: "", email: "", empresa: "", plan: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", empresa: "", tipo: "", plan: "", message: "" });
   const [status, setStatus] = useState("idle");
   const [errors, setErrors] = useState({});
 
@@ -20,8 +20,8 @@ export default function ContactOrganizers() {
     e.preventDefault();
     if (!validate()) return;
     
-    const mailto = `mailto:hola@hybridracehub.com?subject=Contacto organizador - ${form.name}&body=${encodeURIComponent(
-      `Nombre: ${form.name}\nEmail: ${form.email}\nEmpresa: ${form.empresa}\nPlan: ${form.plan}\n\nMensaje:\n${form.message}`
+    const mailto = `mailto:hola@hybridracehub.com?subject=Contacto - ${form.name}&body=${encodeURIComponent(
+      `Nombre: ${form.name}\nEmail: ${form.email}\nEmpresa: ${form.empresa}\nTipo: ${form.tipo}\nColaboración: ${form.plan}\n\nMensaje:\n${form.message}`
     )}`;
     window.location.href = mailto;
     setStatus("success");
@@ -280,10 +280,9 @@ export default function ContactOrganizers() {
         
         <header className="contact-hero">
           <p className="contact-eyebrow">Colaboraciones</p>
-          <h1 className="contact-title">Contacto organizadores</h1>
+          <h1 className="contact-title">Colabora con nosotros</h1>
           <p className="contact-sub">
-            <strong>Hybrid Race Hub</strong> es el calendario de referencia para carreras híbridas, OCR y competiciones funcionales en España. 
-            Promociona tu evento y llega a miles de atletas interesados.
+            ¿Organizas eventos de <strong>OCR/HYROX</strong> o gestionas un <strong>centro de entrenamiento funcional</strong>? Contacta con nosotros para aparecer destacado en la plataforma y llegar a miles de atletas interesados.
           </p>
           <p className="contact-email">
             <a href="mailto:hola@hybridracehub.com">hola@hybridracehub.com</a>
@@ -326,6 +325,21 @@ export default function ContactOrganizers() {
                 </div>
               </div>
               
+              <div className="form-group">
+                <label className="form-label">Soy... *</label>
+                <select
+                  className="form-select"
+                  value={form.tipo}
+                  onChange={e => setForm(f => ({ ...f, tipo: e.target.value }))}
+                  required
+                >
+                  <option value="">Selecciona tu perfil</option>
+                  <option value="organizador">Soy organizador de eventos (OCR/HYROX/CrossFit)</option>
+                  <option value="centro">Gestiono un centro de entrenamiento funcional</option>
+                  <option value="otro">Otro / Consulta general</option>
+                </select>
+              </div>
+
               <div className="form-row">
                 <div className="form-group">
                   <label className="form-label">Empresa / Organización</label>
@@ -334,7 +348,7 @@ export default function ContactOrganizers() {
                     className="form-input"
                     value={form.empresa}
                     onChange={e => setForm(f => ({ ...f, empresa: e.target.value }))}
-                    placeholder="Nombre de tu empresa"
+                    placeholder="Nombre de tu empresa o centro"
                   />
                 </div>
                 <div className="form-group">

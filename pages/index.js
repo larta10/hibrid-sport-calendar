@@ -292,9 +292,9 @@ function HomeSections() {
     {
       href: "/centros-entrenamiento",
       icon: <BoxIcon/>,
-      title: "Boxes CrossFit",
-      desc: "Directorio de más de 356 boxes CrossFit en España. Busca por ciudad o código postal.",
-      cta: "→ Buscar box",
+      title: "Centros de entrenamiento",
+      desc: "Directorio de centros OCR, HYROX y CrossFit en España. Busca por ciudad o código postal.",
+      cta: "→ Buscar centro",
       iconBg: "rgba(139,92,246,0.14)",
     },
   ];
@@ -327,15 +327,15 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Hybrid Race Hub — Calendario OCR, HYROX y CrossFit en España</title>
-        <meta name="description" content="El calendario de referencia para carreras OCR, HYROX y competiciones funcionales en España. Filtra por formato, comunidad y fecha." />
+        <title>Hybrid Race Hub — Plataforma OCR, HYROX y Entrenamiento Funcional en España</title>
+        <meta name="description" content="Tu plataforma completa para el entrenamiento híbrido en España. Descubre eventos de OCR, HYROX y CrossFit, encuentra centros de entrenamiento cerca de ti y accede a rankings de equipamiento especializado." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://hybridracehub.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://hybridracehub.com/" />
-        <meta property="og:title" content="Hybrid Race Hub — Calendario OCR, HYROX y CrossFit en España" />
-        <meta property="og:description" content="El calendario de referencia para carreras OCR, HYROX y competiciones funcionales en España. Filtra por formato, comunidad y fecha." />
+        <meta property="og:title" content="Hybrid Race Hub — Plataforma OCR, HYROX y Entrenamiento Funcional en España" />
+        <meta property="og:description" content="Tu plataforma completa para el entrenamiento híbrido en España. Descubre eventos de OCR, HYROX y CrossFit, encuentra centros de entrenamiento cerca de ti y accede a rankings de equipamiento." />
         <meta property="og:site_name" content="Hybrid Race Hub" />
         <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
         <meta property="og:image:width" content="1200" />
@@ -407,11 +407,10 @@ export default function Home() {
               Calendario híbrido · España {TODAY_YEAR}
             </div>
             <h1 className="hero-title">
-              OCR<span className="slash">/</span><span className="hy">HYROX</span><span className="slash">/</span>CROSSFIT.
+              OCR<span className="slash">/</span><span className="hy">HYROX</span><span className="slash">/</span>CROSSFIT
             </h1>
             <p className="hero-sub">
-              El calendario más completo de <strong>carreras híbridas, OCR y competiciones funcionales</strong> en España.
-              Encuentra todas las pruebas, filtra por formato, comunidad y fecha. Actualizado a diario.
+              Tu plataforma completa para el <strong>entrenamiento híbrido en España</strong>. Descubre eventos de OCR, HYROX y CrossFit, encuentra centros de entrenamiento cerca de ti y accede a rankings de equipamiento especializado. Todo en un solo lugar.
             </p>
             <HeroStats totalCount={totalCount} ccaaCount={CCAA.length} formatsCount={FORMATS.length}/>
             <a href="/calendario" className="hero-cta">VER TODOS LOS EVENTOS →</a>

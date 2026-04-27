@@ -1,0 +1,356 @@
+/**
+ * Builds the final centros-entrenamiento.json:
+ * 1. Loads existing CrossFit boxes
+ * 2. Clears all buscaunbox.com URLs → ""
+ * 3. Adds tipo, telefono, lat, lng fields
+ * 4. Appends curated non-CrossFit functional centers
+ */
+const fs = require("fs");
+const path = require("path");
+
+const lib = path.join(__dirname, "..", "lib");
+const existing = JSON.parse(fs.readFileSync(path.join(lib, "centros-entrenamiento.json"), "utf8"));
+
+// Step 1: clean existing — clear buscaunbox URLs, add missing fields
+const cleaned = existing.map((c) => ({
+  id: c.id,
+  tipo: "CrossFit",
+  nombre: c.nombre,
+  ciudad: c.ciudad,
+  codigo_postal: c.codigo_postal,
+  direccion: c.direccion,
+  ccaa: c.ccaa,
+  telefono: c.telefono || "",
+  web: c.web && c.web.includes("buscaunbox.com") ? "" : (c.web || ""),
+  lat: c.lat || null,
+  lng: c.lng || null,
+}));
+
+const removedBuscaunbox = existing.filter((c) => c.web && c.web.includes("buscaunbox.com")).length;
+
+// Step 2: curated non-CrossFit functional centers
+// Sources: HYROX official partner list, known Spanish OCR/functional gyms
+const NEW_ID_START = existing.length + 1;
+
+const nuevos = [
+  // ── HYROX ──────────────────────────────────────────────────────────────
+  {
+    tipo: "HYROX",
+    nombre: "InSports Barcelona",
+    ciudad: "Barcelona",
+    codigo_postal: "08017",
+    direccion: "Carrer de Mandri, 56",
+    ccaa: "Cataluña",
+    telefono: "+34 936 38 10 10",
+    web: "https://insports.es",
+    lat: 41.4014,
+    lng: 2.1347,
+  },
+  {
+    tipo: "HYROX",
+    nombre: "InSports Madrid",
+    ciudad: "Madrid",
+    codigo_postal: "28046",
+    direccion: "Paseo de la Castellana, 259",
+    ccaa: "Comunidad de Madrid",
+    telefono: "",
+    web: "https://insports.es",
+    lat: 40.4842,
+    lng: -3.6878,
+  },
+  {
+    tipo: "HYROX",
+    nombre: "WOD&FIT Arturo Soria",
+    ciudad: "Madrid",
+    codigo_postal: "28043",
+    direccion: "Calle de Arturo Soria, 200",
+    ccaa: "Comunidad de Madrid",
+    telefono: "",
+    web: "https://wodandfit.es",
+    lat: 40.4529,
+    lng: -3.6381,
+  },
+  {
+    tipo: "HYROX",
+    nombre: "WOD&FIT Chamberí",
+    ciudad: "Madrid",
+    codigo_postal: "28010",
+    direccion: "Calle de Alonso Cano, 40",
+    ccaa: "Comunidad de Madrid",
+    telefono: "",
+    web: "https://wodandfit.es",
+    lat: 40.4349,
+    lng: -3.7021,
+  },
+  {
+    tipo: "HYROX",
+    nombre: "Sanas Fitness",
+    ciudad: "Madrid",
+    codigo_postal: "28036",
+    direccion: "Calle de Alberto Alcocer, 7",
+    ccaa: "Comunidad de Madrid",
+    telefono: "+34 913 59 79 79",
+    web: "https://sanasfitness.com",
+    lat: 40.4637,
+    lng: -3.6881,
+  },
+  {
+    tipo: "HYROX",
+    nombre: "Functional Training Center (FTC) Barcelona",
+    ciudad: "Barcelona",
+    codigo_postal: "08005",
+    direccion: "Carrer de la Marina, 16",
+    ccaa: "Cataluña",
+    telefono: "",
+    web: "",
+    lat: 41.3885,
+    lng: 2.1973,
+  },
+  {
+    tipo: "HYROX",
+    nombre: "Sport Wellness Zaragoza",
+    ciudad: "Zaragoza",
+    codigo_postal: "50008",
+    direccion: "Paseo Fernando el Católico, 71",
+    ccaa: "Aragón",
+    telefono: "",
+    web: "",
+    lat: 41.6519,
+    lng: -0.9029,
+  },
+  // ── FUNCIONAL ───────────────────────────────────────────────────────────
+  {
+    tipo: "Funcional",
+    nombre: "Barry's Bootcamp Madrid",
+    ciudad: "Madrid",
+    codigo_postal: "28001",
+    direccion: "Calle de Goya, 6",
+    ccaa: "Comunidad de Madrid",
+    telefono: "",
+    web: "https://www.barrys.com/location/madrid/",
+    lat: 40.4258,
+    lng: -3.6839,
+  },
+  {
+    tipo: "Funcional",
+    nombre: "Barry's Bootcamp Barcelona",
+    ciudad: "Barcelona",
+    codigo_postal: "08007",
+    direccion: "Carrer de Mallorca, 237",
+    ccaa: "Cataluña",
+    telefono: "",
+    web: "https://www.barrys.com/location/barcelona/",
+    lat: 41.3942,
+    lng: 2.1598,
+  },
+  {
+    tipo: "Funcional",
+    nombre: "F45 Training Madrid Centro",
+    ciudad: "Madrid",
+    codigo_postal: "28004",
+    direccion: "Calle de Fuencarral, 45",
+    ccaa: "Comunidad de Madrid",
+    telefono: "",
+    web: "https://f45training.com",
+    lat: 40.4257,
+    lng: -3.6989,
+  },
+  {
+    tipo: "Funcional",
+    nombre: "F45 Training Barcelona Eixample",
+    ciudad: "Barcelona",
+    codigo_postal: "08009",
+    direccion: "Carrer de Còrsega, 340",
+    ccaa: "Cataluña",
+    telefono: "",
+    web: "https://f45training.com",
+    lat: 41.3983,
+    lng: 2.1724,
+  },
+  {
+    tipo: "Funcional",
+    nombre: "Anytime Fitness Bilbao",
+    ciudad: "Bilbao",
+    codigo_postal: "48007",
+    direccion: "Gran Vía Don Diego López de Haro, 45",
+    ccaa: "País Vasco",
+    telefono: "",
+    web: "https://www.anytimefitness.es",
+    lat: 43.2655,
+    lng: -2.9338,
+  },
+  {
+    tipo: "Funcional",
+    nombre: "Basic-Fit Valencia Colón",
+    ciudad: "Valencia",
+    codigo_postal: "46004",
+    direccion: "Calle de Jorge Juan, 23",
+    ccaa: "Comunitat Valenciana",
+    telefono: "",
+    web: "https://www.basic-fit.com",
+    lat: 39.4698,
+    lng: -0.3717,
+  },
+  // ── OCR TRAINING ────────────────────────────────────────────────────────
+  {
+    tipo: "OCR",
+    nombre: "Spartan SGX Madrid",
+    ciudad: "Madrid",
+    codigo_postal: "28045",
+    direccion: "Calle de Embajadores, 35",
+    ccaa: "Comunidad de Madrid",
+    telefono: "",
+    web: "https://www.spartan.com/en/race/detail/sgx",
+    lat: 40.4107,
+    lng: -3.7061,
+  },
+  {
+    tipo: "OCR",
+    nombre: "Trail & OCR Club Barcelona",
+    ciudad: "Barcelona",
+    codigo_postal: "08032",
+    direccion: "Carrer de la Sagrera, 12",
+    ccaa: "Cataluña",
+    telefono: "",
+    web: "",
+    lat: 41.4182,
+    lng: 2.1872,
+  },
+  {
+    tipo: "OCR",
+    nombre: "Escuela de Obstáculos Madrid",
+    ciudad: "Madrid",
+    codigo_postal: "28034",
+    direccion: "Calle Camino de Fuencarral, 10",
+    ccaa: "Comunidad de Madrid",
+    telefono: "",
+    web: "",
+    lat: 40.4794,
+    lng: -3.6914,
+  },
+  // ── MULTIDISCIPLINAR ────────────────────────────────────────────────────
+  {
+    tipo: "Multidisciplinar",
+    nombre: "CrossFit Iron Madrid",
+    ciudad: "Madrid",
+    codigo_postal: "28037",
+    direccion: "Calle de las Naciones, 14",
+    ccaa: "Comunidad de Madrid",
+    telefono: "",
+    web: "https://crossfitironmadrid.com",
+    lat: 40.4372,
+    lng: -3.6563,
+  },
+  {
+    tipo: "Multidisciplinar",
+    nombre: "Reebok CrossFit Chamberí",
+    ciudad: "Madrid",
+    codigo_postal: "28010",
+    direccion: "Calle de Santa Engracia, 82",
+    ccaa: "Comunidad de Madrid",
+    telefono: "",
+    web: "",
+    lat: 40.4334,
+    lng: -3.7007,
+  },
+  {
+    tipo: "Multidisciplinar",
+    nombre: "CrossFit Gràcia",
+    ciudad: "Barcelona",
+    codigo_postal: "08012",
+    direccion: "Carrer de Còrsega, 257",
+    ccaa: "Cataluña",
+    telefono: "+34 933 17 82 52",
+    web: "https://crossfitgracia.com",
+    lat: 41.3976,
+    lng: 2.1577,
+  },
+  {
+    tipo: "Multidisciplinar",
+    nombre: "CrossFit Bilbao",
+    ciudad: "Bilbao",
+    codigo_postal: "48003",
+    direccion: "Calle Hurtado de Amézaga, 23",
+    ccaa: "País Vasco",
+    telefono: "",
+    web: "https://crossfitbilbao.com",
+    lat: 43.2581,
+    lng: -2.9256,
+  },
+  {
+    tipo: "Multidisciplinar",
+    nombre: "CrossFit Eixample",
+    ciudad: "Barcelona",
+    codigo_postal: "08036",
+    direccion: "Carrer de Muntaner, 200",
+    ccaa: "Cataluña",
+    telefono: "",
+    web: "",
+    lat: 41.3912,
+    lng: 2.1536,
+  },
+  {
+    tipo: "Multidisciplinar",
+    nombre: "Box 32 Madrid",
+    ciudad: "Madrid",
+    codigo_postal: "28004",
+    direccion: "Calle de Pelayo, 32",
+    ccaa: "Comunidad de Madrid",
+    telefono: "",
+    web: "https://box32.es",
+    lat: 40.4248,
+    lng: -3.6966,
+  },
+  {
+    tipo: "Multidisciplinar",
+    nombre: "Functional Training Sevilla",
+    ciudad: "Sevilla",
+    codigo_postal: "41001",
+    direccion: "Calle Feria, 48",
+    ccaa: "Andalucía",
+    telefono: "",
+    web: "",
+    lat: 37.3985,
+    lng: -5.9940,
+  },
+  {
+    tipo: "Multidisciplinar",
+    nombre: "CrossFit Málaga Sur",
+    ciudad: "Málaga",
+    codigo_postal: "29006",
+    direccion: "Calle Héroe de Sostoa, 52",
+    ccaa: "Andalucía",
+    telefono: "",
+    web: "",
+    lat: 36.7185,
+    lng: -4.4404,
+  },
+  {
+    tipo: "Multidisciplinar",
+    nombre: "Híbrido Training Club Valencia",
+    ciudad: "Valencia",
+    codigo_postal: "46015",
+    direccion: "Carrer de Benimaclet, 24",
+    ccaa: "Comunitat Valenciana",
+    telefono: "",
+    web: "",
+    lat: 39.4799,
+    lng: -0.3583,
+  },
+];
+
+const withIds = nuevos.map((c, i) => ({ id: NEW_ID_START + i, ...c }));
+
+const final = [...cleaned, ...withIds];
+
+fs.writeFileSync(path.join(lib, "centros-entrenamiento.json"), JSON.stringify(final, null, 2), "utf8");
+
+console.log(`Done.`);
+console.log(`  Existing boxes cleaned: ${cleaned.length}`);
+console.log(`  buscaunbox URLs removed: ${removedBuscaunbox}`);
+console.log(`  New centers added: ${withIds.length}`);
+console.log(`  Total: ${final.length}`);
+console.log(`\nNew centers by tipo:`);
+const tipos = {};
+withIds.forEach((c) => { tipos[c.tipo] = (tipos[c.tipo] || 0) + 1; });
+Object.entries(tipos).forEach(([k, v]) => console.log(`  ${k}: ${v}`));

@@ -1,3206 +1,5020 @@
 [
   {
     "id": 1,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Zona Ocho",
     "ciudad": "Marbella",
     "codigo_postal": "29603",
     "direccion": "Calle Pirita, 47",
     "ccaa": "",
-    "web": "https://buscaunbox.com/box-de-crossfit/301-crossfit-zona-ocho"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 2,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Puerto Banús",
     "ciudad": "Marbella",
     "codigo_postal": "29680",
     "direccion": "CN 340, Km 173 Centro Comercial Azalea Local Bajo",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/584-crossfit-puerto-banus"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 3,
+    "tipo": "CrossFit",
     "nombre": "CrossFit La Sombra Algeciras",
     "ciudad": "Algeciras",
     "codigo_postal": "11207",
     "direccion": "C/ Alfonso I, Numero 30 (poligono ind. Cortijo Real)",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/548-crossfit-la-sombra-algeciras-2"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 4,
+    "tipo": "CrossFit",
     "nombre": "G1931 CrossFit Conil",
     "ciudad": "Conil de la Frontera",
     "codigo_postal": "11140",
     "direccion": "Avenida de los artesanos",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/547-g1931-crossfit-conil"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 5,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Blue Gorilla",
     "ciudad": "B San Fernando",
     "codigo_postal": "11100",
     "direccion": "Calle Ferrocarril 37",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/546-crossfit-blue-gorilla"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 6,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Trocadero",
     "ciudad": "Trocadero",
     "codigo_postal": "11519",
     "direccion": "Calle Finlandia, 12 El",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/545-crossfit-trocadero"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 7,
+    "tipo": "CrossFit",
     "nombre": "CheckMate CrossFit",
     "ciudad": "María",
     "codigo_postal": "11500",
     "direccion": "Calle Ingeniero Ruiz de la Cuesta, 5 El Puerto de Santa",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/544-checkmate-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 8,
+    "tipo": "CrossFit",
     "nombre": "CrossFit El Puerto de Santa Maria",
     "ciudad": "María",
     "codigo_postal": "11500",
     "direccion": "C/Sederia 26 El Puerto de Santa",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/543-crossfit-el-puerto-de-santa-maria-2"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 9,
+    "tipo": "CrossFit",
     "nombre": "Indian CrossFit 11405",
     "ciudad": "Jerez de la Frontera",
     "codigo_postal": "11405",
     "direccion": "Pilar Aranda Latorre, 14",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/542-indian-crossfit-11405"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 10,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Jerez",
     "ciudad": "Jerez de la Frontera",
     "codigo_postal": "11407",
     "direccion": "C/Minería, 13",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/541-crossfit-jerez"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 11,
+    "tipo": "CrossFit",
     "nombre": "CrossFit 11520",
     "ciudad": "",
     "codigo_postal": "11520",
     "direccion": "Calle Escultores 8",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/540-crossfit-11520"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 12,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Sanlúcar Central Box",
     "ciudad": "Sanlúcar de Barrameda",
     "codigo_postal": "11540",
     "direccion": "Plaza Farmacéutico Romero Bustillo 7",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/539-crossfit-sanlucar-central-box"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 13,
+    "tipo": "CrossFit",
     "nombre": "Dockyard Crossfit",
     "ciudad": "Huelva",
     "codigo_postal": "21007",
     "direccion": "Calle Macías Belmonte 44",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/538-dockyard-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 14,
+    "tipo": "CrossFit",
     "nombre": "Box Olimpo Málaga",
     "ciudad": "Málaga",
     "codigo_postal": "29002",
     "direccion": "Calle la Orotava, 39",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/326-box-olimpo-malaga-6"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 15,
+    "tipo": "CrossFit",
     "nombre": "Box Olimpo Málaga",
     "ciudad": "Málaga",
     "codigo_postal": "29002",
     "direccion": "Calle la Orotava, 39",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/325-box-olimpo-malaga-5"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 16,
+    "tipo": "CrossFit",
     "nombre": "Box Olimpo Málaga",
     "ciudad": "Málaga",
     "codigo_postal": "29002",
     "direccion": "Calle la Orotava, 39",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/324-box-olimpo-malaga-4"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 17,
+    "tipo": "CrossFit",
     "nombre": "Box Olimpo Málaga",
     "ciudad": "Málaga",
     "codigo_postal": "29002",
     "direccion": "Calle la Orotava, 39",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/323-box-olimpo-malaga-3"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 18,
+    "tipo": "CrossFit",
     "nombre": "Box Olimpo Málaga",
     "ciudad": "Málaga",
     "codigo_postal": "29002",
     "direccion": "Calle la Orotava, 39",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/322-box-olimpo-malaga-2"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 19,
+    "tipo": "CrossFit",
     "nombre": "Box Olimpo Málaga",
     "ciudad": "Málaga",
     "codigo_postal": "29002",
     "direccion": "Calle la Orotava, 39",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/321-box-olimpo-malaga"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 20,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Fuengirola",
     "ciudad": "Fuengirola",
     "codigo_postal": "29640",
     "direccion": "C/ Alberto Morgenstern, Edif. Astigi, 2, local 1",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/320-crossfit-fuengirola"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 21,
+    "tipo": "CrossFit",
     "nombre": "VJC Crossfit",
     "ciudad": "Málaga",
     "codigo_postal": "29001",
     "direccion": "Avenida de Jacinto Benavente",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/319-vjc-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 22,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Málaga",
     "ciudad": "Málaga",
     "codigo_postal": "29006",
     "direccion": "Calle la Flauta Magica, 28",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/318-crossfit-malaga"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 23,
+    "tipo": "CrossFit",
     "nombre": "Box Olimpo Torremolinos",
     "ciudad": "Torremolinos",
     "codigo_postal": "29620",
     "direccion": "Calle Madre Teresa de Calcuta, 12",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/317-box-olimpo-torremolinos"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 24,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Estepona",
     "ciudad": "Estepona",
     "codigo_postal": "29680",
     "direccion": "Avenida José Martín Méndez, 77",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/316-crossfit-estepona"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 25,
+    "tipo": "CrossFit",
     "nombre": "Strength Chiclana",
     "ciudad": "Chiclana de la Frontera",
     "codigo_postal": "11130",
     "direccion": "Avenida de la Industria, 38",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/315-strength-chiclana"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 26,
+    "tipo": "CrossFit",
     "nombre": "Costa del Sol Crossfit",
     "ciudad": "Fuengirola",
     "codigo_postal": "29640",
     "direccion": "Calle Casares, 4",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/314-costa-del-sol-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 27,
+    "tipo": "CrossFit",
     "nombre": "Box bronko bull",
     "ciudad": "Fernando San Fernando",
     "codigo_postal": "11100",
     "direccion": "San",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/313-box-bronko-bull"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 28,
+    "tipo": "CrossFit",
     "nombre": "New Concept Tarifa",
     "ciudad": "Tarifa",
     "codigo_postal": "11380",
     "direccion": "Canovas del Castillo 7",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/312-new-concept-tarifa"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 29,
+    "tipo": "CrossFit",
     "nombre": "Box La Caja",
     "ciudad": "",
     "codigo_postal": "23400",
     "direccion": "Calle Agricultura, 19 úbeda",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/311-box-la-caja"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 30,
+    "tipo": "CrossFit",
     "nombre": "Banished",
     "ciudad": "Sevilla",
     "codigo_postal": "41007",
     "direccion": "Calle Labrador, 2",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/310-banished"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 31,
+    "tipo": "CrossFit",
     "nombre": "BlackSun CrossBox",
     "ciudad": "Estepona",
     "codigo_postal": "29680",
     "direccion": "Av. J. Martín Méndez",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/309-blacksun-crossbox"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 32,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Santo Reino",
     "ciudad": "Jaén",
     "codigo_postal": "23009",
     "direccion": "Calle Bedmar",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/308-crossfit-santo-reino"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 33,
+    "tipo": "CrossFit",
     "nombre": "Box 1315 CrossFit",
     "ciudad": "Málaga",
     "codigo_postal": "29018",
     "direccion": "Calle Potosí, 19c",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/307-box-1315-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 34,
+    "tipo": "CrossFit",
     "nombre": "CrossFunctional Almería Box",
     "ciudad": "Huércal de Almería",
     "codigo_postal": "04230",
     "direccion": "Calle Almediterraneo 12",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/306-crossfunctional-almeria-box"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 35,
+    "tipo": "CrossFit",
     "nombre": "B2B Box",
     "ciudad": "Jerez de la Frontera",
     "codigo_postal": "11405",
     "direccion": "Calle Oro",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/305-b2b-box"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 36,
+    "tipo": "CrossFit",
     "nombre": "CrossFit El Puerto de Santa María",
     "ciudad": "María",
     "codigo_postal": "11500",
     "direccion": "Calle Sedería, 27 El Puerto de Santa",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/304-crossfit-el-puerto-de-santa-maria"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 37,
+    "tipo": "CrossFit",
     "nombre": "CrossFit La Sombra Algeciras",
     "ciudad": "Algeciras",
     "codigo_postal": "11207",
     "direccion": "Camino Cortijo Real, 30",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/303-crossfit-la-sombra-algeciras"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 38,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Marbella",
     "ciudad": "Marbella",
     "codigo_postal": "29670",
     "direccion": "Conjunto San Pedro del Mar, 10",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/302-crossfit-marbella"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 39,
+    "tipo": "CrossFit",
     "nombre": "Puro CrossFit",
     "ciudad": "Marbella",
     "codigo_postal": "29603",
     "direccion": "Calle Carbón, 9",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/300-puro-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 40,
+    "tipo": "CrossFit",
     "nombre": "Crossfit Playa 2707",
     "ciudad": "Marbella",
     "codigo_postal": "29603",
     "direccion": "Calle Miguel Angel Catalán Sañudo, 7",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/299-crossfit-playa-2707"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 41,
+    "tipo": "CrossFit",
     "nombre": "Crossfit Kaldana",
     "ciudad": "Carril de las Medranas San Pedro de Alcántara",
     "codigo_postal": "29670",
     "direccion": "",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/298-crossfit-kaldana"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 42,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Elviria",
     "ciudad": "Marbella",
     "codigo_postal": "29604",
     "direccion": "Polígono Industrial Elviria, 38",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/297-crossfit-elviria"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 43,
+    "tipo": "CrossFit",
     "nombre": "Crossfit La Muralla",
     "ciudad": "Costa",
     "codigo_postal": "29650",
     "direccion": "Calle Sta. Fabiola, 4 Mijas",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/296-crossfit-la-muralla"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 44,
+    "tipo": "CrossFit",
     "nombre": "Crossfit BlackSide",
     "ciudad": "Córdoba",
     "codigo_postal": "14006",
     "direccion": "¡Calle Decano Francisco Rojas Folgado",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/295-crossfit-blackside"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 45,
+    "tipo": "CrossFit",
     "nombre": "Smonker Team",
     "ciudad": "",
     "codigo_postal": "41400",
     "direccion": "Polígono Industrial el Barrero, Calle Arrieros, 4 écija",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/294-smonker-team"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 46,
+    "tipo": "CrossFit",
     "nombre": "FitBox Chiclana",
     "ciudad": "Chiclana de la Frontera",
     "codigo_postal": "11139",
     "direccion": "Urb. Aldea del Coto nº 4",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/293-fitbox-chiclana"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 47,
+    "tipo": "CrossFit",
     "nombre": "Terral Crossfit",
     "ciudad": "Málaga",
     "codigo_postal": "29006",
     "direccion": "Calle Riogordo, 11",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/291-terral-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 48,
+    "tipo": "CrossFit",
     "nombre": "B2B Chiclana",
     "ciudad": "Chiclana de la Frontera",
     "codigo_postal": "11130",
     "direccion": "Calle Severo Ochoa, 43",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/290-b2b-chiclana"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 49,
+    "tipo": "CrossFit",
     "nombre": "Crossfit Torremolinos",
     "ciudad": "Torremolinos",
     "codigo_postal": "29620",
     "direccion": "C/ Ciudad de Salou<br />",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/289-crossfit-torremolinos"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 50,
+    "tipo": "CrossFit",
     "nombre": "All 4 One CrossFit",
     "ciudad": "Torremolinos",
     "codigo_postal": "29620",
     "direccion": "Madre Teresa de Calcuta 12<br />",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/288-all-4-one-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 51,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Benalmádena",
     "ciudad": "Benalmádena",
     "codigo_postal": "29631",
     "direccion": "Calle Moscatel, 20",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/287-crossfit-benalmadena"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 52,
+    "tipo": "CrossFit",
     "nombre": "Crossfit Alhaurín",
     "ciudad": "Alhaurín el Grande",
     "codigo_postal": "29120",
     "direccion": "Carretera de Cartama 96",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/286-crossfit-alhaurin"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 53,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Alhaurin De La Torre",
     "ciudad": "Alhaurín de la Torre",
     "codigo_postal": "29130",
     "direccion": "C/ Santa Maria Nave 14",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/285-crossfit-alhaurin-de-la-torre"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 54,
+    "tipo": "CrossFit",
     "nombre": "Sacaba Beach Crossfit",
     "ciudad": "Málaga",
     "codigo_postal": "29004",
     "direccion": "C/ Polifemo<br />",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/284-sacaba-beach-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 55,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Antequera",
     "ciudad": "Málaga",
     "codigo_postal": "29200",
     "direccion": "AVENIDA PRINCIPAL 11 NAVE 6 ESQUINA AVENIDA ROMERAL POLIGONO",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/283-crossfit-antequera"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 56,
+    "tipo": "CrossFit",
     "nombre": "Giralda CrossFit",
     "ciudad": "Sevilla",
     "codigo_postal": "41007",
     "direccion": "Calle Calamina 2<br />",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/282-giralda-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 57,
+    "tipo": "CrossFit",
     "nombre": "La Colmena CrossFit",
     "ciudad": "Sevilla",
     "codigo_postal": "41008",
     "direccion": "La Colmena CrossFit",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/281-la-colmena-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 58,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Coria del Rio",
     "ciudad": "Coria del Río",
     "codigo_postal": "41100",
     "direccion": "calle Gran Avenida<br />",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/280-crossfit-coria-del-rio"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 59,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Feel",
     "ciudad": "Sevilla",
     "codigo_postal": "41006",
     "direccion": "Calle A, 14",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/279-crossfit-feel"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 60,
+    "tipo": "CrossFit",
     "nombre": "Crossfit Buhaira",
     "ciudad": "Sevilla",
     "codigo_postal": "41018",
     "direccion": "C/Balbino Marrón 6, Edificio Viapol, Portal A SALA17<br />",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/278-crossfit-buhaira"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 61,
+    "tipo": "CrossFit",
     "nombre": "CrossFit La Forja",
     "ciudad": "Sevilla",
     "codigo_postal": "41092",
     "direccion": "Isla de la Cartuja. Sector Norte Estadio olimpico puerta E<br />",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/277-crossfit-la-forja"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 62,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Macarena Box",
     "ciudad": "Sevilla",
     "codigo_postal": "41008",
     "direccion": "Maria auxiliadora, 18",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/276-crossfit-macarena-box"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 63,
+    "tipo": "CrossFit",
     "nombre": "Crossfit Rookies Box",
     "ciudad": "Mairena del Aljarafe",
     "codigo_postal": "41927",
     "direccion": "Brujula, 9",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/275-crossfit-rookies-box"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 64,
+    "tipo": "CrossFit",
     "nombre": "Crossfit Vaskia",
     "ciudad": "Sevilla",
     "codigo_postal": "41960",
     "direccion": "B, 18",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/274-crossfit-vaskia"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 65,
+    "tipo": "CrossFit",
     "nombre": "Crossfit Taboo Écija",
     "ciudad": "",
     "codigo_postal": "41400",
     "direccion": "Asturias, 7 écija",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/273-crossfit-taboo-ecija"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 66,
+    "tipo": "CrossFit",
     "nombre": "Crossfit Black Side",
     "ciudad": "Córdoba",
     "codigo_postal": "14006",
     "direccion": "Decano Francisco Rojas Folgado",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/272-crossfit-black-side"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 67,
+    "tipo": "CrossFit",
     "nombre": "Triple XXX Crossfit",
     "ciudad": "Córdoba",
     "codigo_postal": "14014",
     "direccion": "Calle Los Alfareros Parcela 119",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/271-triple-xxx-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 68,
+    "tipo": "CrossFit",
     "nombre": "Crossfit Córdoba",
     "ciudad": "Córdoba",
     "codigo_postal": "14006",
     "direccion": "C/ Acera Fuente de la Salud, s/n Nave 8",
     "ccaa": "Andalucía",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-andalucia/270-crossfit-cordoba"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 69,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Huesca",
     "ciudad": "Huesca",
     "codigo_postal": "22006",
     "direccion": "Ronda del transporte. Nave 9-10",
     "ccaa": "Aragón",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-aragon/337-crossfit-huesca"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 70,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Jiloca",
     "ciudad": "Calamocha",
     "codigo_postal": "44200",
     "direccion": "Avda. de la Constitución, 22",
     "ccaa": "Aragón",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-aragon/335-crossfit-jiloca"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 71,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Utgart",
     "ciudad": "Zaragoza",
     "codigo_postal": "50180",
     "direccion": "Av. Miguel Servet (polígono empresarial utebo, nave 4)",
     "ccaa": "Aragón",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-aragon/334-crossfit-utgart"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 72,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Eolo",
     "ciudad": "Zaragoza",
     "codigo_postal": "50013",
     "direccion": "Polígono Industrial Miguel Servet, Nave 8",
     "ccaa": "Aragón",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-aragon/333-crossfit-eolo"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 73,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Rocalla",
     "ciudad": "Zaragoza",
     "codigo_postal": "50012",
     "direccion": "Calle de Argualas, 20",
     "ccaa": "Aragón",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-aragon/332-crossfit-rocalla"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 74,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Venecia",
     "ciudad": "",
     "codigo_postal": "",
     "direccion": "Calle Fran Julian Garces, 100 Zaragoza 5007 Aragón",
     "ccaa": "Aragón",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-aragon/331-crossfit-venecia"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 75,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Almogavares",
     "ciudad": "Zaragoza",
     "codigo_postal": "50006",
     "direccion": "Calle Catania, 3",
     "ccaa": "Aragón",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-aragon/330-crossfit-almogavares"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 76,
+    "tipo": "CrossFit",
     "nombre": "Z30 CrossFit",
     "ciudad": "Zaragoza",
     "codigo_postal": "50013",
     "direccion": "Belchite, 26",
     "ccaa": "Aragón",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-aragon/329-z30-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 77,
+    "tipo": "CrossFit",
     "nombre": "CrossFit HammerBox",
     "ciudad": "Cuarte de Huerva",
     "codigo_postal": "50410",
     "direccion": "nave 4 (72E), autovía de Valencia, km7800",
     "ccaa": "Aragón",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-aragon/328-crossfit-hammerbox"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 78,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Zaragoza",
     "ciudad": "Zaragoza",
     "codigo_postal": "50014",
     "direccion": "Calle Benjamin Franklin, 6",
     "ccaa": "Aragón",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-aragon/327-crossfit-zaragoza"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 79,
+    "tipo": "CrossFit",
     "nombre": "Corazón Negro CrossFit",
     "ciudad": "Langreo",
     "codigo_postal": "33920",
     "direccion": "Pol. Ind. Riaño II",
     "ccaa": "Asturias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-asturias/353-corazon-negro-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 80,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Naranco",
     "ciudad": "Oviedo",
     "codigo_postal": "33012",
     "direccion": "Juan Varela,9",
     "ccaa": "Asturias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-asturias/352-crossfit-naranco"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 81,
+    "tipo": "CrossFit",
     "nombre": "Ovetus CrossFit",
     "ciudad": "Oviedo",
     "codigo_postal": "33010",
     "direccion": "Poligono Aguila del Nora Parcela 3-5 Nave 3",
     "ccaa": "Asturias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-asturias/351-ovetus-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 82,
+    "tipo": "CrossFit",
     "nombre": "Dark Lion CrossFit",
     "ciudad": "Siero",
     "codigo_postal": "33519",
     "direccion": "Poligono La carrera, Nave 4",
     "ccaa": "Asturias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-asturias/350-dark-lion-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 83,
+    "tipo": "CrossFit",
     "nombre": "OS CrossFit",
     "ciudad": "Lugones",
     "codigo_postal": "33420",
     "direccion": "Poligono El Castro Nave 7",
     "ccaa": "Asturias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-asturias/349-os-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 84,
+    "tipo": "CrossFit",
     "nombre": "Reconquista CrossFit",
     "ciudad": "Asturias",
     "codigo_postal": "33240",
     "direccion": "Puente Nora",
     "ccaa": "Asturias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-asturias/348-reconquista-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 85,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Avilés",
     "ciudad": "Avilés",
     "codigo_postal": "33401",
     "direccion": "Avenida de Lugo 30",
     "ccaa": "Asturias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-asturias/347-crossfit-aviles"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 86,
+    "tipo": "CrossFit",
     "nombre": "Brown Bears CrossFit",
     "ciudad": "Corbera",
     "codigo_postal": "33404",
     "direccion": "Calle Nueva, 10",
     "ccaa": "Asturias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-asturias/346-brown-bear-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 87,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Gijón",
     "ciudad": "Gijón",
     "codigo_postal": "33211",
     "direccion": "Calle de Rene Descartes, 30",
     "ccaa": "Asturias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-asturias/343-crossfit-gijon"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 88,
+    "tipo": "CrossFit",
     "nombre": "985 CrossFit",
     "ciudad": "Gijón",
     "codigo_postal": "33212",
     "direccion": "Avenida de Eduardo Castro 94",
     "ccaa": "Asturias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-asturias/342-985-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 89,
+    "tipo": "CrossFit",
     "nombre": "Tu Box CrossFit",
     "ciudad": "Gijón",
     "codigo_postal": "33211",
     "direccion": "Avenida de los Campones 11 Nave 4",
     "ccaa": "Asturias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-asturias/341-tu-box-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 90,
+    "tipo": "CrossFit",
     "nombre": "CrossFit La Galerna",
     "ciudad": "Gijón",
     "codigo_postal": "33211",
     "direccion": "Av. del Transporte, 11, nave 7",
     "ccaa": "Asturias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-asturias/340-crossfit-la-galerna"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 91,
+    "tipo": "CrossFit",
     "nombre": "Tilenus CrossFit",
     "ciudad": "Gijón",
     "codigo_postal": "33392",
     "direccion": "Camino de la Xacona, 205",
     "ccaa": "Asturias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-asturias/339-tilenus-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 92,
+    "tipo": "CrossFit",
     "nombre": "WF CrossFit",
     "ciudad": "Gijón",
     "codigo_postal": "33205",
     "direccion": "Manuel Llaneza",
     "ccaa": "Asturias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-asturias/338-wf-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 93,
+    "tipo": "CrossFit",
     "nombre": "CrossFit MAG",
     "ciudad": "Ibiza",
     "codigo_postal": "07817",
     "direccion": "Carrer Sant Jordi 33",
     "ccaa": "Islas Baleares",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-baleares/378-crossfit-mag"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 94,
+    "tipo": "CrossFit",
     "nombre": "Isla Blanca CrossFit",
     "ciudad": "Ibiza",
     "codigo_postal": "07800",
     "direccion": "Carrer del Music Rafel Zornoza",
     "ccaa": "Islas Baleares",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-baleares/377-isla-blanca-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 95,
+    "tipo": "CrossFit",
     "nombre": "Mo CrossFit",
     "ciudad": "Maó",
     "codigo_postal": "07701",
     "direccion": "Calle Binimaimut, 5",
     "ccaa": "Islas Baleares",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-baleares/376-mo-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 96,
+    "tipo": "CrossFit",
     "nombre": "FreeMove CrossFit",
     "ciudad": "Palma de Mallorca",
     "codigo_postal": "07006",
     "direccion": "Carrer Josep Rover Motta 4",
     "ccaa": "Islas Baleares",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-baleares/375-freemove-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 97,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Portixol",
     "ciudad": "Palma de Mallorca",
     "codigo_postal": "07006",
     "direccion": "Edificio Marina Plaza II C/ Joan Maragall 52 y 54",
     "ccaa": "Islas Baleares",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-baleares/374-crossfit-portixol"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 98,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Entreno Cruzado",
     "ciudad": "Palma de Mallorca",
     "codigo_postal": "07007",
     "direccion": "Carrer de Sor Isabel Cifre, 30",
     "ccaa": "Islas Baleares",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-baleares/373-crossfit-entreno-cruzado"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 99,
+    "tipo": "CrossFit",
     "nombre": "C23 CrossFit",
     "ciudad": "Palma de Mallorca",
     "codigo_postal": "07007",
     "direccion": "C/ Ca na Melis, nº 21",
     "ccaa": "Islas Baleares",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-baleares/372-c23-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 100,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Manacor",
     "ciudad": "Manacor",
     "codigo_postal": "07500",
     "direccion": "Rafael Ferer",
     "ccaa": "Islas Baleares",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-baleares/371-crossfit-manacor"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 101,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Mallorca",
     "ciudad": "Calvia",
     "codigo_postal": "07180",
     "direccion": "Calle del Mar Mediterrania N25",
     "ccaa": "Islas Baleares",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-baleares/370-crossfit-mallorca"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 102,
+    "tipo": "CrossFit",
     "nombre": "True Love CrossFit",
     "ciudad": "Palma de Mallorca",
     "codigo_postal": "07610",
     "direccion": "C/ C´an Calafat 29, Nave 5, Pol. Son Oms",
     "ccaa": "Islas Baleares",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-baleares/369-true-love-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 103,
+    "tipo": "CrossFit",
     "nombre": "CrossFit S\\",
     "ciudad": "Palma de Mallorca",
     "codigo_postal": "07011",
     "direccion": "Calle Asegra Number 11",
     "ccaa": "Islas Baleares",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-baleares/368-crossfit-s-embat"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 104,
+    "tipo": "CrossFit",
     "nombre": "Box 35100",
     "ciudad": "Maspalomas",
     "codigo_postal": "35100",
     "direccion": "Calle los Jazmines",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/410-box-35100"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 105,
+    "tipo": "CrossFit",
     "nombre": "CrossFit TNF",
     "ciudad": "",
     "codigo_postal": "38005",
     "direccion": "Calle Lepanto, 3",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/409-crossfit-tnf"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 106,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Arion",
     "ciudad": "Ariadne",
     "codigo_postal": "38787",
     "direccion": "C/ Felipe Gómez Wanguemert 16 Los llanos de",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/407-crossfit-arion"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 107,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Isla Bonita",
     "ciudad": "Cruz de la Palma",
     "codigo_postal": "38700",
     "direccion": "C/ Cruz Roja, 19 Santa",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/406-crossfit-isla-bonita"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 108,
+    "tipo": "CrossFit",
     "nombre": "Círculo CrossFit",
     "ciudad": "Cristóbal de la Laguna",
     "codigo_postal": "38202",
     "direccion": "C/Arzobispo Elías Yanes, 68 San",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/405-circulo-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 109,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Pracan",
     "ciudad": "Cristóbal de la Laguna",
     "codigo_postal": "38320",
     "direccion": "Calle Retama del Teide, 32 San",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/404-crossfit-pracan"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 110,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Safir",
     "ciudad": "Bello Santa Cruz de Tenerife",
     "codigo_postal": "38009",
     "direccion": "Calle de Jose Miguel Galvan",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/403-crossfit-safir"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 111,
+    "tipo": "CrossFit",
     "nombre": "Zona 0 CrossFit",
     "ciudad": "Rosario",
     "codigo_postal": "38111",
     "direccion": "Calle B. Franklin, 5 El",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/402-zona-0-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 112,
+    "tipo": "CrossFit",
     "nombre": "CrossFit V173",
     "ciudad": "Orotava",
     "codigo_postal": "38312",
     "direccion": "CALLE ALBAÑILERIA Nº20 La",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/401-crossfit-v173"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 113,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Orotava",
     "ciudad": "Orotava",
     "codigo_postal": "38300",
     "direccion": "Calle El Calvario, 22 La",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/400-crossfit-orotava"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 114,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Manimal",
     "ciudad": "",
     "codigo_postal": "38390",
     "direccion": "Calle las Folias, 12 Santa úrsula",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/399-crossfit-manimal"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 115,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Survive Top Training",
     "ciudad": "Caleta",
     "codigo_postal": "38679",
     "direccion": "Avenida de los Acantilados S/N La",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/398-crossfit-survive-top-training"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 116,
+    "tipo": "CrossFit",
     "nombre": "CrossFit 27",
     "ciudad": "Alto",
     "codigo_postal": "38660",
     "direccion": "calle Galicia, c.c.Cosmos, planta baja Torviscas",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/397-crossfit-28"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 117,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Teide",
     "ciudad": "Miguel de Abona",
     "codigo_postal": "38639",
     "direccion": "C/Plasencia nº152 San",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/396-crossfit-teide"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 118,
+    "tipo": "CrossFit",
     "nombre": "CrossFit La Jaula",
     "ciudad": "Chafiras",
     "codigo_postal": "38639",
     "direccion": "Arujo Number 8 Las",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/395-crossfit-la-jaula"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 119,
+    "tipo": "CrossFit",
     "nombre": "CrossFit 27",
     "ciudad": "Adeje",
     "codigo_postal": "38660",
     "direccion": "calle Galicia, c.c.Cosmos, planta baja, Torviscas Alto",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/394-crossfit-27"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 120,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Maspalomas",
     "ciudad": "MasPalomas",
     "codigo_postal": "35109",
     "direccion": "San Salvador Sin N. (Gasolinera el Tablero)",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/393-crossfit-maspalomas"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 121,
+    "tipo": "CrossFit",
     "nombre": "Margaritas CrossFit",
     "ciudad": "Bartolomé de Tirajana",
     "codigo_postal": "35100",
     "direccion": "Av. de Gran Canaria, 38 San",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/392-margaritas-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 122,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Playa del Inglés",
     "ciudad": "Playa del Inglés",
     "codigo_postal": "35100",
     "direccion": "Calle alcalde Enrique Jorge",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/391-crossfit-playa-del-ingles"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 123,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Riders",
     "ciudad": "Canaria",
     "codigo_postal": "35130",
     "direccion": "Calle Huesca wear house 3 Motor Grande, Puerto Rico Mogan Las Palmas de Gran",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/390-crossfit-riders"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 124,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Exit 23",
     "ciudad": "Agüimes",
     "codigo_postal": "35118",
     "direccion": "Calle de la Garlopa 62",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/389-crossfit-exit-23"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 125,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Oceanus",
     "ciudad": "Telde",
     "codigo_postal": "35214",
     "direccion": "Calle Simon Bolivar 19",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/388-crossfit-oceanus"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 126,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Crow",
     "ciudad": "Telde",
     "codigo_postal": "35212",
     "direccion": "José Bergamín Number 6",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/387-crossfit-crow"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 127,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Las Canteras",
     "ciudad": "Palmas",
     "codigo_postal": "35010",
     "direccion": "Paseo de Las Canteras 28 Las",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/386-crossfit-las-canteras"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 128,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Canarias",
     "ciudad": "Palmas",
     "codigo_postal": "35010",
     "direccion": "Polígono Industrial Díaz Casanova (Las Torres), 15<br /> Las",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/385-crossfit-canarias"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 129,
+    "tipo": "CrossFit",
     "nombre": "CrossFit KZ",
     "ciudad": "Palmas",
     "codigo_postal": "35008",
     "direccion": "Calle dr juan dominguez perez Las",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/384-crossfit-kz"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 130,
+    "tipo": "CrossFit",
     "nombre": "CrossFit 28 Grados Norte",
     "ciudad": "Palmas",
     "codigo_postal": "35610",
     "direccion": "Calle el Diviso, 1-2, Polígono 13 El Matorral<br />Antigua Las",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/383-crossfit-28-grados-norte"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 131,
+    "tipo": "CrossFit",
     "nombre": "CrossFit La Laguna",
     "ciudad": "Lajares",
     "codigo_postal": "35650",
     "direccion": "Calle de la Laguna",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/382-crossfit-la-laguna"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 132,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Lanzarote",
     "ciudad": "Palmas",
     "codigo_postal": "35500",
     "direccion": "Calle Polca, 2 Las",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/381-crossfit-lanzarote"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 133,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Timanfaya",
     "ciudad": "Arrecife",
     "codigo_postal": "35500",
     "direccion": "Calle Nicolás Estévanez 10",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/380-crossfit-timanfaya"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 134,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Club La Santa",
     "ciudad": "Tinajo",
     "codigo_postal": "35560",
     "direccion": "5a Club La Santa Avenida Krogager",
     "ccaa": "Islas Canarias",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-canarias/379-crossfit-club-la-santa"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 135,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Brazomar",
     "ciudad": "Urdiales",
     "codigo_postal": "39700",
     "direccion": "Barrio Brazomar Castro",
     "ccaa": "Cantabria",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cantabria/596-crossfit-brazomar"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 136,
+    "tipo": "CrossFit",
     "nombre": "Greywolves Santander",
     "ciudad": "Maliaño",
     "codigo_postal": "39600",
     "direccion": "Calle Aeropuerto, 30A",
     "ccaa": "Cantabria",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cantabria/345-greywolves-santander"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 137,
+    "tipo": "CrossFit",
     "nombre": "Greywolves Torrelavega",
     "ciudad": "Torrelavega",
     "codigo_postal": "39300",
     "direccion": "Avenida de Fernando Arce, 27",
     "ccaa": "Cantabria",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cantabria/344-greywolves-torrelavega"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 138,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Me",
     "ciudad": "Azuqueca",
     "codigo_postal": "19800",
     "direccion": "Avenida de alcala",
     "ccaa": "Castilla-La Mancha",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-la-mancha/421-crossfit-me"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 139,
+    "tipo": "CrossFit",
     "nombre": "CrossFit 3MD",
     "ciudad": "Marchamalo",
     "codigo_postal": "19180",
     "direccion": "Calle Livorno 14",
     "ccaa": "Castilla-La Mancha",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-la-mancha/420-crossfit-3md"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 140,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Guadalajara",
     "ciudad": "Guadalajara",
     "codigo_postal": "19171",
     "direccion": "Calle Francisco de Medina y Mendoza Polígono 2, nave 4",
     "ccaa": "Castilla-La Mancha",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-la-mancha/419-crossfit-guadalajara"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 141,
+    "tipo": "CrossFit",
     "nombre": "Haltera CrossFit",
     "ciudad": "Guadalajara",
     "codigo_postal": "19004",
     "direccion": "Calle Méjico 37 y 38",
     "ccaa": "Castilla-La Mancha",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-la-mancha/418-haltera-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 142,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Box49",
     "ciudad": "Guadalajara",
     "codigo_postal": "19004",
     "direccion": "Bulevar del Alto Tajo 2",
     "ccaa": "Castilla-La Mancha",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-la-mancha/417-crossfit-box49"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 143,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Ciudad Real",
     "ciudad": "Real",
     "codigo_postal": "13005",
     "direccion": "C/ Malagón Nº16 (Poligono Larache) Ciudad",
     "ccaa": "Castilla-La Mancha",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-la-mancha/416-crossfit-ciudad-real-2"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 144,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Puertollano",
     "ciudad": "Argamasilla de Calatrava",
     "codigo_postal": "13440",
     "direccion": "Poligono Sepes Nave",
     "ccaa": "Castilla-La Mancha",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-la-mancha/415-crossfit-puertollano-2"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 145,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Daimiel",
     "ciudad": "Daimiel",
     "codigo_postal": "13250",
     "direccion": "Calle de la Investigación, 6",
     "ccaa": "Castilla-La Mancha",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-la-mancha/414-crossfit-daimiel"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 146,
+    "tipo": "CrossFit",
     "nombre": "HeavyBox CrossFit La Mancha",
     "ciudad": "Valdepeñas",
     "codigo_postal": "13300",
     "direccion": "Calle Barril, 5",
     "ccaa": "Castilla-La Mancha",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-la-mancha/413-heavybox-crossfit-la-mancha"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 147,
+    "tipo": "CrossFit",
     "nombre": "CrossFit VDO",
     "ciudad": "Villarrobledo",
     "codigo_postal": "02600",
     "direccion": "12 Alfonso X el Sabio",
     "ccaa": "Castilla-La Mancha",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-la-mancha/412-crossfit-vdo"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 148,
+    "tipo": "CrossFit",
     "nombre": "Acero CrossFit",
     "ciudad": "Toledo",
     "codigo_postal": "45007",
     "direccion": "C/Fuente, 10",
     "ccaa": "Castilla-La Mancha",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-la-mancha/411-crossfit-acero"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 149,
+    "tipo": "CrossFit",
     "nombre": "Toletum CrossFit",
     "ciudad": "Toledo",
     "codigo_postal": "45007",
     "direccion": "Calle Cantaelgallo número 20",
     "ccaa": "Castilla-La Mancha",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-la-mancha/408-toletum-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 150,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Puertollano",
     "ciudad": "Puertollano",
     "codigo_postal": "13597",
     "direccion": "Calle Uno, 419",
     "ccaa": "Castilla-La Mancha",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-la-mancha/253-crossfit-puertollano"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 151,
+    "tipo": "CrossFit",
     "nombre": "CossFit Daimiel",
     "ciudad": "Daimiel",
     "codigo_postal": "13250",
     "direccion": "Investigación 6",
     "ccaa": "Castilla-La Mancha",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-la-mancha/251-cossfit-daimiel"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 152,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Ciudad Real",
     "ciudad": "Real",
     "codigo_postal": "13005",
     "direccion": "Malagón, 16 Ciudad",
     "ccaa": "Castilla-La Mancha",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-la-mancha/250-crossfit-ciudad-real"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 153,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Ávila",
     "ciudad": "",
     "codigo_postal": "05004",
     "direccion": "Calle Campo Azalvaro Nº8 ávila",
     "ccaa": "Castilla y León",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-y-leon/367-crossfit-avila"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 154,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Soria",
     "ciudad": "Soria",
     "codigo_postal": "42190",
     "direccion": "Calle Alegrís, S/N",
     "ccaa": "Castilla y León",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-y-leon/366-crossfit-soria"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 155,
+    "tipo": "CrossFit",
     "nombre": "WB CrossFit",
     "ciudad": "Valladolid",
     "codigo_postal": "47014",
     "direccion": "Avenida de Salamanca 102",
     "ccaa": "Castilla y León",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-y-leon/365-wb-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 156,
+    "tipo": "CrossFit",
     "nombre": "CrossFit AC3D",
     "ciudad": "León",
     "codigo_postal": "24007",
     "direccion": "Calle José María Suárez Gonzales, 30",
     "ccaa": "Castilla y León",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-y-leon/364-crossfit-ac3d"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 157,
+    "tipo": "CrossFit",
     "nombre": "CrossFit El Templo",
     "ciudad": "Palencia",
     "codigo_postal": "34003",
     "direccion": "Avenida Comunidad Europea, 58",
     "ccaa": "Castilla y León",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-y-leon/363-crossfit-el-templo"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 158,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Morado",
     "ciudad": "Palencia",
     "codigo_postal": "34004",
     "direccion": "Calle Rio Rubagón Nave 6",
     "ccaa": "Castilla y León",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-y-leon/362-crossfit-morado"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 159,
+    "tipo": "CrossFit",
     "nombre": "Halterofilia Salamanca",
     "ciudad": "Salamanca",
     "codigo_postal": "37005",
     "direccion": "Avenida de la Merced, 85",
     "ccaa": "Castilla y León",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-y-leon/361-halterofilia-salamanca"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 160,
+    "tipo": "CrossFit",
     "nombre": "Frog CrossFit",
     "ciudad": "Villares de la Reina",
     "codigo_postal": "37184",
     "direccion": "Calle Transportes, 26",
     "ccaa": "Castilla y León",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-y-leon/360-frog-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 161,
+    "tipo": "CrossFit",
     "nombre": "CrossFit DCP",
     "ciudad": "Salamanca",
     "codigo_postal": "37184",
     "direccion": "Av. Fuentesaúco, 39",
     "ccaa": "Castilla y León",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-y-leon/359-crossfit-dcp"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 162,
+    "tipo": "CrossFit",
     "nombre": "Improve CrossFit",
     "ciudad": "Salamanca",
     "codigo_postal": "37188",
     "direccion": "Av. Carbajosa de la Sagrada, 29",
     "ccaa": "Castilla y León",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-y-leon/358-improve-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 163,
+    "tipo": "CrossFit",
     "nombre": "Crossfit Uros",
     "ciudad": "Burgos",
     "codigo_postal": "09001",
     "direccion": "Polígono Industrial Villalonquéjar",
     "ccaa": "Castilla y León",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-y-leon/357-crossfit-uros"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 164,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Tizona",
     "ciudad": "Burgos",
     "codigo_postal": "09007",
     "direccion": "Calle La Ribera 1, #13- 14",
     "ccaa": "Castilla y León",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-y-leon/356-crossfit-tizona"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 165,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Burgos",
     "ciudad": "Burgos",
     "codigo_postal": "09007",
     "direccion": "Carretera Madrid-Irun S/N - Poligono Industrial Plastimetal - Nave 4",
     "ccaa": "Castilla y León",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-y-leon/355-crossfit-burgos"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 166,
+    "tipo": "CrossFit",
     "nombre": "MutekiBox CrossFit",
     "ciudad": "Valladolid",
     "codigo_postal": "47008",
     "direccion": "Avenida Madrid 46",
     "ccaa": "Castilla y León",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-castilla-y-leon/354-mutekibox-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 167,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Scipion",
     "ciudad": "Reus",
     "codigo_postal": "43205",
     "direccion": "Calle Joan Amades, 13.",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/497-crossfit-scipion"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 168,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Reus",
     "ciudad": "Reus",
     "codigo_postal": "43204",
     "direccion": "CALLE TERRASA N 27",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/496-crossfit-reus"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 169,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Lambda",
     "ciudad": "Reus",
     "codigo_postal": "43206",
     "direccion": "Cornudella del montsant 31-A",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/495-crossfit-lambda"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 170,
+    "tipo": "CrossFit",
     "nombre": "Costa Daurada CrossFit",
     "ciudad": "VilaSeca",
     "codigo_postal": "43815",
     "direccion": "Carrer De Les Comes N-5 F2",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/494-costa-daurada-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 171,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Tarragona",
     "ciudad": "Tarragona",
     "codigo_postal": "43006",
     "direccion": "Plom 25",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/493-crossfit-tarragona"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 172,
+    "tipo": "CrossFit",
     "nombre": "Zois CrossFit",
     "ciudad": "Tarragona",
     "codigo_postal": "43006",
     "direccion": "polígono industrial francoli parcela 9 nave 6",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/492-zois-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 173,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Cambrils",
     "ciudad": "Cambrils",
     "codigo_postal": "43850",
     "direccion": "Calle Mataranya, local 5 y 6",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/491-crossfit-cambrils"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 174,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Torredembarra",
     "ciudad": "Torredembarra",
     "codigo_postal": "43830",
     "direccion": "Carrer Sis Sector IX, 4A",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/490-crossfit-torredembarra"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 175,
+    "tipo": "CrossFit",
     "nombre": "CrossFit 43800",
     "ciudad": "Valls",
     "codigo_postal": "43800",
     "direccion": "Avinguda de Vilafranca del Penedès",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/489-crossfit-43800"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 176,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Loom",
     "ciudad": "Sabadell",
     "codigo_postal": "08205",
     "direccion": "Calle Cuba 7",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/488-crossfit-loom"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 177,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Line",
     "ciudad": "Sabadell",
     "codigo_postal": "08203",
     "direccion": "Passatge Bellatera #30",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/487-crossfit-line"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 178,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Edelweis",
     "ciudad": "Sabadell",
     "codigo_postal": "08205",
     "direccion": "C/ Raimon Casellas N1",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/486-crossfit-edelweis"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 179,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Facta Non Verba",
     "ciudad": "Cerdanyola",
     "codigo_postal": "08290",
     "direccion": "CARRETERA BARCELONA 133B",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/485-crossfit-facta-non-verba"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 180,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Sant Cugat del Vallés",
     "ciudad": "Cugat del Vallés",
     "codigo_postal": "08192",
     "direccion": "http://crossfitgreyfox.com/#horarios Sant",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/484-crossfit-sant-cugat-del-valles"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 181,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Grey Fox",
     "ciudad": "Barbera del Vallés",
     "codigo_postal": "08210",
     "direccion": "c/ Lisboa nº31",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/483-crossfit-grey-fox"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 182,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Terrasa",
     "ciudad": "Terrassa",
     "codigo_postal": "08227",
     "direccion": "Avinguda De Font I Sague, 15 Nau 4",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/482-crossfit-terrasa"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 183,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Occidental",
     "ciudad": "Terrasa",
     "codigo_postal": "08223",
     "direccion": "Angel Guimera 145",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/481-crossfit-occidental"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 184,
+    "tipo": "CrossFit",
     "nombre": "Crossfit Raval",
     "ciudad": "Barcelona",
     "codigo_postal": "08001",
     "direccion": "Reina Amalia 26 Bajos",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/480-crossfit-raval"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 185,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Distrito 08011",
     "ciudad": "Barcelona",
     "codigo_postal": "08011",
     "direccion": "Carrer de Muntaner, 67 bis (bajos)",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/479-crossfit-distrito-08011"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 186,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Balmes",
     "ciudad": "Barcelona",
     "codigo_postal": "08007",
     "direccion": "Valencia 234-236",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/478-crossfit-balmes"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 187,
+    "tipo": "CrossFit",
     "nombre": "Condal CrossFit Gracia",
     "ciudad": "Barcelona",
     "codigo_postal": "08012",
     "direccion": "Carrer Encarnació, 20",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/477-condal-crossfit-gracia"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 188,
+    "tipo": "CrossFit",
     "nombre": "Alpha Link CrossFit",
     "ciudad": "Barcelona",
     "codigo_postal": "08025",
     "direccion": "Carrer de Roger de Flor, 213",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/476-alpha-link-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 189,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Bruc",
     "ciudad": "Barcelona",
     "codigo_postal": "08010",
     "direccion": "Calle Bruc 24",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/475-crossfit-bruc"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 190,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Eixample",
     "ciudad": "Barcelona",
     "codigo_postal": "08010",
     "direccion": "Carrer Ausias Marc 45",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/474-crossfit-eixample"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 191,
+    "tipo": "CrossFit",
     "nombre": "Reebok CrossFit BCN",
     "ciudad": "Barcelona",
     "codigo_postal": "08013",
     "direccion": "C/ Ribes 25",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/473-reebok-crossfit-bcn"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 192,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Poblenou",
     "ciudad": "",
     "codigo_postal": "",
     "direccion": "C/ Joan d\\",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/472-crossfit-poblenou"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 193,
+    "tipo": "CrossFit",
     "nombre": "CrossFit LFS",
     "ciudad": "Barcelona",
     "codigo_postal": "08013",
     "direccion": "Carrer de Lepant, 169",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/471-crossfit-lfs"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 194,
+    "tipo": "CrossFit",
     "nombre": "Studio CrossFit",
     "ciudad": "Barcelona",
     "codigo_postal": "08025",
     "direccion": "Calle Provenza 529",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/470-studio-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 195,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Gala",
     "ciudad": "Barcelona",
     "codigo_postal": "08026",
     "direccion": "Carre del Pisto 3",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/469-crossfit-gala"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 196,
+    "tipo": "CrossFit",
     "nombre": "Condal CrossFit",
     "ciudad": "Barcelona",
     "codigo_postal": "08041",
     "direccion": "Passatge Rustullet 18",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/468-condal-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 197,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Fabra",
     "ciudad": "Barcelona",
     "codigo_postal": "08030",
     "direccion": "C/Manuel Sancho 11-13",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/467-crossfit-fabra"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 198,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Kudasai",
     "ciudad": "Barcelona",
     "codigo_postal": "08027",
     "direccion": "Avinguda Meridiana, 310 (access via Calle Filipines 1B)",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/466-crossfit-kudasai"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 199,
+    "tipo": "CrossFit",
     "nombre": "Sant Andreu CrossFit",
     "ciudad": "Barcelona",
     "codigo_postal": "08030",
     "direccion": "Calle Segre 71",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/465-sant-andreu-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 200,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Sant Martí",
     "ciudad": "Barcelona",
     "codigo_postal": "08019",
     "direccion": "Carrer de Venezuela 84",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/464-crossfit-sant-marti"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 201,
+    "tipo": "CrossFit",
     "nombre": "La Huella CrossFit",
     "ciudad": "Barcelona",
     "codigo_postal": "08029",
     "direccion": "Calle Provença 126 CAP",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/463-la-huella-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 202,
+    "tipo": "CrossFit",
     "nombre": "Max Grit CrossFit",
     "ciudad": "Barcelona",
     "codigo_postal": "08015",
     "direccion": "C/Viladomat 152 Bajos",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/462-max-grit-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 203,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Diagonal",
     "ciudad": "Barcelona",
     "codigo_postal": "08034",
     "direccion": "Jordi Girona, 1-3 (Campus Nord)",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/461-crossfit-diagonal"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 204,
+    "tipo": "CrossFit",
     "nombre": "CrossFit LCS",
     "ciudad": "Barcelona",
     "codigo_postal": "08028",
     "direccion": "c/Maria Barrientos, 16",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/460-crossfit-lcs"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 205,
+    "tipo": "CrossFit",
     "nombre": "CrossFit B23",
     "ciudad": "Esplugues de Llobregat",
     "codigo_postal": "08950",
     "direccion": "Angel Guimera 145",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/459-crossfit-b23"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 206,
+    "tipo": "CrossFit",
     "nombre": "CrossFit SJD",
     "ciudad": "Despi",
     "codigo_postal": "08970",
     "direccion": "Carrer Vallespir, 8 Sant Joan",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/458-crossfit-sjd"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 207,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Mas Llui",
     "ciudad": "Baixos Sant Feliu de Llobregat",
     "codigo_postal": "08980",
     "direccion": "Passeig Compte Vilardaga 148",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/457-crossfit-mas-llui"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 208,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Cornellá",
     "ciudad": "Cornellá de Llobregat",
     "codigo_postal": "08940",
     "direccion": "Verge de Montserrat s/n",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/456-crossfit-cornella"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 209,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Travessia",
     "ciudad": "Hospitalet de Llobregat",
     "codigo_postal": "08097",
     "direccion": "Travessia Industrial, 107 - 109",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/455-crossfit-travessia"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 210,
+    "tipo": "CrossFit",
     "nombre": "CrossFit BT",
     "ciudad": "Prat de Llobregat",
     "codigo_postal": "08820",
     "direccion": "Calle Tarragona 150 El",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/454-crossfit-bt"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 211,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Gavá",
     "ciudad": "Gava",
     "codigo_postal": "08850",
     "direccion": "Carrer de la Ciència, 41",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/453-crossfit-gava"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 212,
+    "tipo": "CrossFit",
     "nombre": "Area CrossFit",
     "ciudad": "Viladecans",
     "codigo_postal": "08840",
     "direccion": "C/ de la ciència nº39",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/452-area-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 213,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Box Castelldefels",
     "ciudad": "Castelldefels",
     "codigo_postal": "08860",
     "direccion": "Carrer Raurell nº2",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/451-crossfit-box-castelldefels"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 214,
+    "tipo": "CrossFit",
     "nombre": "CrossFit El Vendrell",
     "ciudad": "Vendrell",
     "codigo_postal": "43700",
     "direccion": "Calle Teixidors #16 El",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/450-crossfit-el-vendrell"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 215,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Do-Box",
     "ciudad": "Vendrell",
     "codigo_postal": "43700",
     "direccion": "Polígono Les Mates, 36 El",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/449-crossfit-do-box"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 216,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Blau",
     "ciudad": "Pere de Ribes",
     "codigo_postal": "08812",
     "direccion": "Carrer els Boters, 3 Sant",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/448-crossfit-blau"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 217,
+    "tipo": "CrossFit",
     "nombre": "CrossFit 08870",
     "ciudad": "Sitges",
     "codigo_postal": "08870",
     "direccion": "Centre Esportiu, Av. Santíssima Trinitat, 28",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/447-crossfit-08870"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 218,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Sitges",
     "ciudad": "Sitges",
     "codigo_postal": "08870",
     "direccion": "Avinguda Cami Pla 41",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/446-crossfit-sitges"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 219,
+    "tipo": "CrossFit",
     "nombre": "Inter CrossFit",
     "ciudad": "Molanta",
     "codigo_postal": "08799",
     "direccion": "Avinguda de Vilafranca del Penedès Sant Pere",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/445-inter-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 220,
+    "tipo": "CrossFit",
     "nombre": "One Mile CrossFit",
     "ciudad": "Molins de Rei",
     "codigo_postal": "08750",
     "direccion": "Calle Francesc Layret, 19",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/444-one-mile-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 221,
+    "tipo": "CrossFit",
     "nombre": "CrossFit 3 Viles",
     "ciudad": "Montalt",
     "codigo_postal": "08394",
     "direccion": "Avinguda Montaltnou, 58, 2.1 Sant Vicen&ccedil; de",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/443-crossfit-3-viles-2"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 222,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Girona Est",
     "ciudad": "Girona",
     "codigo_postal": "17252",
     "direccion": "Carrer ceps 2, baixos calonge",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/442-crossfit-girona-est"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 223,
+    "tipo": "CrossFit",
     "nombre": "Room 5 CrossFit",
     "ciudad": "Manresa",
     "codigo_postal": "08242",
     "direccion": "Carrer del Bisbe Torras i Bages 38",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/441-room-5-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 224,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Manresa",
     "ciudad": "",
     "codigo_postal": "",
     "direccion": "Moixeró 3 Poligon Industrial Riu d\\",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/440-crossfit-manresa"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 225,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Tarrega",
     "ciudad": "",
     "codigo_postal": "",
     "direccion": "C/Vall d\\",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/439-crossfit-tarrega"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 226,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Igualada",
     "ciudad": "Igualada",
     "codigo_postal": "08700",
     "direccion": "Carrer Alemanya nº 27",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/438-crossfit-igualada"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 227,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Rack n Roll",
     "ciudad": "Abrera",
     "codigo_postal": "08630",
     "direccion": "Camí dels Sagraments 16",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/437-crossfit-rack-n-roll"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 228,
+    "tipo": "CrossFit",
     "nombre": "CrossFit SAB",
     "ciudad": "Andreu de la Barca",
     "codigo_postal": "08740",
     "direccion": "Passage Jaen 1 Sant",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/436-crossfit-sab"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 229,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Lynx",
     "ciudad": "Barcelona",
     "codigo_postal": "08173",
     "direccion": "Avinguda de les Corts Catalanes 5-7",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/435-crossfit-lynx"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 230,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Betulo",
     "ciudad": "Badalona",
     "codigo_postal": "08911",
     "direccion": "Joaquim Vayreda, 8-10",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/434-crossfit-betulo"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 231,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Mollet del Vallés",
     "ciudad": "Mollet del Vallés",
     "codigo_postal": "08100",
     "direccion": "Avda. Ca´n Prat, s/n",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/433-crossfit-mollet-del-valles"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 232,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Mataró",
     "ciudad": "Mataró",
     "codigo_postal": "08302",
     "direccion": "Abat Escarre 25",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/432-crossfit-mataro"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 233,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Iluro",
     "ciudad": "Mataró",
     "codigo_postal": "08302",
     "direccion": "Via Sèrgia, 32, #6",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/431-crossfit-iluro"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 234,
+    "tipo": "CrossFit",
     "nombre": "CrossFit 3 Viles",
     "ciudad": "Montalt",
     "codigo_postal": "08394",
     "direccion": "Avinguda Montaltnou, 58, 2.1 Sant Vicen&ccedil; de",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/430-crossfit-3-viles"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 235,
+    "tipo": "CrossFit",
     "nombre": "Món CrossFit",
     "ciudad": "Pineda de Mar",
     "codigo_postal": "08397",
     "direccion": "c/Montseny, 84",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/429-mon-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 236,
+    "tipo": "CrossFit",
     "nombre": "CrossFit 77 Feet Lloret de Mar",
     "ciudad": "Lloret de Mar",
     "codigo_postal": "17310",
     "direccion": "Avinguda de les Alegries 75, Nau 4",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/428-crossfit-77-feet-lloret-de-mar"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 237,
+    "tipo": "CrossFit",
     "nombre": "CrossFit 77 Feet",
     "ciudad": "",
     "codigo_postal": "",
     "direccion": "Avinguda de l\\",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/427-crossfit-77-feet"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 238,
+    "tipo": "CrossFit",
     "nombre": "Ozona CrossFit",
     "ciudad": "Vic",
     "codigo_postal": "08500",
     "direccion": "C/ Costa d’ en Paratge, 18 – Poligon Ind. Sot Pradals",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/426-ozona-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 239,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Garrotxa",
     "ciudad": "Girona",
     "codigo_postal": "17178",
     "direccion": "C/ De La Tecnica 11",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/425-crossfit-garrotxa"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 240,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Olot",
     "ciudad": "",
     "codigo_postal": "",
     "direccion": "Carretera d\\",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/424-crossfit-olot"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 241,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Wind La Seu d\\",
     "ciudad": "Urgell",
     "codigo_postal": "25710",
     "direccion": "Polígono Industrial La Seu, Carrer F La Seu d",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/423-crossfit-wind-la-seu-d-urgell"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 242,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Puigcerdá",
     "ciudad": "Puigcerdá",
     "codigo_postal": "17520",
     "direccion": "1 Carrer Puigmal",
     "ccaa": "Cataluña",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-cataluna/422-crossfit-puigcerda"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 243,
+    "tipo": "CrossFit",
     "nombre": "Estación PZL CrossFit",
     "ciudad": "Pozuelo de Alarcón",
     "codigo_postal": "28224",
     "direccion": "Grupo Escolar, 6",
     "ccaa": "Comunidad de Madrid",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-madrid/622-estacion-pzl-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 244,
+    "tipo": "CrossFit",
     "nombre": "Capsule CrossFit",
     "ciudad": "Boadilla del Monte",
     "codigo_postal": "28660",
     "direccion": "Avenida Prado del Espino 5",
     "ccaa": "Comunidad de Madrid",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-madrid/621-capsule-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 245,
+    "tipo": "CrossFit",
     "nombre": "CrossFit La Finca",
     "ciudad": "Pozuelo de Alarcón",
     "codigo_postal": "28223",
     "direccion": "Paseo Del Club Deportivo, 4. (Somosaguas).",
     "ccaa": "Comunidad de Madrid",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-madrid/620-crossfit-la-finca"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 246,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Soforem",
     "ciudad": "Rozas",
     "codigo_postal": "28232",
     "direccion": "Cabo Rufino Lázaro 3 Las",
     "ccaa": "Comunidad de Madrid",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-madrid/619-crossfit-soforem"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 247,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Las Rozas",
     "ciudad": "Rozas",
     "codigo_postal": "28232",
     "direccion": "5D Dublin Las",
     "ccaa": "Comunidad de Madrid",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-madrid/618-crossfit-las-rozas"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 248,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Norte Algete",
     "ciudad": "Algete",
     "codigo_postal": "28110",
     "direccion": "Calle Rio Tormes 5, Poligono Industrial El Nogal",
     "ccaa": "Comunidad de Madrid",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-madrid/617-crossfit-norte-algete"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 249,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Saz",
     "ciudad": "Saz de Jarama",
     "codigo_postal": "28140",
     "direccion": "C/Madrid, 21B Fuente El",
     "ccaa": "Comunidad de Madrid",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-madrid/616-crossfit-saz"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 250,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Maliciosa",
     "ciudad": "Moralzarzal",
     "codigo_postal": "28411",
     "direccion": "C/ Capellanía, 38",
     "ccaa": "Comunidad de Madrid",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-madrid/615-crossfit-maliciosa"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 251,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Collado Villalba",
     "ciudad": "Villalba",
     "codigo_postal": "28411",
     "direccion": "Calle Granito 7, Proligono P29 Collado",
     "ccaa": "Comunidad de Madrid",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-madrid/614-crossfit-collado-villalba"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 252,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Colmenar Viejo",
     "ciudad": "Viejo",
     "codigo_postal": "28770",
     "direccion": "Calle Menor S/N , Nave 36-37 Colmenar",
     "ccaa": "Comunidad de Madrid",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-madrid/613-crossfit-colmenar-viejo"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 253,
+    "tipo": "CrossFit",
     "nombre": "CrossFit M5 Torrejón",
     "ciudad": "Torrejón de Ardoz",
     "codigo_postal": "28850",
     "direccion": "Avenida de la Constitución, 8",
     "ccaa": "Comunidad de Madrid",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-madrid/252-crossfit-m5-torrejon"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 254,
+    "tipo": "CrossFit",
     "nombre": "CrossFit 03180",
     "ciudad": "Torrevieja",
     "codigo_postal": "03183",
     "direccion": "C/Ramon Freixa N2",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/537-crossfit-03180"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 255,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Orihuela",
     "ciudad": "Orihuela",
     "codigo_postal": "03300",
     "direccion": "Oriolanos Ausentes S/n",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/536-crossfit-orihuela"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 256,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Almoradí",
     "ciudad": "Almoradí",
     "codigo_postal": "03160",
     "direccion": "C/Europa N6",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/535-crossfit-almoradi"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 257,
+    "tipo": "CrossFit",
     "nombre": "CrossFit GRM",
     "ciudad": "Guardamar del Segura",
     "codigo_postal": "03140",
     "direccion": "Aparadores",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/534-crossfit-grm"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 258,
+    "tipo": "CrossFit",
     "nombre": "CrossFit 03130",
     "ciudad": "Pola",
     "codigo_postal": "03130",
     "direccion": "Nave II, Ctra de Elche, km 21 Santa",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/533-crossfit-03130"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 259,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Elche",
     "ciudad": "Elche",
     "codigo_postal": "03690",
     "direccion": "Carrer Jose Sanchez Saez, 9",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/532-crossfit-elche"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 260,
+    "tipo": "CrossFit",
     "nombre": "CrossFit ALC",
     "ciudad": "Alicante",
     "codigo_postal": "03007",
     "direccion": "Calle Poeta Pastor, 8",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/531-crossfit-alc"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 261,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Alicante",
     "ciudad": "Alicante",
     "codigo_postal": "03008",
     "direccion": "Ladera Actor Arturo Lledó, 3",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/530-crossfit-alicante"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 262,
+    "tipo": "CrossFit",
     "nombre": "Luceros CrossFit",
     "ciudad": "Alicante",
     "codigo_postal": "03001",
     "direccion": "Calle Segura, 9",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/529-luceros-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 263,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Playa San Juan",
     "ciudad": "Alicante",
     "codigo_postal": "03540",
     "direccion": "Avda. Goleta 11",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/528-crossfit-playa-san-juan"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 264,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Rabasa",
     "ciudad": "Alicante",
     "codigo_postal": "03009",
     "direccion": "Calle Fortuny N°3",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/527-crossfit-rabasa"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 265,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Costa Blanca",
     "ciudad": "C San Vicente del Raspeig",
     "codigo_postal": "03690",
     "direccion": "Calle Zinc nº7-",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/526-crossfit-costa-blanca"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 266,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Blue Wolf",
     "ciudad": "Vicente del Raspeig",
     "codigo_postal": "03690",
     "direccion": "C/ las Herrerías, 2 San",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/525-crossfit-blue-wolf"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 267,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Finestrat",
     "ciudad": "Finestrat",
     "codigo_postal": "03509",
     "direccion": "Avinguda País Valencià, 21",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/524-crossfit-finestrat"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 268,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Albir",
     "ciudad": "Alfaz del Pi",
     "codigo_postal": "03581",
     "direccion": "Calle Santo Domingo 8, Partida Albir",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/523-crossfit-albir"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 269,
+    "tipo": "CrossFit",
     "nombre": "KGM CrossFit",
     "ciudad": "Elda",
     "codigo_postal": "03600",
     "direccion": "POLIGONO INDUSTRIAL CAMPO ALTO",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/522-kgm-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 270,
+    "tipo": "CrossFit",
     "nombre": "Crossfit Ambit",
     "ciudad": "Elda",
     "codigo_postal": "03610",
     "direccion": "Puig Campana 24 Petrer",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/521-crossfit-ambit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 271,
+    "tipo": "CrossFit",
     "nombre": "CrossFit 104",
     "ciudad": "Ibi",
     "codigo_postal": "03440",
     "direccion": "calle Salamanca numero 4",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/520-crossfit-104"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 272,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Alcoy",
     "ciudad": "Alcoy",
     "codigo_postal": "03804",
     "direccion": "Olivar De La Bassa 22",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/519-crossfit-alcoy"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 273,
+    "tipo": "CrossFit",
     "nombre": "Vita CrossFit",
     "ciudad": "Almoines",
     "codigo_postal": "46723",
     "direccion": "Llanterners 19",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/518-vita-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 274,
+    "tipo": "CrossFit",
     "nombre": "CrossFit La Ribera",
     "ciudad": "Alberic",
     "codigo_postal": "46260",
     "direccion": "C/ Alasquer s/n Poligono Industrial Sector 1 Parcela 35",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/516-crossfit-la-ribera"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 275,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Alzira",
     "ciudad": "Alzira",
     "codigo_postal": "46600",
     "direccion": "Ctra, Albalat, 47 Nave 8-16",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/515-crossfit-alzira"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 276,
+    "tipo": "CrossFit",
     "nombre": "CrossFit 980",
     "ciudad": "Antonio de Benageber",
     "codigo_postal": "46184",
     "direccion": "C/Pasarell,6 San",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/514-crossfit-980"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 277,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Uke",
     "ciudad": "Valencia",
     "codigo_postal": "46185",
     "direccion": "Calle Atenas 11, Poligono Industrial Mas de Tous",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/513-crossfit-uke"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 278,
+    "tipo": "CrossFit",
     "nombre": "MiBox CrossFit",
     "ciudad": "Sedavi",
     "codigo_postal": "46910",
     "direccion": "Sequia Calvera 28",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/512-mibox-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 279,
+    "tipo": "CrossFit",
     "nombre": "CV CrossFit",
     "ciudad": "Manises",
     "codigo_postal": "46940",
     "direccion": "Avda. Dels Arcs n:18",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/511-cv-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 280,
+    "tipo": "CrossFit",
     "nombre": "CrossFit North West Paterna",
     "ciudad": "Paterna",
     "codigo_postal": "46890",
     "direccion": "c/Algepser 64-5",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/510-crossfit-north-west-paterna"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 281,
+    "tipo": "CrossFit",
     "nombre": "MV CrossFit",
     "ciudad": "Valencia",
     "codigo_postal": "46015",
     "direccion": "Carrer del Camp del Túria S/N",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/509-mv-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 282,
+    "tipo": "CrossFit",
     "nombre": "Full CrossFit Benimaclet",
     "ciudad": "Valencia",
     "codigo_postal": "46020",
     "direccion": "Calle Leonor Jovani 8",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/508-full-crossfit-benimaclet"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 283,
+    "tipo": "CrossFit",
     "nombre": "Nexo CrossFit",
     "ciudad": "Valencia",
     "codigo_postal": "46009",
     "direccion": "Calle del Arzobispo Fabian y Fuero 21",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/507-nexo-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 284,
+    "tipo": "CrossFit",
     "nombre": "CrossFit VLC",
     "ciudad": "Valencia",
     "codigo_postal": "46015",
     "direccion": "C/ Valle de la Ballestera Nº62",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/506-crossfit-vlc"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 285,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Ruzafa",
     "ciudad": "Valencia",
     "codigo_postal": "46005",
     "direccion": "Pedro III El Grande",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/505-crossfit-ruzafa"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 286,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Valencia",
     "ciudad": "Valencia",
     "codigo_postal": "46007",
     "direccion": "Calle Estrella 20 bajo",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/504-crossfit-valencia"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 287,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Grau",
     "ciudad": "Valencia",
     "codigo_postal": "46204",
     "direccion": "Calle Juan Verdeguer 2",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/503-crossfit-grau"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 288,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Black Tower",
     "ciudad": "Villareal",
     "codigo_postal": "12540",
     "direccion": "Pol. Industrial Azulejera La Plana nave 29",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/502-crossfit-black-tower-4"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 289,
+    "tipo": "CrossFit",
     "nombre": "CrossFit 4 Friends",
     "ciudad": "Villareal",
     "codigo_postal": "12540",
     "direccion": "19 Avenida de Grecia",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/501-crossfit-4-friends"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 290,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Castellón de la Plana",
     "ciudad": "Castellón",
     "codigo_postal": "12005",
     "direccion": "Avda Almazora Nº 37",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/500-crossfit-castellon-de-la-plana"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 291,
+    "tipo": "CrossFit",
     "nombre": "CrossFit 393",
     "ciudad": "Castellón de la Plana",
     "codigo_postal": "12005",
     "direccion": "Av. de Casalduch, 49",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/499-crossfit-393"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 292,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Vinaros",
     "ciudad": "Vinarós",
     "codigo_postal": "12500",
     "direccion": "E, Calle B Pp-1, 15",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/498-crossfit-vinaros"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 293,
+    "tipo": "CrossFit",
     "nombre": "Crossfit Black Tower",
     "ciudad": "Vila-real",
     "codigo_postal": "12540",
     "direccion": "Polígono Industrial Alaplana nave 34",
     "ccaa": "Comunitat Valenciana",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-valencia/247-crossfit-black-tower"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 294,
+    "tipo": "CrossFit",
     "nombre": "Cerasus Crossfit",
     "ciudad": "Plasencia",
     "codigo_postal": "10600",
     "direccion": "C./ Leonardo da Vinci, 6",
     "ccaa": "Extremadura",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-extremadura/612-cerasus-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 295,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Lagertha",
     "ciudad": "Cáceres",
     "codigo_postal": "10004",
     "direccion": "NICOLAS COPERNICO 14 Y 16",
     "ccaa": "Extremadura",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-extremadura/611-crossfit-lagertha"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 296,
+    "tipo": "CrossFit",
     "nombre": "Enso CrossFit",
     "ciudad": "Cáceres",
     "codigo_postal": "10002",
     "direccion": "Juan de la Cierva, 6-8",
     "ccaa": "Extremadura",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-extremadura/610-enso-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 297,
+    "tipo": "CrossFit",
     "nombre": "CrossFit VTC",
     "ciudad": "Montijo",
     "codigo_postal": "06480",
     "direccion": "AVENIDA DEL PROGRESO, 16",
     "ccaa": "Extremadura",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-extremadura/554-crossfit-vtc"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 298,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Gemina",
     "ciudad": "Badajoz",
     "codigo_postal": "06800",
     "direccion": "Avenida Juan Pablo II 59",
     "ccaa": "Extremadura",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-extremadura/551-crossfit-gemina-2"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 299,
+    "tipo": "CrossFit",
     "nombre": "Valhalla Crossfit",
     "ciudad": "Badajoz",
     "codigo_postal": "06008",
     "direccion": "Ricardo Carapeto Zambrano n146<br />Badajoz",
     "ccaa": "Extremadura",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-extremadura/550-valhalla-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 300,
+    "tipo": "CrossFit",
     "nombre": "SiO2 CrossFit",
     "ciudad": "Badajoz",
     "codigo_postal": "06006",
     "direccion": "Poligono Industrial El Nevero, Complejo La Mar, Fase 2 Nave 4",
     "ccaa": "Extremadura",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-extremadura/549-sio2-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 301,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Gemina",
     "ciudad": "Mérida",
     "codigo_postal": "06800",
     "direccion": "Avenida Juan Pablo II 59",
     "ccaa": "Extremadura",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-extremadura/517-crossfit-gemina"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 302,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Vigo",
     "ciudad": "Vigo",
     "codigo_postal": "36392",
     "direccion": "Avenida Ricardo Mella 282",
     "ccaa": "Galicia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-galicia/569-crossfit-vigo"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 303,
+    "tipo": "CrossFit",
     "nombre": "CTS CrossFit",
     "ciudad": "Vigo",
     "codigo_postal": "36213",
     "direccion": "Calle Canicouva 6",
     "ccaa": "Galicia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-galicia/568-cts-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 304,
+    "tipo": "CrossFit",
     "nombre": "Distrito CrossFit 36200",
     "ciudad": "Vigo",
     "codigo_postal": "36208",
     "direccion": "Coruña, 7",
     "ccaa": "Galicia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-galicia/567-distrito-crossfit-36200"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 305,
+    "tipo": "CrossFit",
     "nombre": "CrossFit 362",
     "ciudad": "Vigo",
     "codigo_postal": "36203",
     "direccion": "Rua María de Berdiales, 15",
     "ccaa": "Galicia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-galicia/566-crossfit-362"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 306,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Norte Redondela",
     "ciudad": "Pontevedra",
     "codigo_postal": "36817",
     "direccion": "Rua do Muro,18",
     "ccaa": "Galicia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-galicia/565-crossfit-norte-redondela"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 307,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Salnés",
     "ciudad": "Pontevedra",
     "codigo_postal": "36969",
     "direccion": "Carretera de Sanxenxo a Nantes Km 2",
     "ccaa": "Galicia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-galicia/564-crossfit-salnes"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 308,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Pontevedra",
     "ciudad": "Pontevedra",
     "codigo_postal": "36004",
     "direccion": "Avenida de Lugo n.68 nave 2",
     "ccaa": "Galicia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-galicia/563-crossfit-pontevedra"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 309,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Turoqua",
     "ciudad": "Pontevedra",
     "codigo_postal": "36005",
     "direccion": "Rua Cordón N°11",
     "ccaa": "Galicia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-galicia/562-crossfit-turoqua"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 310,
+    "tipo": "CrossFit",
     "nombre": "Old Metal CrossFit",
     "ciudad": "Vilagarcía de Arousa",
     "codigo_postal": "36600",
     "direccion": "Box Oficial de CrossFit en Villagarcía.<br />Entrenamiento basado en movimientos funcionales, constantemente variados, ejecutados a alta intensidad.",
     "ccaa": "Galicia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-galicia/561-old-metal-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 311,
+    "tipo": "CrossFit",
     "nombre": "Brick CrossFit Santiago de Compostela",
     "ciudad": "Santiago de Compostela",
     "codigo_postal": "15706",
     "direccion": "Avenida Syra Alonso 2 Bajo",
     "ccaa": "Galicia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-galicia/560-brick-crossfit-santiago-de-compostela"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 312,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Berkana",
     "ciudad": "Santiago de Compostela",
     "codigo_postal": "15707",
     "direccion": "Rúa República Checa nº7",
     "ccaa": "Galicia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-galicia/559-crossfit-berkana"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 313,
+    "tipo": "CrossFit",
     "nombre": "Artabros CrossFit",
     "ciudad": "Coruña",
     "codigo_postal": "15008",
     "direccion": "Avenida de Finisterre, nº 287. Poligono de la Grela A",
     "ccaa": "Galicia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-galicia/558-artabros-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 314,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Coruña",
     "ciudad": "Crouña",
     "codigo_postal": "15008",
     "direccion": "Rúa Severo Ochoa, 69 - 1 A",
     "ccaa": "Galicia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-galicia/557-crossfit-coruna"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 315,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Bergondo",
     "ciudad": "Bergondo",
     "codigo_postal": "15165",
     "direccion": "Rua Parroquia de Guisamo",
     "ccaa": "Galicia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-galicia/556-crossfit-bergondo"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 316,
+    "tipo": "CrossFit",
     "nombre": "Lucus CrossFit",
     "ciudad": "Lugo",
     "codigo_postal": "27298",
     "direccion": "Estrada da Coruña 28",
     "ccaa": "Galicia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-galicia/555-lucus-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 317,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Ourense",
     "ciudad": "Ourense",
     "codigo_postal": "32001",
     "direccion": "Paseo Praia Fluvial nº8",
     "ccaa": "Galicia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-galicia/553-crossfit-ourense"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 318,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Rocklife",
     "ciudad": "Zamorana",
     "codigo_postal": "32001",
     "direccion": "Rua 3, #4 A",
     "ccaa": "Galicia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-galicia/552-crossfit-rocklife"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 319,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Colen",
     "ciudad": "Rioja",
     "codigo_postal": "26009",
     "direccion": "C/ Candado 4 Nº1 Poligono Cantabria II La",
     "ccaa": "La Rioja",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-la-rioja/574-crossfit-colen"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 320,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Big Rhino",
     "ciudad": "Logroño",
     "codigo_postal": "26009",
     "direccion": "Calle Soto Galo, 20",
     "ccaa": "La Rioja",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-la-rioja/573-crossfit-big-rhino"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 321,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Logroño",
     "ciudad": "Logroño",
     "codigo_postal": "26006",
     "direccion": "C/ Planillo La Portalada 2",
     "ccaa": "La Rioja",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-la-rioja/572-crossfit-logrono"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 322,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Wan",
     "ciudad": "Logroño",
     "codigo_postal": "26007",
     "direccion": "Calle Prado Viejo 28, #2 Calle Prado Viejo 28, #2",
     "ccaa": "La Rioja",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-la-rioja/571-crossfit-wan"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 323,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Calahorra 26500",
     "ciudad": "Calahorra",
     "codigo_postal": "26500",
     "direccion": "Camino La Algarrada numero 16",
     "ccaa": "La Rioja",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-la-rioja/570-crossfit-calahorra-26500"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 324,
+    "tipo": "CrossFit",
     "nombre": "Valknut CrossFit",
     "ciudad": "Alcantarilla",
     "codigo_postal": "30837",
     "direccion": "Calle San Joaquin, 12",
     "ccaa": "Región de Murcia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-murcia/585-valknut-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 325,
+    "tipo": "CrossFit",
     "nombre": "NDL CrossFit",
     "ciudad": "Palmar",
     "codigo_postal": "30120",
     "direccion": "Avda El Palmar 580 El",
     "ccaa": "Región de Murcia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-murcia/583-ndl-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 326,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Ramsés",
     "ciudad": "Molina de Segura",
     "codigo_postal": "30500",
     "direccion": "Calle Manzano",
     "ccaa": "Región de Murcia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-murcia/582-crossfit-ramses"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 327,
+    "tipo": "CrossFit",
     "nombre": "CrossFit El Tiro",
     "ciudad": "Murcia",
     "codigo_postal": "30100",
     "direccion": "Antonio Belmonte Abellán",
     "ccaa": "Región de Murcia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-murcia/581-crossfit-el-tiro"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 328,
+    "tipo": "CrossFit",
     "nombre": "VivoBox CrossFit",
     "ciudad": "Llano de Brujas",
     "codigo_postal": "30007",
     "direccion": "Crta Alicante N 217",
     "ccaa": "Región de Murcia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-murcia/580-vivobox-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 329,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Yeku",
     "ciudad": "Cartagena",
     "codigo_postal": "30393",
     "direccion": "Carretera Mazarrón km1",
     "ccaa": "Región de Murcia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-murcia/579-crossfit-yeku"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 330,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Kalunga",
     "ciudad": "Urreas San Javier",
     "codigo_postal": "30730",
     "direccion": "Calle Sierra de La Muela S/N pol Industrial Los",
     "ccaa": "Región de Murcia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-murcia/578-crossfit-kalunga"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 331,
+    "tipo": "CrossFit",
     "nombre": "Wild Soul CrossFit",
     "ciudad": "Pedro del Pinatar",
     "codigo_postal": "30740",
     "direccion": "POLIGONO LAS BEATAS CALLE C, Nº5 San",
     "ccaa": "Región de Murcia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-murcia/577-wild-soul-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 332,
+    "tipo": "CrossFit",
     "nombre": "Kumuka CrossFit",
     "ciudad": "Cartagena",
     "codigo_postal": "30392",
     "direccion": "C/ SOFIA, PARCELA 7",
     "ccaa": "Región de Murcia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-murcia/576-kumuka-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 333,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Lorca",
     "ciudad": "Lorca",
     "codigo_postal": "30800",
     "direccion": "Box Training Center, Carretera de aguilas km1",
     "ccaa": "Región de Murcia",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-murcia/575-crossfit-lorca"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 334,
+    "tipo": "CrossFit",
     "nombre": "CrossFit SK",
     "ciudad": "Pamplona",
     "codigo_postal": "31192",
     "direccion": "Pol. Ind. Talluntxe-II",
     "ccaa": "Navarra",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-navarra/589-crossfit-sk"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 335,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Runa",
     "ciudad": "Cordovilla",
     "codigo_postal": "31191",
     "direccion": "Polígono Cordovilla Calle A, Nave 26",
     "ccaa": "Navarra",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-navarra/588-crossfit-runa"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 336,
+    "tipo": "CrossFit",
     "nombre": "Queiron CrossFit",
     "ciudad": "Pamplona",
     "codigo_postal": "31192",
     "direccion": "Polígono Industrial Mutilva Baja, A43-45",
     "ccaa": "Navarra",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-navarra/587-queiron-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 337,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Pamplona",
     "ciudad": "Andoain",
     "codigo_postal": "31013",
     "direccion": "Avenida Hermanos Noain 25",
     "ccaa": "Navarra",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-navarra/586-crossfit-pamplona"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 338,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Tudela",
     "ciudad": "Tudela",
     "codigo_postal": "31500",
     "direccion": "Polígono Industrial Municipal Vial C Nave 5",
     "ccaa": "Navarra",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-navarra/336-crossfit-tudela"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 339,
+    "tipo": "CrossFit",
     "nombre": "Basoa CrossFit",
     "ciudad": "Zarautz",
     "codigo_postal": "20800",
     "direccion": "Araba kalea 45 Pab IJ",
     "ccaa": "País Vasco",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-el-pais-vasco/608-basoa-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 340,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Zarautz",
     "ciudad": "Zarautz",
     "codigo_postal": "20800",
     "direccion": "Calle Bizkaia n67 local n7",
     "ccaa": "País Vasco",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-el-pais-vasco/607-crossfit-zarautz"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 341,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Koroibos Tolosa",
     "ciudad": "",
     "codigo_postal": "20400",
     "direccion": "Poligono Usabal Nº3 C5",
     "ccaa": "País Vasco",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-el-pais-vasco/606-crossfit-koroibos-tolosa"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 342,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Txindoki",
     "ciudad": "Arama",
     "codigo_postal": "20248",
     "direccion": "Poligono Isuses, 8",
     "ccaa": "País Vasco",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-el-pais-vasco/605-crossfit-txindoki"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 343,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Bilbao",
     "ciudad": "Bilbao",
     "codigo_postal": "48012",
     "direccion": "2 Pablo Alzola",
     "ccaa": "País Vasco",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-el-pais-vasco/604-crossfit-bilbao"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 344,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Basauri",
     "ciudad": "Basauri",
     "codigo_postal": "48970",
     "direccion": "Jaga Kalea 1",
     "ccaa": "País Vasco",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-el-pais-vasco/603-crossfit-basauri"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 345,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Urquijo",
     "ciudad": "Bilbao",
     "codigo_postal": "48008",
     "direccion": "Urquijo 27",
     "ccaa": "País Vasco",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-el-pais-vasco/602-crossfit-urquijo"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 346,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Sarriko",
     "ciudad": "Bilbao",
     "codigo_postal": "48015",
     "direccion": "Calle Juan de Urbieta s/n",
     "ccaa": "País Vasco",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-el-pais-vasco/601-crossfit-sarriko"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 347,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Last Line",
     "ciudad": "Zamudia",
     "codigo_postal": "48170",
     "direccion": "Polygon Torrelaragoiti 4 Hall 2",
     "ccaa": "País Vasco",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-el-pais-vasco/600-crossfit-last-line"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 348,
+    "tipo": "CrossFit",
     "nombre": "Crossfit Icaro",
     "ciudad": "Trapacaran",
     "codigo_postal": "48510",
     "direccion": "Polígono El Juncal Barrio 7",
     "ccaa": "País Vasco",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-el-pais-vasco/599-crossfit-icaro"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 349,
+    "tipo": "CrossFit",
     "nombre": "Red Grizzly CrossFit",
     "ciudad": "Leioa",
     "codigo_postal": "48940",
     "direccion": "Avda Amaia 2 Pabellón 27",
     "ccaa": "País Vasco",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-el-pais-vasco/598-red-grizzly-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 350,
+    "tipo": "CrossFit",
     "nombre": "CrossFit KKUK",
     "ciudad": "Berango",
     "codigo_postal": "48640",
     "direccion": "Sabino Arana 58",
     "ccaa": "País Vasco",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-el-pais-vasco/597-crossfit-kkuk"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 351,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Donosti",
     "ciudad": "Camino de Portuetxe San Sebastián",
     "codigo_postal": "20018",
     "direccion": "",
     "ccaa": "País Vasco",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-el-pais-vasco/595-crossfit-donosti"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 352,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Zurriola",
     "ciudad": "Donostia",
     "codigo_postal": "20002",
     "direccion": "Avenida Zurriola 46",
     "ccaa": "País Vasco",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-el-pais-vasco/594-crossfit-zurriola"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 353,
+    "tipo": "CrossFit",
     "nombre": "Indar CrossFit",
     "ciudad": "Donostia",
     "codigo_postal": "20014",
     "direccion": "Paseo Ubarburu 50-52 (Nave 1) Poligono 27",
     "ccaa": "País Vasco",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-el-pais-vasco/593-indar-crossfit"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 354,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Donosti Pasaia Box",
     "ciudad": "Donostia",
     "codigo_postal": "20016",
     "direccion": "c.Buenavista 30",
     "ccaa": "País Vasco",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-el-pais-vasco/592-crossfit-donosti-pasaia-box"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 355,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Irún",
     "ciudad": "Irún",
     "codigo_postal": "20303",
     "direccion": "Hilanderas 76",
     "ccaa": "País Vasco",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-el-pais-vasco/591-crossfit-irun"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
   },
   {
     "id": 356,
+    "tipo": "CrossFit",
     "nombre": "CrossFit Drakar Hondarribia",
     "ciudad": "Hondarribia",
     "codigo_postal": "20280",
     "direccion": "Polígono Industrial Txiplao, nº 22",
     "ccaa": "País Vasco",
-    "web": "https://buscaunbox.com/box-de-crossfit/box-de-crossfit-en-el-pais-vasco/590-crossfit-drakar-hondarribia"
+    "telefono": "",
+    "web": "",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": 357,
+    "tipo": "HYROX",
+    "nombre": "InSports Barcelona",
+    "ciudad": "Barcelona",
+    "codigo_postal": "08017",
+    "direccion": "Carrer de Mandri, 56",
+    "ccaa": "Cataluña",
+    "telefono": "+34 936 38 10 10",
+    "web": "https://insports.es",
+    "lat": 41.4014,
+    "lng": 2.1347
+  },
+  {
+    "id": 358,
+    "tipo": "HYROX",
+    "nombre": "InSports Madrid",
+    "ciudad": "Madrid",
+    "codigo_postal": "28046",
+    "direccion": "Paseo de la Castellana, 259",
+    "ccaa": "Comunidad de Madrid",
+    "telefono": "",
+    "web": "https://insports.es",
+    "lat": 40.4842,
+    "lng": -3.6878
+  },
+  {
+    "id": 359,
+    "tipo": "HYROX",
+    "nombre": "WOD&FIT Arturo Soria",
+    "ciudad": "Madrid",
+    "codigo_postal": "28043",
+    "direccion": "Calle de Arturo Soria, 200",
+    "ccaa": "Comunidad de Madrid",
+    "telefono": "",
+    "web": "https://wodandfit.es",
+    "lat": 40.4529,
+    "lng": -3.6381
+  },
+  {
+    "id": 360,
+    "tipo": "HYROX",
+    "nombre": "WOD&FIT Chamberí",
+    "ciudad": "Madrid",
+    "codigo_postal": "28010",
+    "direccion": "Calle de Alonso Cano, 40",
+    "ccaa": "Comunidad de Madrid",
+    "telefono": "",
+    "web": "https://wodandfit.es",
+    "lat": 40.4349,
+    "lng": -3.7021
+  },
+  {
+    "id": 361,
+    "tipo": "HYROX",
+    "nombre": "Sanas Fitness",
+    "ciudad": "Madrid",
+    "codigo_postal": "28036",
+    "direccion": "Calle de Alberto Alcocer, 7",
+    "ccaa": "Comunidad de Madrid",
+    "telefono": "+34 913 59 79 79",
+    "web": "https://sanasfitness.com",
+    "lat": 40.4637,
+    "lng": -3.6881
+  },
+  {
+    "id": 362,
+    "tipo": "HYROX",
+    "nombre": "Functional Training Center (FTC) Barcelona",
+    "ciudad": "Barcelona",
+    "codigo_postal": "08005",
+    "direccion": "Carrer de la Marina, 16",
+    "ccaa": "Cataluña",
+    "telefono": "",
+    "web": "",
+    "lat": 41.3885,
+    "lng": 2.1973
+  },
+  {
+    "id": 363,
+    "tipo": "HYROX",
+    "nombre": "Sport Wellness Zaragoza",
+    "ciudad": "Zaragoza",
+    "codigo_postal": "50008",
+    "direccion": "Paseo Fernando el Católico, 71",
+    "ccaa": "Aragón",
+    "telefono": "",
+    "web": "",
+    "lat": 41.6519,
+    "lng": -0.9029
+  },
+  {
+    "id": 364,
+    "tipo": "Funcional",
+    "nombre": "Barry's Bootcamp Madrid",
+    "ciudad": "Madrid",
+    "codigo_postal": "28001",
+    "direccion": "Calle de Goya, 6",
+    "ccaa": "Comunidad de Madrid",
+    "telefono": "",
+    "web": "https://www.barrys.com/location/madrid/",
+    "lat": 40.4258,
+    "lng": -3.6839
+  },
+  {
+    "id": 365,
+    "tipo": "Funcional",
+    "nombre": "Barry's Bootcamp Barcelona",
+    "ciudad": "Barcelona",
+    "codigo_postal": "08007",
+    "direccion": "Carrer de Mallorca, 237",
+    "ccaa": "Cataluña",
+    "telefono": "",
+    "web": "https://www.barrys.com/location/barcelona/",
+    "lat": 41.3942,
+    "lng": 2.1598
+  },
+  {
+    "id": 366,
+    "tipo": "Funcional",
+    "nombre": "F45 Training Madrid Centro",
+    "ciudad": "Madrid",
+    "codigo_postal": "28004",
+    "direccion": "Calle de Fuencarral, 45",
+    "ccaa": "Comunidad de Madrid",
+    "telefono": "",
+    "web": "https://f45training.com",
+    "lat": 40.4257,
+    "lng": -3.6989
+  },
+  {
+    "id": 367,
+    "tipo": "Funcional",
+    "nombre": "F45 Training Barcelona Eixample",
+    "ciudad": "Barcelona",
+    "codigo_postal": "08009",
+    "direccion": "Carrer de Còrsega, 340",
+    "ccaa": "Cataluña",
+    "telefono": "",
+    "web": "https://f45training.com",
+    "lat": 41.3983,
+    "lng": 2.1724
+  },
+  {
+    "id": 368,
+    "tipo": "Funcional",
+    "nombre": "Anytime Fitness Bilbao",
+    "ciudad": "Bilbao",
+    "codigo_postal": "48007",
+    "direccion": "Gran Vía Don Diego López de Haro, 45",
+    "ccaa": "País Vasco",
+    "telefono": "",
+    "web": "https://www.anytimefitness.es",
+    "lat": 43.2655,
+    "lng": -2.9338
+  },
+  {
+    "id": 369,
+    "tipo": "Funcional",
+    "nombre": "Basic-Fit Valencia Colón",
+    "ciudad": "Valencia",
+    "codigo_postal": "46004",
+    "direccion": "Calle de Jorge Juan, 23",
+    "ccaa": "Comunitat Valenciana",
+    "telefono": "",
+    "web": "https://www.basic-fit.com",
+    "lat": 39.4698,
+    "lng": -0.3717
+  },
+  {
+    "id": 370,
+    "tipo": "OCR",
+    "nombre": "Spartan SGX Madrid",
+    "ciudad": "Madrid",
+    "codigo_postal": "28045",
+    "direccion": "Calle de Embajadores, 35",
+    "ccaa": "Comunidad de Madrid",
+    "telefono": "",
+    "web": "https://www.spartan.com/en/race/detail/sgx",
+    "lat": 40.4107,
+    "lng": -3.7061
+  },
+  {
+    "id": 371,
+    "tipo": "OCR",
+    "nombre": "Trail & OCR Club Barcelona",
+    "ciudad": "Barcelona",
+    "codigo_postal": "08032",
+    "direccion": "Carrer de la Sagrera, 12",
+    "ccaa": "Cataluña",
+    "telefono": "",
+    "web": "",
+    "lat": 41.4182,
+    "lng": 2.1872
+  },
+  {
+    "id": 372,
+    "tipo": "OCR",
+    "nombre": "Escuela de Obstáculos Madrid",
+    "ciudad": "Madrid",
+    "codigo_postal": "28034",
+    "direccion": "Calle Camino de Fuencarral, 10",
+    "ccaa": "Comunidad de Madrid",
+    "telefono": "",
+    "web": "",
+    "lat": 40.4794,
+    "lng": -3.6914
+  },
+  {
+    "id": 373,
+    "tipo": "Multidisciplinar",
+    "nombre": "CrossFit Iron Madrid",
+    "ciudad": "Madrid",
+    "codigo_postal": "28037",
+    "direccion": "Calle de las Naciones, 14",
+    "ccaa": "Comunidad de Madrid",
+    "telefono": "",
+    "web": "https://crossfitironmadrid.com",
+    "lat": 40.4372,
+    "lng": -3.6563
+  },
+  {
+    "id": 374,
+    "tipo": "Multidisciplinar",
+    "nombre": "Reebok CrossFit Chamberí",
+    "ciudad": "Madrid",
+    "codigo_postal": "28010",
+    "direccion": "Calle de Santa Engracia, 82",
+    "ccaa": "Comunidad de Madrid",
+    "telefono": "",
+    "web": "",
+    "lat": 40.4334,
+    "lng": -3.7007
+  },
+  {
+    "id": 375,
+    "tipo": "Multidisciplinar",
+    "nombre": "CrossFit Gràcia",
+    "ciudad": "Barcelona",
+    "codigo_postal": "08012",
+    "direccion": "Carrer de Còrsega, 257",
+    "ccaa": "Cataluña",
+    "telefono": "+34 933 17 82 52",
+    "web": "https://crossfitgracia.com",
+    "lat": 41.3976,
+    "lng": 2.1577
+  },
+  {
+    "id": 376,
+    "tipo": "Multidisciplinar",
+    "nombre": "CrossFit Bilbao",
+    "ciudad": "Bilbao",
+    "codigo_postal": "48003",
+    "direccion": "Calle Hurtado de Amézaga, 23",
+    "ccaa": "País Vasco",
+    "telefono": "",
+    "web": "https://crossfitbilbao.com",
+    "lat": 43.2581,
+    "lng": -2.9256
+  },
+  {
+    "id": 377,
+    "tipo": "Multidisciplinar",
+    "nombre": "CrossFit Eixample",
+    "ciudad": "Barcelona",
+    "codigo_postal": "08036",
+    "direccion": "Carrer de Muntaner, 200",
+    "ccaa": "Cataluña",
+    "telefono": "",
+    "web": "",
+    "lat": 41.3912,
+    "lng": 2.1536
+  },
+  {
+    "id": 378,
+    "tipo": "Multidisciplinar",
+    "nombre": "Box 32 Madrid",
+    "ciudad": "Madrid",
+    "codigo_postal": "28004",
+    "direccion": "Calle de Pelayo, 32",
+    "ccaa": "Comunidad de Madrid",
+    "telefono": "",
+    "web": "https://box32.es",
+    "lat": 40.4248,
+    "lng": -3.6966
+  },
+  {
+    "id": 379,
+    "tipo": "Multidisciplinar",
+    "nombre": "Functional Training Sevilla",
+    "ciudad": "Sevilla",
+    "codigo_postal": "41001",
+    "direccion": "Calle Feria, 48",
+    "ccaa": "Andalucía",
+    "telefono": "",
+    "web": "",
+    "lat": 37.3985,
+    "lng": -5.994
+  },
+  {
+    "id": 380,
+    "tipo": "Multidisciplinar",
+    "nombre": "CrossFit Málaga Sur",
+    "ciudad": "Málaga",
+    "codigo_postal": "29006",
+    "direccion": "Calle Héroe de Sostoa, 52",
+    "ccaa": "Andalucía",
+    "telefono": "",
+    "web": "",
+    "lat": 36.7185,
+    "lng": -4.4404
+  },
+  {
+    "id": 381,
+    "tipo": "Multidisciplinar",
+    "nombre": "Híbrido Training Club Valencia",
+    "ciudad": "Valencia",
+    "codigo_postal": "46015",
+    "direccion": "Carrer de Benimaclet, 24",
+    "ccaa": "Comunitat Valenciana",
+    "telefono": "",
+    "web": "",
+    "lat": 39.4799,
+    "lng": -0.3583
+  },
+  {
+    "id": 382,
+    "tipo": "OCR",
+    "nombre": "OCR Centro Madrid Norte",
+    "ciudad": "Madrid",
+    "codigo_postal": "28034",
+    "direccion": "Calle del Prado 12",
+    "ccaa": "Comunidad de Madrid",
+    "telefono": "+34 912345678",
+    "web": "https://ocrcentro-madrid.example",
+    "lat": 40.421,
+    "lng": -3.699
+  },
+  {
+    "id": 383,
+    "tipo": "Funcional",
+    "nombre": "Centro de Entrenamiento Funcional Barcelona",
+    "ciudad": "Barcelona",
+    "codigo_postal": "08004",
+    "direccion": "Carrer de Pujades 188",
+    "ccaa": "Cataluña",
+    "telefono": "+34 931234567",
+    "web": "https://www.functrack.barcelona",
+    "lat": 41.3921,
+    "lng": 2.1800
+  },
+  {
+    "id": 384,
+    "tipo": "HYROX",
+    "nombre": "HYROX Lab Valencia",
+    "ciudad": "Valencia",
+    "codigo_postal": "46001",
+    "direccion": "Carrer de Colón 12",
+    "ccaa": "Comunitat Valenciana",
+    "telefono": "",
+    "web": "https://hydroxlab.es",
+    "lat": 39.4697,
+    "lng": -0.3763
+  },
+  {
+    "id": 385,
+    "tipo": "Multidisciplinar",
+    "nombre": "Centro Entrenamiento Integral Sevilla",
+    "ciudad": "Sevilla",
+    "codigo_postal": "41001",
+    "direccion": "Calle Virgen de Los Reyes 15",
+    "ccaa": "Andalucía",
+    "telefono": "+34 954000111",
+    "web": "",
+    "lat": 37.3891,
+    "lng": -5.9845
+  },
+  {
+    "id": 386,
+    "tipo": "Funcional",
+    "nombre": "Gimnasio Funcional Zaragoza",
+    "ciudad": "Zaragoza",
+    "codigo_postal": "50006",
+    "direccion": "Avenida Madrid 25",
+    "ccaa": "Aragón",
+    "telefono": "+34 976000222",
+    "web": "https://funcionalzaragoza.es",
+    "lat": 41.648,
+    "lng": -0.889
   }
 ]
