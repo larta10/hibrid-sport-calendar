@@ -90,63 +90,6 @@ function HeroSearch() {
   );
 }
 
-/* ─── NewsletterSignup ─────────────────────────────────────────────────────── */
-function NewsletterSignup() {
-  const [email, setEmail]   = useState("");
-  const [status, setStatus] = useState("idle");
-  const [errMsg, setErrMsg] = useState("");
-
-  async function handleSubmit(e) {
-    e.preventDefault();
-    if(!email||!email.includes("@")) return;
-    setStatus("loading");
-    try {
-      const res = await fetch(`${SUPABASE_URL}/rest/v1/subscribers`,{
-        method:"POST",
-        headers:{ apikey:ANON_KEY, Authorization:`Bearer ${ANON_KEY}`, "Content-Type":"application/json", Prefer:"return=minimal" },
-        body: JSON.stringify({ email:email.toLowerCase().trim(), active:true }),
-      });
-      if(res.ok||res.status===201){ setStatus("success"); }
-      else {
-        const body=await res.json().catch(()=>({}));
-        if(body?.code==="23505"){ setStatus("success"); }
-        else throw new Error(body?.message||"Error");
-      }
-    } catch { setStatus("error"); setErrMsg("No se pudo completar. Inténtalo de nuevo."); }
-  }
-
-  return (
-    <section className="nl">
-      <div className="nl-inner">
-        <div className="nl-text">
-          <p className="nl-eyebrow">NEWSLETTER</p>
-          <h2 className="nl-title">¿Sin perderte<br/>una carrera?</h2>
-          <p className="nl-sub">
-            Te avisamos cuando añadamos nuevas carreras OCR, HYROX o
-            competiciones funcionales en España.
-          </p>
-        </div>
-        {status==="success"?(
-          <div className="nl-success">
-            <span className="nl-check">✓</span>
-            ¡Apuntado! Te avisaremos de nuevas pruebas.
-          </div>
-        ):(
-          <form className="nl-form" onSubmit={handleSubmit}>
-            <input type="email" className="nl-input" placeholder="tu@email.com"
-              value={email} onChange={e=>setEmail(e.target.value)}
-              required disabled={status==="loading"}/>
-            <button type="submit" className="nl-btn" disabled={status==="loading"}>
-              {status==="loading"?"…":"QUIERO AVISOS →"}
-            </button>
-            {status==="error"&&<p className="nl-error">{errMsg}</p>}
-          </form>
-        )}
-      </div>
-    </section>
-  );
-}
-
 /* ─── FAQ ──────────────────────────────────────────────────────────────────── */
 const FAQ_DATA = [
   { question:"¿Qué es una carrera OCR?", answer:"OCR (Obstacle Course Race) es una carrera que combina running con obstáculos naturales o artificiales. Las pruebas más populares son Spartan Race, Tough Mudder y sus variantes. Los corredores deben completar tramos de carrera con desafíos físicos como trepar, arrastrarse, cargar peso y cruzar elementos de agua." },
@@ -416,7 +359,7 @@ export default function Home() {
           </nav>
         </div>
 
-        {/* Hero body: left = headline, right = search */}
+        {/* Hero body: headline + stats */}
         <div className="hero-body">
           <div className="hero-left">
             <div className="hero-eyebrow">
@@ -433,14 +376,14 @@ export default function Home() {
             <HeroStats totalCount={totalCount} ccaaCount={CCAA.length} formatsCount={FORMATS.length}/>
             <a href="/calendario" className="hero-cta">VER TODOS LOS EVENTOS →</a>
           </div>
-          <div className="hero-right">
-            <HeroSearch/>
-          </div>
+        </div>
+        {/* Search bar: full-width, centered below headline */}
+        <div className="hero-search-outer">
+          <HeroSearch/>
         </div>
       </header>
 
       <HomeSections/>
-      <NewsletterSignup/>
       <FAQSection/>
       <OrganizerContact/>
       <SiteFooter/>
