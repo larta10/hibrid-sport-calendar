@@ -334,16 +334,6 @@ function HomeSections() {
 /* ─── Home ─────────────────────────────────────────────────────────────────── */
 export default function Home() {
   const [totalCount, setTotalCount] = useState(null);
-  // State for Step 2 form inside the hero journey
-  const [step2, setStep2] = useState({
-    evento: 'Hyrox Madrid 2026',
-    edad: 32,
-    altura: 175,
-    peso: 72,
-    sexo: 'Hombre',
-    experiencia: false,
-  });
-
   useEffect(()=>{
     fetch(`${SUPABASE_URL}/rest/v1/races?select=count&modalidad_parent=in.(ocr,funcional)`,{
       headers:{ apikey:ANON_KEY, Authorization:`Bearer ${ANON_KEY}`, Prefer:"count=exact" },
@@ -467,23 +457,8 @@ export default function Home() {
             <div className="journey-card" aria-label="Paso 2">
               <div className="journey-icon" aria-hidden>💪</div>
               <h3 className="journey-title" style={{ color:'#fff' }}>Paso 2: Plan Personalizado</h3>
-              <p className="journey-desc">Generador de rutinas adaptadas a tu evento, nivel y características físicas.</p>
-              <form className="journey-form" onSubmit={(e)=>{ e.preventDefault(); const v = step2; console.log(v); alert("Funcionalidad en desarrollo - Tus datos: " + JSON.stringify(v)); }}>
-                <select aria-label="Selecciona tu evento" value={step2.evento} onChange={e=>setStep2(f=>({...f, evento:e.target.value}))}>
-                  <option>Hyrox Madrid 2026</option>
-                  <option>Spartan Beast Valencia</option>
-                </select>
-                <input type="number" min={16} max={80} placeholder="Edad" value={step2.edad} onChange={e=>setStep2(f=>({...f, edad: Number(e.target.value)}))} />
-                <input type="number" placeholder="Altura cm" value={step2.altura} onChange={e=>setStep2(f=>({...f, altura: Number(e.target.value)}))} />
-                <input type="number" placeholder="Peso kg" value={step2.peso} onChange={e=>setStep2(f=>({...f, peso: Number(e.target.value)}))} />
-                <div className="journey-form-row" style={{ display:'flex', gap:8, alignItems:'center' }}>
-                  <label style={{ display:'inline-flex', alignItems:'center', gap:6 }}><input type="radio" name="sexo" value="Hombre" checked={step2.sexo==='Hombre'} onChange={e=>setStep2(f=>({...f, sexo:'Hombre'}))}/> Hombre</label>
-                  <label style={{ display:'inline-flex', alignItems:'center', gap:6 }}><input type="radio" name="sexo" value="Mujer" checked={step2.sexo==='Mujer'} onChange={e=>setStep2(f=>({...f, sexo:'Mujer'}))}/> Mujer</label>
-                </div>
-                <label style={{ display:'inline-flex', alignItems:'center', gap:6 }}><input type="checkbox" checked={step2.experiencia} onChange={e=>setStep2(f=>({...f, experiencia: e.target.checked}))}/> Tengo experiencia previa en Hyrox/OCR</label>
-                <button type="submit" className="btn-primary" style={{ marginTop:4 }}>Generar Plan</button>
-              </form>
-              <span className="journey-note" style={{ fontSize:12, color:'#ccc', marginTop:'6px' }}>El plan considera tus tiempos de recuperación según edad, peso y capacidad aeróbica estimada</span>
+              <p className="journey-desc">Entrena con un plan diseñado para tu nivel y tus objetivos. Responde 5 preguntas y recibe tu rutina semanal.</p>
+              <a href="/plan-entrenamiento" className="btn-primary" style={{ alignSelf:'flex-start' }}>CREAR MI PLAN →</a>
             </div>
             {/* Paso 3 */}
             <div className="journey-card" aria-label="Paso 3">
