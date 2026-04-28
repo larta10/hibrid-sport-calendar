@@ -155,12 +155,13 @@ function OrganizerContact() {
     <section className="oc">
       <div className="oc-inner">
         <div className="oc-text">
-          <p className="oc-eyebrow">PARA ORGANIZADORES</p>
-          <h2 className="oc-title">¿Organizas una<br/>prueba híbrida?</h2>
+          <p className="oc-eyebrow">COLABORACIONES</p>
+          <h2 className="oc-title">¿TRABAJAMOS<br/>JUNTOS?</h2>
           <p className="oc-sub">
-            Hybrid Race Hub es el calendario de referencia de carreras OCR, HYROX y
-            fitness funcional en España. Si organizas una prueba y quieres llegar a miles
-            de atletas comprometidos, escríbenos. Estudiamos cada colaboración de forma individual.
+            Si eres entrenador personal especializado en entrenamiento híbrido, organizador
+            de pruebas o gestor de un centro deportivo, queremos conocerte. Hybrid Race Hub
+            conecta a los mejores profesionales del sector con miles de atletas en España.
+            Escríbenos y estudiamos cómo podemos ayudarte a llegar a tu público.
           </p>
           <a href="mailto:hola@hybridracehub.com" className="oc-ig-link" style={{marginBottom:8,display:"inline-flex"}}>
             <EnvelopeIcon size={14}/><span>hola@hybridracehub.com</span>
@@ -427,7 +428,7 @@ export default function Home() {
         <div className="hero-body" style={{ paddingTop: 0 }}>
           <div className="hero-left">
             <h1 className="hero-title" style={{ fontSize: 'clamp(28px,6vw,48px)', textTransform:'none' }}>
-              De la inscripción al podio: tu camino en 3 pasos
+              De la inscripción al éxito: tu camino en 3 pasos
             </h1>
             <p className="hero-sub" style={{ maxWidth: 680 }}>
               Encuentra tu carrera, entrena con un plan personalizado, localiza tu gimnasio
@@ -447,7 +448,17 @@ export default function Home() {
           <div className="home-journey-inner">
             {/* Paso 1 */}
             <div className="journey-card" title="Próximos eventos: Hyrox Madrid (Mayo), Spartan Race Barcelona (Junio)">
-              <div className="journey-icon" aria-hidden>📅</div>
+              <div className="journey-icon" aria-hidden>
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#FB923C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="5" y="9" width="38" height="34" rx="4"/>
+                  <line x1="5" y1="19" x2="43" y2="19"/>
+                  <line x1="16" y1="5" x2="16" y2="13"/>
+                  <line x1="32" y1="5" x2="32" y2="13"/>
+                  <rect x="12" y="25" width="7" height="5" rx="1.5"/>
+                  <rect x="29" y="25" width="7" height="5" rx="1.5"/>
+                  <rect x="12" y="34" width="7" height="5" rx="1.5"/>
+                </svg>
+              </div>
               <h3 className="journey-title" style={{ color:'#fff' }}>Paso 1: Encuentra tu Evento</h3>
               <p className="journey-desc">Calendario completo de carreras Hyrox, OCR y híbridas en España. Filtra por ciudad, fecha y nivel.</p>
               <a href="/calendario" className="btn-primary" style={{ alignSelf:'flex-start' }}>Explorar Calendario</a>
@@ -455,21 +466,35 @@ export default function Home() {
             </div>
             {/* Paso 2 */}
             <div className="journey-card" aria-label="Paso 2">
-              <div className="journey-icon" aria-hidden>💪</div>
+              <div className="journey-icon" aria-hidden>
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#FB923C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="9" y="4" width="30" height="38" rx="3"/>
+                  <line x1="16" y1="15" x2="32" y2="15"/>
+                  <line x1="16" y1="22" x2="32" y2="22"/>
+                  <line x1="16" y1="29" x2="25" y2="29"/>
+                  <circle cx="34" cy="36" r="8" fill="#08090C" stroke="#FB923C" strokeWidth="1.8"/>
+                  <polyline points="30,36 33,39 38,32"/>
+                </svg>
+              </div>
               <h3 className="journey-title" style={{ color:'#fff' }}>Paso 2: Plan Personalizado</h3>
               <p className="journey-desc">Entrena con un plan diseñado para tu nivel y tus objetivos. Responde 5 preguntas y recibe tu rutina semanal.</p>
               <a href="/plan-entrenamiento" className="btn-primary" style={{ alignSelf:'flex-start' }}>CREAR MI PLAN →</a>
             </div>
             {/* Paso 3 */}
             <div className="journey-card" aria-label="Paso 3">
-              <div className="journey-icon" aria-hidden>📍</div>
-              <h3 className="journey-title" style={{ color:'#fff' }}>Paso 3: Encuentra tu Gimnasio</h3>
-              <p className="journey-desc">Centros con equipamiento Hyrox, boxes de CrossFit y gimnasios funcionales cerca de ti.</p>
-              <div className="journey-city-search" style={{ display:'flex', gap:8 }}>
-                <input placeholder="Madrid, Barcelona, 28001..." className="center-search-input" aria-label="Ciudad"/>
+              <div className="journey-icon" aria-hidden>
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#FB923C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M24 4C16 4 11 11 11 18c0 11 13 26 13 26s13-15 13-26c0-7-5-14-13-14z"/>
+                  <rect x="19" y="12" width="10" height="9" rx="1.5"/>
+                  <line x1="22" y1="12" x2="22" y2="21"/>
+                  <line x1="26" y1="12" x2="26" y2="21"/>
+                  <line x1="19" y1="17" x2="29" y2="17"/>
+                </svg>
               </div>
-              <a href="/centros-deportivos" className="btn-primary" style={{ alignSelf:'flex-start' }}>Buscar Centros</a>
-              <div className="journey-tooltip">Más de 150 centros registrados en España</div>
+              <h3 className="journey-title" style={{ color:'#fff' }}>Paso 3: Encuentra tu Centro</h3>
+              <p className="journey-desc">Más de 400 centros OCR, HYROX y CrossFit en toda España. Busca por ciudad o código postal.</p>
+              <a href="/centros-entrenamiento" className="btn-primary" style={{ alignSelf:'flex-start' }}>Buscar Centros</a>
+              <div className="journey-tooltip">426 centros registrados en toda España</div>
             </div>
           </div>
         </section>

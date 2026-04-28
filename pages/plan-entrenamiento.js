@@ -43,11 +43,46 @@ const WEAKNESS_OPTIONS = [
   { id: "power",     label: "Potencia" },
 ];
 
+const EX_BASE = {
+  principiante: [
+    { id: "squat",    label: "Sentadilla",   r: 0.50 },
+    { id: "deadlift", label: "Peso Muerto",  r: 0.60 },
+    { id: "bench",    label: "Press Banca",  r: 0.40 },
+    { id: "press",    label: "Press Hombro", r: 0.30 },
+    { id: "row",      label: "Remo",         r: 0.35 },
+    { id: "lunge",    label: "Zancada",      r: 0.30 },
+    { id: "kb",       label: "KB Swing",     r: 0.20 },
+    { id: "thruster", label: "Thruster",     r: 0.20 },
+  ],
+  intermedio: [
+    { id: "squat",    label: "Sentadilla",   r: 0.80 },
+    { id: "deadlift", label: "Peso Muerto",  r: 1.00 },
+    { id: "bench",    label: "Press Banca",  r: 0.65 },
+    { id: "press",    label: "Press Hombro", r: 0.50 },
+    { id: "row",      label: "Remo",         r: 0.55 },
+    { id: "lunge",    label: "Zancada",      r: 0.45 },
+    { id: "kb",       label: "KB Swing",     r: 0.30 },
+    { id: "thruster", label: "Thruster",     r: 0.30 },
+  ],
+  avanzado: [
+    { id: "squat",    label: "Sentadilla",   r: 1.10 },
+    { id: "deadlift", label: "Peso Muerto",  r: 1.40 },
+    { id: "bench",    label: "Press Banca",  r: 0.85 },
+    { id: "press",    label: "Press Hombro", r: 0.70 },
+    { id: "row",      label: "Remo",         r: 0.75 },
+    { id: "lunge",    label: "Zancada",      r: 0.60 },
+    { id: "kb",       label: "KB Swing",     r: 0.40 },
+    { id: "thruster", label: "Thruster",     r: 0.45 },
+  ],
+};
+
+const CYCLE_LABELS = ["Base", "+5%", "+10%", "DELOAD"];
+
 /* ─── COMPONENT ─────────────────────────────────────────────────────────── */
 
 export default function PlanEntrenamiento() {
-  const [step, setStep]               = useState(1);
-  const [answers, setAnswers]         = useState({ objective: null, level: null, daysPerWeek: 4, horizon: null, equipment: null, weaknesses: [] });
+  const [step, setStep]               = useState(0);
+  const [answers, setAnswers]         = useState({ edad: "", peso: "", altura: "", objective: null, level: null, daysPerWeek: 4, horizon: null, equipment: null, weaknesses: [] });
   const [plan, setPlan]               = useState(null);
   const [expandedWeeks, setExpWeeks]  = useState(new Set([1]));
   const [expandedDays,  setExpDays]   = useState(new Set());
@@ -78,12 +113,12 @@ export default function PlanEntrenamiento() {
 
   function back() {
     if (step === "result") { setStep(5); return; }
-    if (step > 1) { setStep(s => s - 1); window.scrollTo(0, 0); }
+    if (step > 0) { setStep(s => s - 1); window.scrollTo(0, 0); }
   }
 
   function reset() {
-    setStep(1);
-    setAnswers({ objective: null, level: null, daysPerWeek: 4, horizon: null, equipment: null, weaknesses: [] });
+    setStep(0);
+    setAnswers({ edad: "", peso: "", altura: "", objective: null, level: null, daysPerWeek: 4, horizon: null, equipment: null, weaknesses: [] });
     setPlan(null);
     setExpWeeks(new Set([1]));
     setExpDays(new Set());
@@ -91,6 +126,10 @@ export default function PlanEntrenamiento() {
   }
 
   function canNext() {
+    if (step === 0) {
+      const e = Number(answers.edad), p = Number(answers.peso), h = Number(answers.altura);
+      return e >= 14 && e <= 80 && p >= 30 && p <= 250 && h >= 130 && h <= 230;
+    }
     if (step === 1) return !!answers.objective;
     if (step === 2) return !!answers.level;
     if (step === 3) return !!answers.horizon;
@@ -103,6 +142,21 @@ export default function PlanEntrenamiento() {
   }
   function toggleDay(k) {
     setExpDays(p => { const s = new Set(p); s.has(k) ? s.delete(k) : s.add(k); return s; });
+  }
+
+  function calcLoads(pesoKg, level, weekNum) {
+    const posInCycle  = (weekNum - 1) % 4;
+    const cycleNum    = Math.floor((weekNum - 1) / 4);
+    const inCycleMult = [1.0, 1.05, 1.10, 0.80][posInCycle];
+    const cycleBase   = 1.0 + 0.05 * cycleNum;
+    const mult        = cycleBase * inCycleMult;
+    const isDeload    = posInCycle === 3;
+    const bases       = EX_BASE[level] || EX_BASE.intermedio;
+    const items       = bases.map(({ id, label, r }) => ({
+      id, label,
+      kg: Math.round(pesoKg * r * mult / 2.5) * 2.5,
+    }));
+    return { items, isDeload, cycleLabel: CYCLE_LABELS[posInCycle] };
   }
 
   const selObj = OBJECTIVES.find(o => o.id === answers.objective);
@@ -245,6 +299,28 @@ export default function PlanEntrenamiento() {
     .cta-ghost{background:transparent;color:var(--muted);border:none;cursor:pointer;padding:12px 16px;font-family:var(--font-display);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;}
     .cta-ghost:hover{color:var(--text);}
 
+    /* ── Free badge ── */
+    .free-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(251,146,60,.14);color:var(--accent);border:1px solid rgba(251,146,60,.3);border-radius:20px;padding:.35rem .9rem;font-family:var(--font-mono);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.25rem;}
+
+    /* ── Profile step ── */
+    .profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem;}
+    .profile-field{display:flex;flex-direction:column;gap:.5rem;}
+    .profile-label{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);}
+    .profile-input{background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--radius-sm);padding:.75rem 1rem;font-family:var(--font-display);font-size:24px;font-weight:700;color:var(--text);outline:none;text-align:center;transition:border-color .18s;width:100%;}
+    .profile-input:focus{border-color:var(--accent);}
+    .profile-input::placeholder{color:var(--muted2);font-size:16px;font-weight:400;}
+
+    /* ── Loads panel ── */
+    .week-loads{background:rgba(251,146,60,.05);border-top:1px solid rgba(251,146,60,.18);padding:.75rem 1.25rem;}
+    .loads-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem;}
+    .loads-title{font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);}
+    .loads-cycle-label{font-family:var(--font-mono);font-size:9px;font-weight:600;padding:.15rem .6rem;border-radius:4px;background:rgba(251,146,60,.15);color:var(--accent);}
+    .loads-cycle-label.deload{background:rgba(250,204,21,.12);color:#FACC15;}
+    .loads-grid{display:flex;flex-wrap:wrap;gap:.4rem;}
+    .load-item{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:.3rem .7rem;display:flex;flex-direction:column;gap:1px;}
+    .load-item-name{font-family:var(--font-mono);font-size:8px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted2);}
+    .load-item-val{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--accent);line-height:1;}
+
     @media(max-width:600px){
       .plan-page{padding:1rem 1rem 3rem;}
       .card-grid{grid-template-columns:1fr 1fr;}
@@ -252,6 +328,7 @@ export default function PlanEntrenamiento() {
       .plan-stats{gap:.5rem;}
       .plan-ctas{flex-direction:column;}
       .cta-btn{width:100%;justify-content:center;}
+      .profile-grid{grid-template-columns:1fr;}
     }
   `;
 
@@ -266,14 +343,64 @@ export default function PlanEntrenamiento() {
 
           {/* Progress */}
           <div className="wizard-progress">
-            {[1,2,3,4,5].map(n => (
+            {[0,1,2,3,4,5].map(n => (
               <div
                 key={n}
                 className={`wp-step ${n < step ? "done" : n === step ? "active" : ""}`}
               />
             ))}
-            <span className="wizard-label">Paso {step} de 5</span>
+            <span className="wizard-label">Paso {step + 1} de 6</span>
           </div>
+
+          {/* ── Step 0: Perfil físico ── */}
+          {step === 0 && (
+            <>
+              <div className="free-badge">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="6,1 7.5,4.2 11,4.6 8.5,7 9.2,10.5 6,8.8 2.8,10.5 3.5,7 1,4.6 4.5,4.2"/></svg>
+                100% GRATUITO · SIN REGISTRO
+              </div>
+              <h1 className="step-title">Tu perfil físico</h1>
+              <p className="step-sub">Tres datos para calcular las cargas de entrenamiento adaptadas a ti.</p>
+              <div className="profile-grid">
+                <div className="profile-field">
+                  <label className="profile-label">Edad (años)</label>
+                  <input
+                    className="profile-input"
+                    type="number"
+                    inputMode="numeric"
+                    min={14} max={80}
+                    placeholder="--"
+                    value={answers.edad}
+                    onChange={e => pick("edad", e.target.value)}
+                  />
+                </div>
+                <div className="profile-field">
+                  <label className="profile-label">Peso (kg)</label>
+                  <input
+                    className="profile-input"
+                    type="number"
+                    inputMode="decimal"
+                    min={30} max={250}
+                    placeholder="--"
+                    value={answers.peso}
+                    onChange={e => pick("peso", e.target.value)}
+                  />
+                </div>
+                <div className="profile-field">
+                  <label className="profile-label">Altura (cm)</label>
+                  <input
+                    className="profile-input"
+                    type="number"
+                    inputMode="numeric"
+                    min={130} max={230}
+                    placeholder="---"
+                    value={answers.altura}
+                    onChange={e => pick("altura", e.target.value)}
+                  />
+                </div>
+              </div>
+            </>
+          )}
 
           {/* ── Step 1: Objetivo ── */}
           {step === 1 && (
@@ -401,7 +528,7 @@ export default function PlanEntrenamiento() {
 
           {/* Navigation */}
           <div className="wizard-nav">
-            <button className="btn-back" onClick={back} style={{ visibility: step === 1 ? "hidden" : "visible" }}>
+            <button className="btn-back" onClick={back} style={{ visibility: step === 0 ? "hidden" : "visible" }}>
               ← Atrás
             </button>
             <button className="btn-next" onClick={next} disabled={!canNext()}>
@@ -483,6 +610,7 @@ export default function PlanEntrenamiento() {
           {plan?.weeks?.map(week => {
             const isOpen = expandedWeeks.has(week.number);
             const phaseMeta = PHASE_META[week.phase];
+            const weekLoads = answers.peso ? calcLoads(Number(answers.peso), answers.level, week.number) : null;
             return (
               <div key={week.number} className="week-card">
                 <div className="week-header" onClick={() => toggleWeek(week.number)}>
@@ -498,6 +626,7 @@ export default function PlanEntrenamiento() {
                 </div>
 
                 {isOpen && (
+                  <>
                   <div className="days-list">
                     {week.days.map((dayObj, di) => {
                       const dayKey = `${week.number}-${di}`;
@@ -566,6 +695,25 @@ export default function PlanEntrenamiento() {
                       );
                     })}
                   </div>
+                  {weekLoads && (
+                    <div className="week-loads">
+                      <div className="loads-header">
+                        <span className="loads-title">Cargas orientativas</span>
+                        <span className={`loads-cycle-label${weekLoads.isDeload ? " deload" : ""}`}>
+                          {weekLoads.cycleLabel}
+                        </span>
+                      </div>
+                      <div className="loads-grid">
+                        {weekLoads.items.map(({ id, label, kg }) => (
+                          <div key={id} className="load-item">
+                            <span className="load-item-name">{label}</span>
+                            <span className="load-item-val">{kg}kg</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  </>
                 )}
               </div>
             );
