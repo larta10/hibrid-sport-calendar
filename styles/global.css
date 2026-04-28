@@ -44,6 +44,44 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* NEW: 3-steps journey on home */
+.home-journey { background:transparent; }
+.home-journey-inner {
+  max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  padding: 0 24px;
+}
+.journey-card {
+  background:#1a1a1a; border:1px solid var(--border); border-radius:12px; padding:40px; display:flex; flex-direction:column; gap:12px; position:relative; color:#fff;
+  transition: transform .2s ease, box-shadow .2s, border-color .2s;
+  min-height: 260px;
+}
+.journey-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 18px 40px rgba(251,146,60,0.4);
+  border-color: var(--border2);
+}
+.journey-icon { font-size:64px; align-self:flex-start; }
+.journey-title { font-family:var(--font-display); font-weight:800; font-size:24px; margin:0; }
+.journey-desc { color:#cccccc; font-size:16px; line-height:1.6; }
+.journey-tooltip {
+  position: absolute; bottom:12px; left:12px; right:12px; padding:8px 10px; border-radius:6px; font-size:12px; background: rgba(0,0,0,0.7); color:#fff; opacity:0; transform: translateY(6px); transition: all .2s ease; text-align:left;
+}
+.journey-card:hover .journey-tooltip { opacity:1; transform: translateY(0); }
+.journey-form { display:flex; flex-wrap: wrap; gap:8px; align-items:center; margin-top:6px; }
+.journey-form select, .journey-form input { padding:10px; border-radius:6px; border:1px solid var(--border2); background:var(--surface2); color:var(--text); font-family:var(--font-body); }
+.journey-form input { min-width: 120px; }
+.journey-form-row { display:flex; gap:8px; align-items:center; }
+.journey-note { display:block; margin-top:6px; color:#ccc; }
+.home-card--small { max-width: 350px; background:#2a2a2a; padding:14px; border-radius:12px; text-decoration:none; color:var(--text); border:0.5px solid var(--border); display:flex; flex-direction:column; gap:8px; }
+.home-secondary { background:var(--bg2); border-top:1px solid var(--border); padding:2rem 0; }
+.home-secondary-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem; padding:0 24px; }
+.home-card.small h2 { font-size:16px; }
+.home-card.small .home-card-desc { font-size:12px; }
+.home-card.small .home-card-icon { width:28px; height:28px; font-size:20px; }
+
 ::-webkit-scrollbar { width: 4px; height: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--hint); border-radius: 4px; }

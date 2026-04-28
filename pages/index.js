@@ -334,6 +334,15 @@ function HomeSections() {
 /* ─── Home ─────────────────────────────────────────────────────────────────── */
 export default function Home() {
   const [totalCount, setTotalCount] = useState(null);
+  // State for Step 2 form inside the hero journey
+  const [step2, setStep2] = useState({
+    evento: 'Hyrox Madrid 2026',
+    edad: 32,
+    altura: 175,
+    peso: 72,
+    sexo: 'Hombre',
+    experiencia: false,
+  });
 
   useEffect(()=>{
     fetch(`${SUPABASE_URL}/rest/v1/races?select=count&modalidad_parent=in.(ocr,funcional)`,{
@@ -424,37 +433,94 @@ export default function Home() {
           </nav>
         </div>
 
-        {/* Hero body: headline + stats */}
-        <div className="hero-body">
+        {/* Hero body: new title/subtitle and hero search */}
+        <div className="hero-body" style={{ paddingTop: 0 }}>
           <div className="hero-left">
-            <div className="hero-eyebrow">
-              <span className="hero-eyebrow-dot"/>
-              Calendario híbrido · España {TODAY_YEAR}
-            </div>
-            <h1 className="hero-title">
-              OCR<span className="slash">/</span><span className="hy">HYROX</span><span className="slash">/</span>CROSSFIT
+            <h1 className="hero-title" style={{ fontSize: 'clamp(28px,6vw,48px)', textTransform:'none' }}>
+              De la inscripción al podio: tu camino en 3 pasos
             </h1>
-            <p className="hero-sub">
-              Tu plataforma completa para el <strong>entrenamiento híbrido en España</strong>. Descubre eventos de OCR, HYROX y CrossFit, encuentra centros de entrenamiento cerca de ti y accede a rankings de equipamiento especializado. Todo en un solo lugar.
+            <p className="hero-sub" style={{ maxWidth: 680 }}>
+              Encuentra tu carrera, entrena con un plan personalizado, localiza tu gimnasio
             </p>
-            {/* Centro destacado buscador principal (cabecera) */}
-            <div className="center-search-cta" aria-label="Buscar centros">
-              <input
-                className="center-search-input"
-                value={centerQuery}
-                onChange={(e)=>setCenterQuery(e.target.value)}
-                placeholder="Buscar centros OCR / HYROX / Funcional..."
-              />
-              <button className="center-search-btn" onClick={goCenterSearch}>Buscar centros</button>
-            </div>
+            {/* Espaciado para que los 3 pasos se destaquen debajo del hero */}
           <HeroStats totalCount={totalCount} ccaaCount={CCAA.length} formatsCount={FORMATS.length}/>
           <a href="/calendario" className="hero-cta">VER TODOS LOS EVENTOS →</a>
           </div>
         </div>
-        {/* Search bar: full-width, centered below headline */}
-        <div className="hero-search-outer">
+        {/* Search bar: kept for header-like utility, smaller prominence per spec */}
+        <div className="hero-search-outer" style={{ marginTop: '0.5rem' }}>
           <HeroSearch/>
         </div>
+
+        {/* Nuevo journey de 3 pasos */}
+        <section className="home-journey" aria-label="Tres pasos" style={{ padding:'2.5rem 0' }}>
+          <div className="home-journey-inner">
+            {/* Paso 1 */}
+            <div className="journey-card" title="Próximos eventos: Hyrox Madrid (Mayo), Spartan Race Barcelona (Junio)">
+              <div className="journey-icon" aria-hidden>📅</div>
+              <h3 className="journey-title" style={{ color:'#fff' }}>Paso 1: Encuentra tu Evento</h3>
+              <p className="journey-desc">Calendario completo de carreras Hyrox, OCR y híbridas en España. Filtra por ciudad, fecha y nivel.</p>
+              <a href="/calendario" className="btn-primary" style={{ alignSelf:'flex-start' }}>Explorar Calendario</a>
+              <div className="journey-tooltip">Próximos eventos: Hyrox Madrid (Mayo), Spartan Race Barcelona (Junio)...</div>
+            </div>
+            {/* Paso 2 */}
+            <div className="journey-card" aria-label="Paso 2">
+              <div className="journey-icon" aria-hidden>💪</div>
+              <h3 className="journey-title" style={{ color:'#fff' }}>Paso 2: Plan Personalizado</h3>
+              <p className="journey-desc">Generador de rutinas adaptadas a tu evento, nivel y características físicas.</p>
+              <form className="journey-form" onSubmit={(e)=>{ e.preventDefault(); const v = step2; console.log(v); alert("Funcionalidad en desarrollo - Tus datos: " + JSON.stringify(v)); }}>
+                <select aria-label="Selecciona tu evento" value={step2.evento} onChange={e=>setStep2(f=>({...f, evento:e.target.value}))}>
+                  <option>Hyrox Madrid 2026</option>
+                  <option>Spartan Beast Valencia</option>
+                </select>
+                <input type="number" min={16} max={80} placeholder="Edad" value={step2.edad} onChange={e=>setStep2(f=>({...f, edad: Number(e.target.value)}))} />
+                <input type="number" placeholder="Altura cm" value={step2.altura} onChange={e=>setStep2(f=>({...f, altura: Number(e.target.value)}))} />
+                <input type="number" placeholder="Peso kg" value={step2.peso} onChange={e=>setStep2(f=>({...f, peso: Number(e.target.value)}))} />
+                <div className="journey-form-row" style={{ display:'flex', gap:8, alignItems:'center' }}>
+                  <label style={{ display:'inline-flex', alignItems:'center', gap:6 }}><input type="radio" name="sexo" value="Hombre" checked={step2.sexo==='Hombre'} onChange={e=>setStep2(f=>({...f, sexo:'Hombre'}))}/> Hombre</label>
+                  <label style={{ display:'inline-flex', alignItems:'center', gap:6 }}><input type="radio" name="sexo" value="Mujer" checked={step2.sexo==='Mujer'} onChange={e=>setStep2(f=>({...f, sexo:'Mujer'}))}/> Mujer</label>
+                </div>
+                <label style={{ display:'inline-flex', alignItems:'center', gap:6 }}><input type="checkbox" checked={step2.experiencia} onChange={e=>setStep2(f=>({...f, experiencia: e.target.checked}))}/> Tengo experiencia previa en Hyrox/OCR</label>
+                <button type="submit" className="btn-primary" style={{ marginTop:4 }}>Generar Plan</button>
+              </form>
+              <span className="journey-note" style={{ fontSize:12, color:'#ccc', marginTop:'6px' }}>El plan considera tus tiempos de recuperación según edad, peso y capacidad aeróbica estimada</span>
+            </div>
+            {/* Paso 3 */}
+            <div className="journey-card" aria-label="Paso 3">
+              <div className="journey-icon" aria-hidden>📍</div>
+              <h3 className="journey-title" style={{ color:'#fff' }}>Paso 3: Encuentra tu Gimnasio</h3>
+              <p className="journey-desc">Centros con equipamiento Hyrox, boxes de CrossFit y gimnasios funcionales cerca de ti.</p>
+              <div className="journey-city-search" style={{ display:'flex', gap:8 }}>
+                <input placeholder="Madrid, Barcelona, 28001..." className="center-search-input" aria-label="Ciudad"/>
+              </div>
+              <a href="/centros-deportivos" className="btn-primary" style={{ alignSelf:'flex-start' }}>Buscar Centros</a>
+              <div className="journey-tooltip">Más de 150 centros registrados en España</div>
+            </div>
+          </div>
+        </section>
+        {/* Recursos Complementarios (secundaria) */}
+        <section className="home-secondary" aria-label="Recursos Complementarios">
+          <div className="home-secondary-inner">
+            <a className="home-card small" href="/blog">
+              <div className="home-card-icon" style={{ width:40, height:40, fontSize:20, display:'flex', alignItems:'center', justifyContent:'center' }}>📝</div>
+              <h2 className="home-card-title" style={{ fontSize:18 }}>Blog de Entrenamiento</h2>
+              <p className="home-card-desc">Artículos, guías y análisis técnico</p>
+              <span className="home-card-cta">Leer artículos</span>
+            </a>
+            <a className="home-card small" href="/productos">
+              <div className="home-card-icon" style={{ width:40, height:40, fontSize:20, display:'flex', alignItems:'center', justifyContent:'center' }}>🛒</div>
+              <h2 className="home-card-title" style={{ fontSize:18 }}>Equipamiento Recomendado</h2>
+              <p className="home-card-desc">Rankings de relojes, zapatillas y gear</p>
+              <span className="home-card-cta">Ver rankings</span>
+            </a>
+            <a className="home-card small" href="/calculadora">
+              <div className="home-card-icon" style={{ width:40, height:40, fontSize:20, display:'flex', alignItems:'center', justifyContent:'center' }}>⏱️</div>
+              <h2 className="home-card-title" style={{ fontSize:18 }}>Calculadora de Tiempos</h2>
+              <p className="home-card-desc">Estima tu marca en Hyrox según nivel</p>
+              <span className="home-card-cta">Calcular</span>
+            </a>
+          </div>
+        </section>
       </header>
 
       <HomeSections/>

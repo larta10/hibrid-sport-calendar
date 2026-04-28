@@ -345,11 +345,11 @@ export default function CentrosEntrenamiento() {
         <div className="page-hero-inner">
           <p className="page-eyebrow">Hybrid Race Hub · Directorio nacional</p>
           <h1 className="page-title">
-            Centros de Entrenamiento OCR, HYROX y CrossFit
+            Tu Mapa de Entrenamiento Híbrido en España
           </h1>
           <p className="page-sub">
-            Encuentra centros de entrenamiento funcional en toda España.
-            CrossFit, HYROX, OCR y gimnasios especializados. Busca por ciudad o código postal.
+            Directorio de centros OCR, HYROX, CrossFit y entrenamiento funcional en toda España.
+            Busca por ciudad o código postal y encuentra dónde preparar tu próxima carrera.
           </p>
           <div className="stats-bar">
             <div className="stat-item">
@@ -517,13 +517,9 @@ function CentroCard({ centro }) {
   const mapsUrl = `https://maps.google.com?q=${encodeURIComponent(
     [centro.nombre, centro.direccion, centro.ciudad].filter(Boolean).join(" ")
   )}`;
-  // Determine a primary destination link for the center
-  let siteHref = '';
-  if (centro.web && centro.web.trim()) siteHref = centro.web;
-  else if (centro.instagram && centro.instagram.trim()) siteHref = centro.instagram;
-  else if (centro.nombre) {
-    siteHref = `https://www.google.com/search?q=${encodeURIComponent(centro.nombre + ' ' + (centro.ciudad || ''))}`;
-  }
+  const hasWeb = centro.web && centro.web.trim();
+  const hasTel = !!centro.telefono;
+  const showLinks = hasWeb || hasTel;
 
   return (
     <article className="centro-card">
@@ -548,9 +544,9 @@ function CentroCard({ centro }) {
         <div className="centro-dist" style={{fontSize: 12, color: 'var(--muted)'}}>A ~{centro.distKm.toFixed(1)} km</div>
       )}
 
-      {((centro.web && !centro.web.includes("buscaunbox.com")) || centro.telefono || siteHref) && (
+      {showLinks && (
         <div className="centro-links">
-          {centro.web && !centro.web.includes("buscaunbox.com") && (
+          {hasWeb && (
             <a
               href={centro.web}
               target="_blank"
@@ -564,30 +560,23 @@ function CentroCard({ centro }) {
               Web
             </a>
           )}
-          {centro.telefono && (
-            <a href={`tel:${centro.telefono.replace(/\s/g, "")}`} className="centro-link centro-link--tel">
+          {hasTel && (
+            <a href={`tel:${centro.telefono.replace(/[\s-]/g, "")}`} className="centro-link centro-link--tel">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/>
               </svg>
               Llamar
             </a>
           )}
-          {(centro.web || centro.telefono) && (
-            <a href={mapsUrl} target="_blank" rel="noreferrer noopener" className="centro-link" style={{ marginLeft: "auto" }}>
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-              Mapa
-            </a>
-          )}
-          {siteHref && (
-            <a href={siteHref} target="_blank" rel="noreferrer noopener" className="centro-link" style={{ marginLeft: "auto" }}>
-              Visitar
-            </a>
-          )}
+          <a href={mapsUrl} target="_blank" rel="noreferrer noopener" className="centro-link" style={{ marginLeft: "auto" }}>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Mapa
+          </a>
         </div>
-  )}
+      )}
     </article>
   );
 }
