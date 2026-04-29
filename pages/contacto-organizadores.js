@@ -1,18 +1,19 @@
 import { useState } from "react";
 import Head from "next/head";
 
+const INITIAL_FORM = { nombre: "", email: "", tipo: "", mensaje: "" };
 
 export default function ContactOrganizers() {
-  const [form, setForm]       = useState({ name: "", email: "", empresa: "", tipo: "", plan: "", message: "" });
+  const [form, setForm]       = useState(INITIAL_FORM);
   const [status, setStatus]   = useState("idle");
   const [errors, setErrors]   = useState({});
   const [submitError, setSubmitError] = useState("");
 
   function validate() {
     const errs = {};
-    if (!form.name.trim()) errs.name = true;
+    if (!form.nombre.trim()) errs.nombre = true;
     if (!form.email.trim() || !form.email.includes("@")) errs.email = true;
-    if (!form.message.trim()) errs.message = true;
+    if (!form.mensaje.trim()) errs.mensaje = true;
     setErrors(errs);
     return Object.keys(errs).length === 0;
   }
@@ -27,15 +28,14 @@ export default function ContactOrganizers() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          nombre:  form.name,
+          nombre:  form.nombre,
           email:   form.email,
-          empresa: form.empresa,
           tipo:    form.tipo,
-          plan:    form.plan,
-          mensaje: form.message,
+          mensaje: form.mensaje,
         }),
       });
       if (res.ok) {
+        setForm(INITIAL_FORM);
         setStatus("success");
       } else {
         const data = await res.json().catch(() => ({}));
@@ -76,20 +76,15 @@ export default function ContactOrganizers() {
           --bg: #08090C;
           --bg2: #0F1015;
           --surface: #13151C;
-          --surface2: #1A1D26;
-          --border: rgba(255,255,255,0.08);
           --border2: rgba(255,255,255,0.16);
           --text: #F5F5F7;
           --muted: #8C8E9A;
-          --muted2: #5D5F6B;
           --accent: #FB923C;
-          --accent-bg: rgba(251,146,60,0.14);
-          --accent-mid: #FDBA74;
+          --radius-sm: 8px;
+          --radius: 12px;
           --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
           --font-body: "Inter", -apple-system, sans-serif;
           --font-mono: "JetBrains Mono", ui-monospace, monospace;
-          --radius-sm: 8px;
-          --radius: 12px;
         }
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
@@ -103,11 +98,8 @@ export default function ContactOrganizers() {
         a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
-        .contact-page {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 2rem;
-        }
+        .contact-page { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+
         .back-link {
           display: inline-flex;
           align-items: center;
@@ -120,16 +112,9 @@ export default function ContactOrganizers() {
           color: var(--muted);
           margin-bottom: 1rem;
         }
-        .back-link:hover {
-          color: var(--accent);
-          text-decoration: none;
-        }
+        .back-link:hover { color: var(--accent); text-decoration: none; }
 
-        /* Hero */
-        .contact-hero {
-          text-align: center;
-          padding: 4rem 0 3rem;
-        }
+        .contact-hero { text-align: center; padding: 4rem 0 3rem; }
         .contact-eyebrow {
           font-family: var(--font-mono);
           font-size: 11px;
@@ -156,28 +141,14 @@ export default function ContactOrganizers() {
           line-height: 1.7;
         }
         .contact-sub strong { color: var(--text); font-weight: 600; }
-        .contact-email {
-          margin-top: 1.5rem;
-        }
+        .contact-email { margin-top: 1.5rem; }
         .contact-email a {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
           font-family: var(--font-mono);
           font-size: 13px;
           color: var(--accent);
         }
 
-        /* Pricing Grid (removed) */
-        .pricing-badge {
-          display: none;
-        }
-        /* Form */
-        .form-section {
-          max-width: 600px;
-          margin: 0 auto;
-          padding: 2rem 0 4rem;
-        }
+        .form-section { max-width: 560px; margin: 0 auto; padding: 2rem 0 4rem; }
         .form-title {
           font-family: var(--font-display);
           font-size: 24px;
@@ -187,9 +158,7 @@ export default function ContactOrganizers() {
           text-align: center;
           margin-bottom: 2rem;
         }
-        .form-group {
-          margin-bottom: 1rem;
-        }
+        .form-group { margin-bottom: 1rem; }
         .form-label {
           display: block;
           font-family: var(--font-mono);
@@ -215,21 +184,12 @@ export default function ContactOrganizers() {
         .form-input:focus, .form-textarea:focus, .form-select:focus {
           border-color: var(--accent);
         }
-        .form-input.error, .form-textarea.error {
-          border-color: #F87171;
-        }
-        .form-textarea {
-          min-height: 120px;
-          resize: vertical;
-        }
-        .form-select {
-          cursor: pointer;
-        }
-        .form-row {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 1rem;
-        }
+        .form-input.error, .form-textarea.error { border-color: #F87171; }
+        .form-textarea { min-height: 130px; resize: vertical; }
+        .form-select { cursor: pointer; }
+
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
         .form-submit {
           width: 100%;
           display: inline-flex;
@@ -254,51 +214,53 @@ export default function ContactOrganizers() {
           transform: translateY(-2px);
           box-shadow: 0 6px 20px rgba(251,146,60,0.35);
         }
-        .form-submit:disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-        }
-        .form-success {
-          text-align: center;
-          padding: 3rem 2rem;
-          background: var(--surface);
-          border-radius: var(--radius);
-        }
-        .form-success-icon {
-          width: 56px;
-          height: 56px;
+        .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+        .spinner {
+          width: 16px;
+          height: 16px;
+          border: 2px solid rgba(8,9,12,0.3);
+          border-top-color: #08090C;
           border-radius: 50%;
-          background: rgba(52,211,153,0.14);
+          animation: spin 0.7s linear infinite;
+          flex-shrink: 0;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .alert-success {
+          padding: 14px 18px;
+          background: rgba(52,211,153,0.10);
+          border: 1px solid rgba(52,211,153,0.30);
+          border-radius: var(--radius-sm);
           color: #34D399;
-          font-size: 24px;
+          font-size: 14px;
+          font-weight: 600;
+          margin-top: 1rem;
           display: flex;
           align-items: center;
-          justify-content: center;
-          margin: 0 auto 1rem;
+          gap: 10px;
         }
-        .form-success-title {
-          font-family: var(--font-display);
-          font-size: 24px;
-          font-weight: 700;
-          text-transform: uppercase;
-          margin-bottom: 0.5rem;
-        }
-        .form-success-text {
-          color: var(--muted);
-          font-size: 14px;
+        .alert-error {
+          padding: 12px 16px;
+          background: rgba(248,113,113,0.08);
+          border: 1px solid rgba(248,113,113,0.25);
+          border-radius: var(--radius-sm);
+          color: #F87171;
+          font-size: 13px;
+          margin-top: 1rem;
+          line-height: 1.5;
         }
 
         @media (max-width: 640px) {
           .contact-page { padding: 1rem; }
           .contact-hero { padding: 2rem 0; }
           .form-row { grid-template-columns: 1fr; }
-          .pricing-grid { gap: 1rem; }
         }
       `}</style>
 
       <div className="contact-page">
         <a href="/" className="back-link">← Volver al calendario</a>
-        
+
         <header className="contact-hero">
           <p className="contact-eyebrow">Colaboraciones</p>
           <h1 className="contact-title">Colabora con nosotros</h1>
@@ -312,101 +274,79 @@ export default function ContactOrganizers() {
 
         <section className="form-section" id="contact-form">
           <h2 className="form-title">Solicita información</h2>
-          
-          {status === "success" ? (
-            <div className="form-success">
-              <div className="form-success-icon">✓</div>
-              <h3 className="form-success-title">Mensaje enviado</h3>
-              <p className="form-success-text">Gracias por contactar con nosotros. Te responderemos en breve.</p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit}>
-              <div className="form-row">
-                <div className="form-group">
-                  <label className="form-label">Nombre *</label>
-                  <input
-                    type="text"
-                    className={`form-input${errors.name ? ' error' : ''}`}
-                    value={form.name}
-                    onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-                    placeholder="Tu nombre"
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <label className="form-label">Email *</label>
-                  <input
-                    type="email"
-                    className={`form-input${errors.email ? ' error' : ''}`}
-                    value={form.email}
-                    onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-                    placeholder="tu@email.com"
-                    required
-                  />
-                </div>
-              </div>
-              
-              <div className="form-group">
-                <label className="form-label">Soy... *</label>
-                <select
-                  className="form-select"
-                  value={form.tipo}
-                  onChange={e => setForm(f => ({ ...f, tipo: e.target.value }))}
-                  required
-                >
-                  <option value="">Selecciona tu perfil</option>
-                  <option value="organizador">Soy organizador de eventos (OCR/HYROX/CrossFit)</option>
-                  <option value="centro">Gestiono un centro de entrenamiento funcional</option>
-                  <option value="otro">Otro / Consulta general</option>
-                </select>
-              </div>
 
-              <div className="form-row">
-                <div className="form-group">
-                  <label className="form-label">Empresa / Organización</label>
-                  <input
-                    type="text"
-                    className="form-input"
-                    value={form.empresa}
-                    onChange={e => setForm(f => ({ ...f, empresa: e.target.value }))}
-                    placeholder="Nombre de tu empresa o centro"
-                  />
-                </div>
-                <div className="form-group">
-                  <label className="form-label">Tipo de colaboración</label>
-                  <select
-                    className="form-select"
-                    value={form.plan}
-                    onChange={e => setForm(f => ({ ...f, plan: e.target.value }))}
-                  >
-                    <option value="">Selecciona una opción</option>
-                    <option value="basico">Visibilidad básica</option>
-                    <option value="premium">Máxima visibilidad</option>
-                  </select>
-                </div>
-              </div>
-              
+          <form onSubmit={handleSubmit}>
+            <div className="form-row">
               <div className="form-group">
-                <label className="form-label">Mensaje *</label>
-                <textarea
-                  className={`form-textarea${errors.message ? ' error' : ''}`}
-                  value={form.message}
-                  onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
-                  placeholder="Cuéntanos sobre tu evento..."
+                <label className="form-label">Nombre *</label>
+                <input
+                  type="text"
+                  className={`form-input${errors.nombre ? " error" : ""}`}
+                  value={form.nombre}
+                  onChange={e => setForm(f => ({ ...f, nombre: e.target.value }))}
+                  placeholder="Tu nombre"
                   required
                 />
               </div>
-              
-              {submitError && (
-                <p style={{ color: "#F87171", fontSize: "13px", marginTop: "1rem", padding: "10px 14px", background: "rgba(248,113,113,0.08)", borderRadius: "var(--radius-sm)", border: "1px solid rgba(248,113,113,0.25)", lineHeight: 1.5 }}>
-                  {submitError}
-                </p>
+              <div className="form-group">
+                <label className="form-label">Email *</label>
+                <input
+                  type="email"
+                  className={`form-input${errors.email ? " error" : ""}`}
+                  value={form.email}
+                  onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
+                  placeholder="tu@email.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">Soy... *</label>
+              <select
+                className="form-select"
+                value={form.tipo}
+                onChange={e => setForm(f => ({ ...f, tipo: e.target.value }))}
+                required
+              >
+                <option value="">Selecciona tu perfil</option>
+                <option value="organizador">Organizador de eventos (OCR / HYROX / CrossFit)</option>
+                <option value="entrenador">Entrenador personal</option>
+                <option value="centro">Centro de entrenamiento funcional</option>
+                <option value="otro">Otro / Consulta general</option>
+              </select>
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">Mensaje *</label>
+              <textarea
+                className={`form-textarea${errors.mensaje ? " error" : ""}`}
+                value={form.mensaje}
+                onChange={e => setForm(f => ({ ...f, mensaje: e.target.value }))}
+                placeholder="Cuéntanos sobre tu evento o propuesta..."
+                required
+              />
+            </div>
+
+            {status === "success" && (
+              <div className="alert-success">
+                <span>✓</span>
+                Mensaje enviado, te contactamos pronto.
+              </div>
+            )}
+
+            {submitError && (
+              <div className="alert-error">{submitError}</div>
+            )}
+
+            <button type="submit" className="form-submit" disabled={status === "loading"}>
+              {status === "loading" ? (
+                <><span className="spinner" /> Enviando...</>
+              ) : (
+                "Enviar mensaje →"
               )}
-              <button type="submit" className="form-submit" disabled={status === "loading"}>
-                {status === "loading" ? "Enviando..." : "Enviar mensaje →"}
-              </button>
-            </form>
-          )}
+            </button>
+          </form>
         </section>
       </div>
     </>
