@@ -3,9 +3,10 @@ import Head from "next/head";
 
 
 export default function ContactOrganizers() {
-  const [form, setForm] = useState({ name: "", email: "", empresa: "", tipo: "", plan: "", message: "" });
-  const [status, setStatus] = useState("idle");
-  const [errors, setErrors] = useState({});
+  const [form, setForm]       = useState({ name: "", email: "", empresa: "", tipo: "", plan: "", message: "" });
+  const [status, setStatus]   = useState("idle");
+  const [errors, setErrors]   = useState({});
+  const [submitError, setSubmitError] = useState("");
 
   function validate() {
     const errs = {};
@@ -19,12 +20,32 @@ export default function ContactOrganizers() {
   async function handleSubmit(e) {
     e.preventDefault();
     if (!validate()) return;
-    
-    const mailto = `mailto:hola@hybridracehub.com?subject=Contacto - ${form.name}&body=${encodeURIComponent(
-      `Nombre: ${form.name}\nEmail: ${form.email}\nEmpresa: ${form.empresa}\nTipo: ${form.tipo}\nColaboración: ${form.plan}\n\nMensaje:\n${form.message}`
-    )}`;
-    window.location.href = mailto;
-    setStatus("success");
+    setStatus("loading");
+    setSubmitError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre:  form.name,
+          email:   form.email,
+          empresa: form.empresa,
+          tipo:    form.tipo,
+          plan:    form.plan,
+          mensaje: form.message,
+        }),
+      });
+      if (res.ok) {
+        setStatus("success");
+      } else {
+        const data = await res.json().catch(() => ({}));
+        setSubmitError(data.error || "Error al enviar. Escríbenos directamente a hola@hybridracehub.com");
+        setStatus("idle");
+      }
+    } catch {
+      setSubmitError("Error al enviar. Escríbenos directamente a hola@hybridracehub.com");
+      setStatus("idle");
+    }
   }
 
   return (
@@ -376,6 +397,11 @@ export default function ContactOrganizers() {
                 />
               </div>
               
+              {submitError && (
+                <p style={{ color: "#F87171", fontSize: "13px", marginTop: "1rem", padding: "10px 14px", background: "rgba(248,113,113,0.08)", borderRadius: "var(--radius-sm)", border: "1px solid rgba(248,113,113,0.25)", lineHeight: 1.5 }}>
+                  {submitError}
+                </p>
+              )}
               <button type="submit" className="form-submit" disabled={status === "loading"}>
                 {status === "loading" ? "Enviando..." : "Enviar mensaje →"}
               </button>

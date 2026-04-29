@@ -86,10 +86,7 @@ export default function PlanEntrenamiento() {
   const [plan, setPlan]               = useState(null);
   const [expandedWeeks, setExpWeeks]  = useState(new Set([1]));
   const [expandedDays,  setExpDays]   = useState(new Set());
-  const [buyEmail,   setBuyEmail]   = useState("");
-  const [emailStep,  setEmailStep]  = useState(false);
-  const [buying,     setBuying]     = useState(false);
-  const [buyError,   setBuyError]   = useState("");
+  const [downloading,   setDownloading] = useState(null); // "excel" | "pdf" | null
 
   function pick(key, val) { setAnswers(p => ({ ...p, [key]: val })); }
 
@@ -126,10 +123,7 @@ export default function PlanEntrenamiento() {
     setPlan(null);
     setExpWeeks(new Set([1]));
     setExpDays(new Set());
-    setBuyEmail("");
-    setEmailStep(false);
-    setBuying(false);
-    setBuyError("");
+    setDownloading(null);
     window.scrollTo(0, 0);
   }
 
@@ -152,25 +146,205 @@ export default function PlanEntrenamiento() {
     setExpDays(p => { const s = new Set(p); s.has(k) ? s.delete(k) : s.add(k); return s; });
   }
 
-  async function handleCheckout() {
-    setBuying(true);
-    setBuyError("");
+  async function downloadExcel() {
+    setDownloading("excel");
     try {
-      const res = await fetch("/api/create-checkout-session", {
+      const res = await fetch("/api/generate-excel", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ answers, email: buyEmail }),
+        body: JSON.stringify({ answers }),
       });
-      const data = await res.json();
-      if (data.url) {
-        window.location.href = data.url;
-      } else {
-        setBuyError(data.error || "Error al iniciar el pago. Inténtalo de nuevo.");
-        setBuying(false);
+      if (!res.ok) throw new Error("Server error");
+      const blob = await res.blob();
+      const url  = URL.createObjectURL(blob);
+      const a    = document.createElement("a");
+      a.href     = url;
+      a.download = `plan-${answers.level || "entrenamiento"}.xlsx`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error("Excel download error:", err);
+    } finally {
+      setDownloading(null);
+    }
+  }
+
+  async function downloadPdf() {
+    setDownloading("pdf");
+    try {
+      const { jsPDF }        = await import("jspdf");
+      const { default: autoTable } = await import("jspdf-autotable");
+
+      const doc = new jsPDF({ orientation: "p", unit: "mm", format: "a4" });
+      const W = 210, H = 297, M = 15;
+      const ORANGE = [251, 146, 60];
+      const DARK   = [8, 9, 12];
+      const SURF   = [26, 29, 38];
+      const MUTED  = [140, 142, 154];
+      const WHITE  = [245, 245, 247];
+
+      const OBJ_MAP   = { ocr_sprint: "OCR Sprint", ocr_pro: "OCR Pro", ocr_ultra: "OCR Ultra", hyrox: "HYROX", crossfit: "CrossFit", general: "Funcional" };
+      const LVL_MAP   = { principiante: "Principiante", intermedio: "Intermedio", avanzado: "Avanzado" };
+      const CYCLE_LBL = ["Base", "+5%", "+10%", "DELOAD"];
+
+      function pageDecor() {
+        // Header brand
+        doc.setFontSize(9);
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(...ORANGE);
+        doc.text("HYBRID RACE HUB", M, 10);
+        doc.setDrawColor(...ORANGE);
+        doc.setLineWidth(0.4);
+        doc.line(M, 13, W - M, 13);
+        // Footer
+        doc.setFontSize(7.5);
+        doc.setFont("helvetica", "normal");
+        doc.setTextColor(...MUTED);
+        doc.text("hybridracehub.com", M, H - 7);
+        doc.text("Plan de Entrenamiento Personalizado", W - M, H - 7, { align: "right" });
+        doc.setDrawColor(0, 0, 0);
+        doc.setTextColor(0, 0, 0);
       }
-    } catch {
-      setBuyError("Error de conexión. Inténtalo de nuevo.");
-      setBuying(false);
+
+      // ── Cover ──────────────────────────────────────────────────────────
+      pageDecor();
+      doc.setFillColor(...DARK);
+      doc.roundedRect(M, 18, W - 2 * M, 72, 3, 3, "F");
+
+      doc.setFontSize(28);
+      doc.setFont("helvetica", "bold");
+      doc.setTextColor(...ORANGE);
+      doc.text("PLAN DE ENTRENAMIENTO", M + 7, 36);
+
+      doc.setFontSize(18);
+      doc.setTextColor(...WHITE);
+      doc.text(plan?.title || "Personalizado", M + 7, 48, { maxWidth: W - 2 * M - 14 });
+
+      doc.setFontSize(9);
+      doc.setFont("helvetica", "normal");
+      doc.setTextColor(...MUTED);
+      const infoLine = [
+        OBJ_MAP[answers.objective] || "",
+        LVL_MAP[answers.level] || "",
+        `${plan?.weeks?.length || 0} semanas`,
+        `${answers.daysPerWeek} días/sem`,
+        answers.peso ? `${answers.peso} kg` : null,
+      ].filter(Boolean).join("  ·  ");
+      doc.text(infoLine, M + 7, 62, { maxWidth: W - 2 * M - 14 });
+
+      doc.setFontSize(9);
+      doc.setTextColor(...ORANGE);
+      doc.text("hybridracehub.com", M + 7, 78);
+
+      // ── Weekly pages ───────────────────────────────────────────────────
+      for (const week of (plan?.weeks || [])) {
+        doc.addPage();
+        pageDecor();
+
+        const pos       = (week.number - 1) % 4;
+        const cycle     = Math.floor((week.number - 1) / 4);
+        const mult      = (1 + 0.05 * cycle) * [1.0, 1.05, 1.10, 0.80][pos];
+        const isDeload  = pos === 3;
+        const cycleLabel = CYCLE_LBL[pos];
+        const pesoKg    = Number(answers.peso) || 70;
+        const bases     = EX_BASE[answers.level] || EX_BASE.intermedio;
+        const loads     = bases.map(({ label, r }) => ({ label, kg: Math.round(pesoKg * r * mult / 2.5) * 2.5 }));
+
+        // Week header band
+        doc.setFillColor(...DARK);
+        doc.roundedRect(M, 16, W - 2 * M, 13, 2, 2, "F");
+        doc.setFontSize(12);
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(...ORANGE);
+        doc.text(
+          `SEMANA ${week.number}  ·  ${(week.phaseLabel || "").toUpperCase()}  ·  ${cycleLabel}${isDeload ? "  ← DELOAD" : ""}`,
+          M + 4, 24.5
+        );
+
+        // Tip
+        doc.setFontSize(8);
+        doc.setFont("helvetica", "italic");
+        doc.setTextColor(...MUTED);
+        doc.text(week.tip || "", M, 34);
+
+        // Build table rows
+        const tableBody = [];
+        for (const dayObj of (week.days || [])) {
+          if (!dayObj.session) continue;
+          tableBody.push([{
+            content: `${dayObj.day}  —  ${dayObj.session.title || ""}`,
+            colSpan: 7,
+            styles: { fontStyle: "bold", fillColor: SURF, textColor: WHITE, fontSize: 8 },
+          }]);
+          for (const item of (dayObj.session.main || [])) {
+            const sep = item.lastIndexOf(" — ");
+            let name = item, sets = "", reps = "";
+            if (sep !== -1) {
+              name = item.slice(0, sep).trim();
+              const rest = item.slice(sep + 3).trim();
+              const m = rest.match(/^(\d+)\s*[×x]\s*(.+)$/);
+              if (m) { sets = m[1]; reps = m[2].replace(/ ?reps?$/i, "").trim(); }
+              else reps = rest;
+            }
+            const found  = loads.find(l => name.toLowerCase().includes(l.label.toLowerCase().split(" ")[0]));
+            const pObj   = found ? String(found.kg) : "";
+            tableBody.push([name, sets, reps, pObj, "", "", ""]);
+          }
+        }
+
+        autoTable(doc, {
+          startY: 37,
+          head: [["Ejercicio", "Series", "Reps", "Peso obj.(kg)", "Peso real(kg)", "RPE", "Notas"]],
+          body: tableBody,
+          theme: "grid",
+          headStyles: { fillColor: ORANGE, textColor: DARK, fontStyle: "bold", fontSize: 8 },
+          bodyStyles: { fontSize: 8 },
+          alternateRowStyles: { fillColor: [248, 248, 250] },
+          columnStyles: {
+            0: { cellWidth: 58 },
+            1: { cellWidth: 13, halign: "center" },
+            2: { cellWidth: 20, halign: "center" },
+            3: { cellWidth: 20, halign: "center" },
+            4: { cellWidth: 20, halign: "center" },
+            5: { cellWidth: 13, halign: "center" },
+            6: { cellWidth: "auto" },
+          },
+          margin: { left: M, right: M },
+          didDrawPage: pageDecor,
+        });
+      }
+
+      // ── Mi Progreso ────────────────────────────────────────────────────
+      doc.addPage();
+      pageDecor();
+      doc.setFontSize(13);
+      doc.setFont("helvetica", "bold");
+      doc.setTextColor(...ORANGE);
+      doc.text("MI PROGRESO — SEGUIMIENTO SEMANAL", M, 22);
+
+      const progBody = (plan?.weeks || []).map(w => [
+        String(w.number), w.phaseLabel || "", "", "", "", "", "",
+      ]);
+      autoTable(doc, {
+        startY: 27,
+        head: [["Semana", "Fase", "Peso corp.(kg)", "RPE medio", "Ejercicio clave", "Peso movido(kg)", "Observaciones"]],
+        body: progBody,
+        theme: "grid",
+        headStyles: { fillColor: ORANGE, textColor: DARK, fontStyle: "bold", fontSize: 8 },
+        bodyStyles: { fontSize: 8.5 },
+        alternateRowStyles: { fillColor: [248, 248, 250] },
+        margin: { left: M, right: M },
+        didDrawPage: pageDecor,
+      });
+
+      const objSlug = (OBJ_MAP[answers.objective] || "plan").toLowerCase().replace(/\s+/g, "-");
+      doc.save(`plan-${objSlug}-${answers.level || "personalizado"}.pdf`);
+    } catch (err) {
+      console.error("PDF error:", err);
+    } finally {
+      setDownloading(null);
     }
   }
 
@@ -351,27 +525,12 @@ export default function PlanEntrenamiento() {
     .load-item-name{font-family:var(--font-mono);font-size:8px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted2);}
     .load-item-val{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--accent);line-height:1;}
 
-    /* ── Excel CTA ── */
-    .excel-cta{background:var(--surface);border:1.5px solid rgba(251,146,60,.25);border-radius:var(--radius);padding:2rem;margin-top:1.5rem;}
-    .excel-cta-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1.25rem;margin-bottom:1rem;}
-    .excel-eyebrow{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);display:block;margin-bottom:.5rem;}
-    .excel-title{font-family:var(--font-display);font-size:clamp(20px,4vw,28px);font-weight:800;text-transform:uppercase;color:var(--text);line-height:1.1;}
-    .excel-price-block{text-align:right;flex-shrink:0;}
-    .excel-price{font-family:var(--font-display);font-size:46px;font-weight:900;color:var(--accent);line-height:1;display:block;}
-    .excel-price-label{font-family:var(--font-mono);font-size:9px;color:var(--muted2);text-transform:uppercase;letter-spacing:.08em;margin-top:2px;display:block;}
-    .excel-desc{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:1.25rem;}
-    .excel-pay-row{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem;}
-    .pay-secure{font-family:var(--font-mono);font-size:9px;color:var(--muted2);letter-spacing:.06em;display:flex;align-items:center;gap:4px;}
-    .pay-badge{font-family:var(--font-mono);font-size:9px;font-weight:600;color:var(--muted2);background:var(--bg2,#0F1015);border:1px solid var(--border);border-radius:4px;padding:.2rem .55rem;text-transform:uppercase;letter-spacing:.05em;}
-    .excel-email-row{display:flex;gap:.6rem;}
-    .excel-email-input{flex:1;min-width:0;background:var(--bg);border:1.5px solid var(--border2);border-radius:var(--radius-sm);padding:.75rem 1rem;font-family:var(--font-body);font-size:14px;color:var(--text);outline:none;transition:border-color .18s;}
-    .excel-email-input:focus{border-color:var(--accent);}
-    .excel-email-input::placeholder{color:var(--muted2);}
-    .btn-excel{padding:12px 22px;background:var(--accent);color:#08090C;border:none;border-radius:var(--radius-sm);font-family:var(--font-display);font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;transition:transform .15s,box-shadow .15s,opacity .15s;white-space:nowrap;}
-    .btn-excel:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 6px 20px rgba(251,146,60,.35);}
-    .btn-excel:disabled{opacity:.35;cursor:not-allowed;}
-    .excel-hint{font-size:11px;color:var(--muted2);margin-top:.6rem;font-family:var(--font-mono);}
-    .excel-error{color:#F87171;font-size:12px;margin-bottom:.5rem;font-family:var(--font-mono);}
+    /* ── Download buttons ── */
+    .cta-dl-excel{background:rgba(52,211,153,.1);color:#34D399;border:1.5px solid rgba(52,211,153,.35);}
+    .cta-dl-excel:hover:not(:disabled){background:rgba(52,211,153,.18);border-color:#34D399;transform:translateY(-2px);}
+    .cta-dl-pdf{background:rgba(96,165,250,.1);color:#60A5FA;border:1.5px solid rgba(96,165,250,.35);}
+    .cta-dl-pdf:hover:not(:disabled){background:rgba(96,165,250,.18);border-color:#60A5FA;transform:translateY(-2px);}
+    .cta-btn:disabled{opacity:.45;cursor:not-allowed;}
 
     @media(max-width:600px){
       .plan-page{padding:1rem 1rem 3rem;}
@@ -381,10 +540,6 @@ export default function PlanEntrenamiento() {
       .plan-ctas{flex-direction:column;}
       .cta-btn{width:100%;justify-content:center;}
       .profile-grid{grid-template-columns:1fr;}
-      .excel-cta-top{flex-direction:column;}
-      .excel-price-block{text-align:left;}
-      .excel-email-row{flex-direction:column;}
-      .btn-excel{width:100%;text-align:center;}
     }
   `;
 
@@ -776,69 +931,23 @@ export default function PlanEntrenamiento() {
           })}
         </div>
 
-        {/* Excel CTA */}
-        <div className="excel-cta">
-          <div className="excel-cta-top">
-            <div>
-              <span className="excel-eyebrow">Descarga tu plan en Excel</span>
-              <div className="excel-title">Excel personalizado<br/>con seguimiento</div>
-            </div>
-            <div className="excel-price-block">
-              <span className="excel-price">2,99€</span>
-              <span className="excel-price-label">pago único</span>
-            </div>
-          </div>
-
-          <p className="excel-desc">
-            Recibe tu rutina completa en Excel personalizado con seguimiento de pesos,
-            progreso semanal y registro corporal. Una sola vez, sin suscripción.
-          </p>
-
-          <div className="excel-pay-row">
-            <span className="pay-secure">
-              <svg width="10" height="11" viewBox="0 0 10 11" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round">
-                <rect x="1" y="5" width="8" height="5.5" rx="1.2"/><path d="M3 5V3.5a2 2 0 0 1 4 0V5"/>
-              </svg>
-              PAGO SEGURO
-            </span>
-            {["VISA", "MASTERCARD", "GOOGLE PAY", "APPLE PAY"].map(m => (
-              <span key={m} className="pay-badge">{m}</span>
-            ))}
-          </div>
-
-          {!emailStep ? (
-            <button className="btn-excel" onClick={() => setEmailStep(true)}>
-              OBTENER MI EXCEL →
-            </button>
-          ) : (
-            <>
-              {buyError && <p className="excel-error">{buyError}</p>}
-              <div className="excel-email-row">
-                <input
-                  className="excel-email-input"
-                  type="email"
-                  placeholder="tu@email.com"
-                  value={buyEmail}
-                  onChange={e => setBuyEmail(e.target.value)}
-                  onKeyDown={e => e.key === "Enter" && !buying && buyEmail.includes("@") && handleCheckout()}
-                  autoFocus
-                />
-                <button
-                  className="btn-excel"
-                  onClick={handleCheckout}
-                  disabled={!buyEmail.includes("@") || buying}
-                >
-                  {buying ? "Redirigiendo..." : "PAGAR 2,99€ →"}
-                </button>
-              </div>
-              <p className="excel-hint">Recibirás el Excel en tu email al completar el pago.</p>
-            </>
-          )}
-        </div>
-
         {/* CTAs */}
         <div className="plan-ctas">
-          <a href="/calendario" className="cta-btn cta-primary">Ver carreras próximas →</a>
+          <button
+            className="cta-btn cta-dl-excel"
+            onClick={downloadExcel}
+            disabled={!!downloading}
+          >
+            {downloading === "excel" ? "Generando..." : "↓ Descargar Excel"}
+          </button>
+          <button
+            className="cta-btn cta-dl-pdf"
+            onClick={downloadPdf}
+            disabled={!!downloading}
+          >
+            {downloading === "pdf" ? "Generando..." : "↓ Descargar PDF"}
+          </button>
+          <a href="/calendario" className="cta-btn cta-secondary">Ver carreras próximas →</a>
           <a href="/centros-entrenamiento" className="cta-btn cta-secondary">Encuentra tu centro →</a>
           <button className="cta-ghost" onClick={reset}>Crear nuevo plan</button>
         </div>

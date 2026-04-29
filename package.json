@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "NODE_OPTIONS=--max_old_space_size=4096 next build",
     "start": "next start",
     "seed": "node scripts/seed-events.mjs",
     "scrape-centros-live": "node scripts/scrape-centros-live.js",
@@ -16,15 +16,15 @@
     "seo-report": "node scripts/seo-accessibility-report.js"
   },
   "dependencies": {
-    "@stripe/stripe-js": "^9.3.1",
     "exceljs": "^4.4.0",
+    "jspdf": "^4.2.1",
+    "jspdf-autotable": "^5.0.7",
     "next": "14.2.3",
     "node-fetch": "^2.7.0",
     "nodemailer": "^6.10.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "resend": "^6.12.2",
-    "stripe": "^22.1.0"
+    "resend": "^6.12.2"
   },
   "devDependencies": {
     "@supabase/supabase-js": "^2.104.1",
