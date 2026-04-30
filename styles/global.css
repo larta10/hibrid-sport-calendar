@@ -795,3 +795,121 @@ input, textarea { cursor: text; }
   cursor: pointer;
 }
 .center-search-btn:hover { filter: brightness(0.95); }
+
+/* ── JOURNEY FEATURE LIST (Paso 2) ── */
+.journey-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 4px 0 8px;
+  padding: 0;
+}
+.journey-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.4;
+}
+.journey-trainer-note {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 4px 0 8px;
+}
+
+/* ── JOURNEY STEP PHOTOS ── */
+.journey-photos {
+  max-width: 1200px;
+  margin: 2.5rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 0 24px;
+}
+.step-photo {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  border: 0.5px solid var(--border);
+}
+
+/* ── EDITORIAL BLOCKS ── */
+.editorial-section {
+  padding: 4rem 2rem;
+  border-top: 1px solid var(--border);
+}
+.editorial {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.editorial--reverse .editorial-photo { order: 2; }
+.editorial--reverse .editorial-text  { order: 1; }
+.editorial-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  border: 0.5px solid var(--border);
+}
+.editorial-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent-mid);
+  margin-bottom: 12px;
+}
+.editorial-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+.editorial-body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+.editorial-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(251,146,60,0.4);
+  padding-bottom: 2px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.editorial-cta:hover { color: var(--accent-mid); border-color: var(--accent-mid); }
+
+@media (max-width: 900px) {
+  .journey-photos { grid-template-columns: 1fr; gap: 1rem; }
+  .editorial { grid-template-columns: 1fr; gap: 2rem; }
+  .editorial--reverse .editorial-photo { order: 0; }
+  .editorial--reverse .editorial-text  { order: 0; }
+  .editorial-section { padding: 2.5rem 1rem; }
+}

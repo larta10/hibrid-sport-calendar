@@ -331,7 +331,7 @@ export default function ContactOrganizers() {
             {status === "success" && (
               <div className="alert-success">
                 <span>✓</span>
-                Mensaje enviado, te contactamos pronto.
+                Mensaje enviado. Te contestaremos en un plazo máximo de 48 horas.
               </div>
             )}
 

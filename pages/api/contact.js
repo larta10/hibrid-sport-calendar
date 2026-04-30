@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { nombre, email, tipo, mensaje } = req.body || {};
+  const { nombre, email, tipo, prueba, mensaje } = req.body || {};
 
   if (!nombre?.trim() || !email?.trim() || !mensaje?.trim()) {
     return res.status(400).json({ error: "Faltan campos obligatorios" });
@@ -32,7 +32,7 @@ export default async function handler(req, res) {
   }
 
   const tipoLabel = TIPO_LABELS[tipo] || tipo || "General";
-  const subject   = `Nueva colaboración - ${tipoLabel} - Hybrid Race Hub`;
+  const subject   = `Nueva colaboración - ${tipoLabel}${prueba?.trim() ? ` - ${prueba}` : ""} - Hybrid Race Hub`;
 
   const html = `<!DOCTYPE html>
 <html lang="es">
@@ -64,6 +64,10 @@ export default async function handler(req, res) {
               <td style="padding:8px 16px 8px 0;color:#8C8E9A;white-space:nowrap;font-weight:600;vertical-align:top;">Perfil</td>
               <td style="padding:8px 0;color:#F5F5F7;">${esc(tipoLabel)}</td>
             </tr>
+            ${prueba?.trim() ? `<tr>
+              <td style="padding:8px 16px 8px 0;color:#8C8E9A;white-space:nowrap;font-weight:600;vertical-align:top;">Evento / Org.</td>
+              <td style="padding:8px 0;color:#F5F5F7;">${esc(prueba)}</td>
+            </tr>` : ""}
           </table>
 
           <p style="margin:0 0 8px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#FB923C;font-weight:600;font-family:monospace;">MENSAJE</p>
@@ -74,6 +78,9 @@ export default async function handler(req, res) {
 
         <!-- Footer -->
         <tr><td style="background:#0F1015;padding:16px 36px;border-radius:0 0 12px 12px;text-align:center;">
+          <p style="margin:0 0 6px;font-size:11px;color:#5D5F6B;">
+            Te contestaremos en un plazo máximo de 48 horas.
+          </p>
           <p style="margin:0;font-size:11px;color:#5D5F6B;">
             Responde a este email para contactar directamente con
             <a href="mailto:${esc(email)}" style="color:#FB923C;text-decoration:none;">${esc(email)}</a>

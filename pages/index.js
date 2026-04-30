@@ -1,94 +1,10 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import {
-  SUPABASE_URL, ANON_KEY, TODAY_ISO, TODAY_YEAR, NICHE_PARENTS, CCAA, FORMATS,
-  formatDate, InstagramIcon, EnvelopeIcon, HeroStats, SiteFooter, CookieBanner, CalIcon,
+  SUPABASE_URL, ANON_KEY, CCAA, FORMATS,
+  InstagramIcon, EnvelopeIcon, HeroStats, SiteFooter, CookieBanner, CalIcon,
 } from "../lib/shared";
-
-/* ─── Hero Search ──────────────────────────────────────────────────────────── */
-function HeroSearch() {
-  const router  = useRouter();
-  const [query, setQuery]     = useState("");
-  const [results, setResults] = useState([]);
-  const [open, setOpen]       = useState(false);
-  const debRef  = useRef(null);
-  const wrapRef = useRef(null);
-
-  useEffect(()=>{
-    clearTimeout(debRef.current);
-    if(!query.trim()){ setResults([]); setOpen(false); return; }
-    debRef.current = setTimeout(async ()=>{
-      try {
-        const t = query.trim().replace(/[%_]/g,"");
-        const p = new URLSearchParams();
-        p.set("select","id,nombre,fecha_iso,ubicacion,comunidad");
-        p.set("modalidad_parent",`in.(${NICHE_PARENTS.join(",")})`);
-        p.set("fecha_iso",`gte.${TODAY_ISO}`);
-        p.set("or",`(nombre.ilike.*${t}*,ubicacion.ilike.*${t}*,comunidad.ilike.*${t}*)`);
-        p.set("order","fecha_iso.asc");
-        p.set("limit","8");
-        const res  = await fetch(`${SUPABASE_URL}/rest/v1/races?${p}`,{
-          headers:{ apikey:ANON_KEY, Authorization:`Bearer ${ANON_KEY}` },
-        });
-        const data = await res.json();
-        if(Array.isArray(data)&&data.length>0){ setResults(data); setOpen(true); }
-        else { setResults([]); setOpen(false); }
-      } catch {}
-    },200);
-    return ()=>clearTimeout(debRef.current);
-  },[query]);
-
-  useEffect(()=>{
-    function down(e){ if(wrapRef.current&&!wrapRef.current.contains(e.target)) setOpen(false); }
-    document.addEventListener("mousedown",down);
-    return ()=>document.removeEventListener("mousedown",down);
-  },[]);
-
-  function go(r){ router.push(`/calendario?q=${encodeURIComponent(r.nombre)}`); }
-  function goAll(){ if(query.trim()) router.push(`/calendario?q=${encodeURIComponent(query.trim())}`); }
-
-  return (
-    <div className="hs-wrap" ref={wrapRef}>
-      <label className="hs-eyebrow">BUSCA TU PRÓXIMA CARRERA</label>
-      <div className={`hs-box${open?" hs-box--open":""}`}>
-        <span className="hs-icon">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
-            <circle cx="6.5" cy="6.5" r="5" stroke="#FB923C" strokeWidth="1.4"/>
-            <line x1="10.5" y1="10.5" x2="13.5" y2="13.5" stroke="#FB923C" strokeWidth="1.4" strokeLinecap="round"/>
-          </svg>
-        </span>
-        <input
-          className="hs-input"
-          type="text"
-          placeholder="Busca carrera, ciudad o prueba..."
-          value={query}
-          onChange={e=>setQuery(e.target.value)}
-          onKeyDown={e=>e.key==="Enter"&&goAll()}
-        />
-        {query&&(
-          <button className="hs-clear-btn" onClick={()=>{ setQuery(""); setOpen(false); }}>×</button>
-        )}
-      </div>
-      {open&&results.length>0&&(
-        <div className="hs-dropdown">
-          {results.map((r,i)=>(
-            <button key={i} className="hs-item" onClick={()=>go(r)}>
-              <span className="hs-item-name">{r.nombre}</span>
-              <span className="hs-item-meta">
-                {formatDate(r.fecha_iso)}{r.ubicacion?` · ${r.ubicacion}`:r.comunidad?` · ${r.comunidad}`:""}
-              </span>
-            </button>
-          ))}
-          <button className="hs-ver-todo" onClick={goAll}>
-            Ver todos los resultados para &quot;{query}&quot; →
-          </button>
-        </div>
-      )}
-    </div>
-  );
-}
 
 /* ─── FAQ ──────────────────────────────────────────────────────────────────── */
 const FAQ_DATA = [
@@ -178,7 +94,7 @@ function OrganizerContact() {
               <span className="oc-check">✓</span>
               <div>
                 <p className="oc-success-title">¡Mensaje enviado!</p>
-                <p className="oc-success-sub">Te respondemos en menos de 48 h.</p>
+                <p className="oc-success-sub">Te contestaremos en un plazo máximo de 48 horas.</p>
               </div>
             </div>
           ):(
@@ -332,6 +248,23 @@ function HomeSections() {
   );
 }
 
+/* ─── Editorial Block ──────────────────────────────────────────────────────── */
+function EditorialBlock({ imgSrc, imgAlt, eyebrow, title, body, cta, ctaHref, reverse }) {
+  return (
+    <section className="editorial-section">
+      <div className={`editorial${reverse ? " editorial--reverse" : ""}`}>
+        <img src={imgSrc} alt={imgAlt} loading="lazy" className="editorial-photo"/>
+        <div className="editorial-text">
+          {eyebrow && <p className="editorial-eyebrow">{eyebrow}</p>}
+          <h2 className="editorial-title">{title}</h2>
+          <p className="editorial-body">{body}</p>
+          {cta && <a href={ctaHref} className="editorial-cta">{cta}</a>}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── Home ─────────────────────────────────────────────────────────────────── */
 export default function Home() {
   const [totalCount, setTotalCount] = useState(null);
@@ -340,14 +273,6 @@ export default function Home() {
       headers:{ apikey:ANON_KEY, Authorization:`Bearer ${ANON_KEY}`, Prefer:"count=exact" },
     }).then(r=>{ const c=r.headers.get("content-range"); if(c) setTotalCount(c.split("/")[1]); }).catch(()=>{});
   },[]);
-
-  const [centerQuery, setCenterQuery] = useState("");
-  const router = useRouter();
-  function goCenterSearch() {
-    const q = centerQuery.trim();
-    if (!q) return;
-    router.push(`/centros-entrenamiento?q=${encodeURIComponent(q)}`);
-  }
 
   return (
     <>
@@ -403,7 +328,7 @@ export default function Home() {
       </Head>
 
       {/* ── HEADER ── */}
-      <header className="hero">
+      <header className="hero" style={{background:"linear-gradient(rgba(8,9,12,0.55),rgba(8,9,12,0.9)),url('https://images.unsplash.com/photo-1757147517623-ee9a76c9ead2?w=1920&q=80&fit=crop&auto=format') center/cover no-repeat"}}>
         <div className="hero-inner">
           <div className="brand">
             <Image src="/logo-icon.svg" className="brand-logo-img" alt="Hybrid Race Hub" width={40} height={40} priority />
@@ -424,7 +349,7 @@ export default function Home() {
           </nav>
         </div>
 
-        {/* Hero body: new title/subtitle and hero search */}
+        {/* Hero body */}
         <div className="hero-body" style={{ paddingTop: 0 }}>
           <div className="hero-left">
             <h1 className="hero-title" style={{ fontSize: 'clamp(28px,6vw,48px)', textTransform:'none' }}>
@@ -433,18 +358,12 @@ export default function Home() {
             <p className="hero-sub" style={{ maxWidth: 680 }}>
               Encuentra tu carrera, entrena con un plan personalizado, localiza tu gimnasio
             </p>
-            {/* Espaciado para que los 3 pasos se destaquen debajo del hero */}
-          <HeroStats totalCount={totalCount} ccaaCount={CCAA.length} formatsCount={FORMATS.length}/>
-          <a href="/calendario" className="hero-cta">VER TODOS LOS EVENTOS →</a>
+            <HeroStats totalCount={totalCount} ccaaCount={CCAA.length} formatsCount={FORMATS.length}/>
           </div>
         </div>
-        {/* Search bar: kept for header-like utility, smaller prominence per spec */}
-        <div className="hero-search-outer" style={{ marginTop: '0.5rem' }}>
-          <HeroSearch/>
-        </div>
 
-        {/* Nuevo journey de 3 pasos */}
-        <section className="home-journey" aria-label="Tres pasos" style={{ padding:'2.5rem 0' }}>
+        {/* Journey de 3 pasos */}
+        <section className="home-journey" aria-label="Tres pasos" style={{ padding:'4rem 0 2rem' }}>
           <div className="home-journey-inner">
             {/* Paso 1 */}
             <div className="journey-card" title="Próximos eventos: Hyrox Madrid (Mayo), Spartan Race Barcelona (Junio)">
@@ -478,6 +397,18 @@ export default function Home() {
               </div>
               <h3 className="journey-title" style={{ color:'#fff' }}>Paso 2: Plan Personalizado</h3>
               <p className="journey-desc">Entrena con un plan diseñado para tu nivel y tus objetivos. Responde 5 preguntas y recibe tu rutina semanal.</p>
+              <ul className="journey-features">
+                {["100% gratuito, sin registro","Personalizado a tu nivel y objetivos","Descargable en Excel y PDF al instante"].map((item,i)=>(
+                  <li key={i} className="journey-feature-item">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" style={{flexShrink:0}}>
+                      <circle cx="8" cy="8" r="7.5" fill="rgba(251,146,60,0.15)" stroke="#FB923C" strokeWidth="1"/>
+                      <path d="M5 8l2 2 4-4" stroke="#FB923C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="journey-trainer-note">¿Quieres que un entrenador personal te lleve la rutina y el seguimiento? Escríbenos a <a href="mailto:hola@hybridracehub.com" style={{color:"#FB923C"}}>hola@hybridracehub.com</a></p>
               <a href="/plan-entrenamiento" className="btn-primary" style={{ alignSelf:'flex-start' }}>CREAR MI PLAN →</a>
             </div>
             {/* Paso 3 */}
@@ -497,24 +428,65 @@ export default function Home() {
               <div className="journey-tooltip">426 centros registrados en toda España</div>
             </div>
           </div>
+
+          {/* Fotos de contexto bajo cada paso */}
+          <div className="journey-photos">
+            <img
+              src="https://images.unsplash.com/photo-1743993414654-0be2b73a9620?w=600&q=80&fit=crop&auto=format"
+              alt="Atletas compitiendo en HYROX empujando sleds en interior"
+              className="step-photo"
+              loading="lazy"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1639511205270-2b1ce5b112c6?w=600&q=80&fit=crop&auto=format"
+              alt="Atleta entrenando con kettlebell en el gimnasio"
+              className="step-photo"
+              loading="lazy"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1739283180407-21e27d5c0735?w=600&q=80&fit=crop&auto=format"
+              alt="Grupo de corredores en pista de competición"
+              className="step-photo"
+              loading="lazy"
+            />
+          </div>
         </section>
-        {/* Recursos Complementarios (secundaria) */}
+
+        {/* Recursos Complementarios */}
         <section className="home-secondary" aria-label="Recursos Complementarios">
           <div className="home-secondary-inner">
             <a className="home-card small" href="/blog">
-              <div className="home-card-icon" style={{ width:40, height:40, fontSize:20, display:'flex', alignItems:'center', justifyContent:'center' }}>📝</div>
+              <div className="home-card-icon" style={{ width:40, height:40, display:'flex', alignItems:'center', justifyContent:'center' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FB923C" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="21" rx="2"/>
+                  <line x1="7" y1="8" x2="17" y2="8"/>
+                  <line x1="7" y1="12" x2="17" y2="12"/>
+                  <line x1="7" y1="16" x2="13" y2="16"/>
+                </svg>
+              </div>
               <h2 className="home-card-title" style={{ fontSize:18 }}>Blog de Entrenamiento</h2>
               <p className="home-card-desc">Artículos, guías y análisis técnico</p>
               <span className="home-card-cta">Leer artículos</span>
             </a>
             <a className="home-card small" href="/productos">
-              <div className="home-card-icon" style={{ width:40, height:40, fontSize:20, display:'flex', alignItems:'center', justifyContent:'center' }}>🛒</div>
+              <div className="home-card-icon" style={{ width:40, height:40, display:'flex', alignItems:'center', justifyContent:'center' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FB923C" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
+                  <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                  <line x1="3" y1="6" x2="21" y2="6"/>
+                  <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+              </div>
               <h2 className="home-card-title" style={{ fontSize:18 }}>Equipamiento Recomendado</h2>
               <p className="home-card-desc">Rankings de relojes, zapatillas y gear</p>
               <span className="home-card-cta">Ver rankings</span>
             </a>
             <a className="home-card small" href="/calculadora">
-              <div className="home-card-icon" style={{ width:40, height:40, fontSize:20, display:'flex', alignItems:'center', justifyContent:'center' }}>⏱️</div>
+              <div className="home-card-icon" style={{ width:40, height:40, display:'flex', alignItems:'center', justifyContent:'center' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FACC15" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
               <h2 className="home-card-title" style={{ fontSize:18 }}>Calculadora de Tiempos</h2>
               <p className="home-card-desc">Estima tu marca en Hyrox según nivel</p>
               <span className="home-card-cta">Calcular</span>
@@ -523,7 +495,31 @@ export default function Home() {
         </section>
       </header>
 
+      {/* Editorial 1: Eventos */}
+      <EditorialBlock
+        imgSrc="https://images.unsplash.com/photo-1741562238447-d7c44397f7e0?w=900&q=80&fit=crop&auto=format"
+        imgAlt="Corredores en carrera indoor de atletismo híbrido"
+        eyebrow="CALENDARIO DE EVENTOS"
+        title="Tu próxima carrera está a un clic"
+        body="Más de 140 eventos OCR, HYROX y functional fitness en España. Desde Spartan Race hasta HYROX Madrid, todo el calendario en un solo sitio. Filtra por fecha, comunidad y nivel de dificultad."
+        cta="Ver el calendario completo →"
+        ctaHref="/calendario"
+      />
+
       <HomeSections/>
+
+      {/* Editorial 2: Comunidad */}
+      <EditorialBlock
+        imgSrc="https://images.unsplash.com/photo-1757147517580-90c214fc28f3?w=900&q=80&fit=crop&auto=format"
+        imgAlt="Atletas compitiendo en evento HYROX Grand Palais París"
+        eyebrow="COMUNIDAD DE ATLETAS"
+        title="Hecho por atletas, para atletas"
+        body="Hybrid Race Hub nació en las trincheras: corredores de OCR, competidores de HYROX y atletas de CrossFit que querían una plataforma pensada para ellos. Sin filtros de marketing. Sin contenido genérico. Solo datos y herramientas que realmente usas para preparar tu siguiente carrera."
+        cta="Síguenos en Instagram →"
+        ctaHref="https://www.instagram.com/hybridracehub_spain"
+        reverse
+      />
+
       <FAQSection/>
       <OrganizerContact/>
       <SiteFooter/>
