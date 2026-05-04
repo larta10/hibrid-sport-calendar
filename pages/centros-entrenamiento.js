@@ -519,7 +519,9 @@ function CentroCard({ centro }) {
   )}`;
   const hasWeb = centro.web && centro.web.trim();
   const hasTel = !!centro.telefono;
-  const showLinks = hasWeb || hasTel;
+  const webUrl = hasWeb
+    ? centro.web
+    : `https://www.google.com/search?q=${encodeURIComponent([centro.nombre, centro.ciudad].filter(Boolean).join(" "))}`;
 
   return (
     <article className="centro-card">
@@ -544,39 +546,35 @@ function CentroCard({ centro }) {
         <div className="centro-dist" style={{fontSize: 12, color: 'var(--muted)'}}>A ~{centro.distKm.toFixed(1)} km</div>
       )}
 
-      {showLinks && (
-        <div className="centro-links">
-          {hasWeb && (
-            <a
-              href={centro.web}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="centro-link centro-link--web"
-            >
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-                <path d="M22 12a10 10 0 1 1-9-9"/>
-                <path d="M15 7h6v6"/>
-              </svg>
-              Web
-            </a>
-          )}
-          {hasTel && (
-            <a href={`tel:${centro.telefono.replace(/[\s-]/g, "")}`} className="centro-link centro-link--tel">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/>
-              </svg>
-              Llamar
-            </a>
-          )}
-          <a href={mapsUrl} target="_blank" rel="noreferrer noopener" className="centro-link" style={{ marginLeft: "auto" }}>
+      <div className="centro-links">
+        <a
+          href={webUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="centro-link centro-link--web"
+        >
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+            <path d="M22 12a10 10 0 1 1-9-9"/>
+            <path d="M15 7h6v6"/>
+          </svg>
+          {hasWeb ? "Web" : "Buscar"}
+        </a>
+        {hasTel && (
+          <a href={`tel:${centro.telefono.replace(/[\s-]/g, "")}`} className="centro-link centro-link--tel">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-              <circle cx="12" cy="10" r="3"/>
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/>
             </svg>
-            Mapa
+            Llamar
           </a>
-        </div>
-      )}
+        )}
+        <a href={mapsUrl} target="_blank" rel="noopener noreferrer" className="centro-link" style={{ marginLeft: "auto" }}>
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Mapa
+        </a>
+      </div>
     </article>
   );
 }

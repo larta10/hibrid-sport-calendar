@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import {
   SUPABASE_URL, ANON_KEY, TODAY_ISO, TODAY_YEAR, NICHE_PARENTS,
-  MODALITIES, CCAA, FORMATS, MONTH_NAMES, formatDate,
+  MODALITIES, CCAA, MONTH_NAMES, formatDate,
   toggle, OcrIcon, FuncIcon, EnvelopeIcon, InstagramIcon,
   FilterSection, ActiveFiltersRow, DateRangePicker,
   RaceCard, RaceModal, SiteFooter, CookieBanner,
@@ -16,7 +16,6 @@ export default function Calendario() {
   const [ccaa, setCcaa]                 = useState([]);
   const [modalParents, setModalParents] = useState([]);
   const [modalSubs, setModalSubs]       = useState([]);
-  const [formats, setFormats]           = useState([]);
   const [dateRange, setDateRange]       = useState({ from:null, to:null });
   const [textQuery, setTextQuery]       = useState("");
   const [results, setResults]           = useState(null);
@@ -82,18 +81,14 @@ export default function Calendario() {
       const data = await res.json();
       if(!Array.isArray(data)) throw new Error(data.message||"Error");
 
-      const hasFormato=data.some(r=>r.formato);
-      const filtered=(formats.length>0&&hasFormato)
-        ?data.filter(r=>!r.formato||formats.includes(r.formato))
-        :data;
-      setResults(filtered);
+      setResults(data);
     } catch {
       setError("Error de conexión. Inténtalo de nuevo.");
     } finally {
       setLoading(false);
       setRefreshing(false);
     }
-  },[ccaa,modalParents,modalSubs,formats,dateRange,textQuery]);
+  },[ccaa,modalParents,modalSubs,dateRange,textQuery]);
 
   useEffect(()=>{
     if(!routerReady) return;
@@ -109,11 +104,11 @@ export default function Calendario() {
 
   function handleReset(){
     setCcaa([]); setModalParents([]); setModalSubs([]);
-    setFormats([]); setDateRange({from:null,to:null}); setTextQuery("");
+    setDateRange({from:null,to:null}); setTextQuery("");
     router.replace("/calendario",undefined,{shallow:true});
   }
 
-  const anyFilter=ccaa.length||modalParents.length||modalSubs.length||formats.length
+  const anyFilter=ccaa.length||modalParents.length||modalSubs.length
     ||dateRange.from||dateRange.to||textQuery;
 
   const sorted=results?[...results].sort((a,b)=>{
@@ -198,18 +193,6 @@ export default function Calendario() {
               :null}
           </div>
           <div className="sidebar-body">
-
-            <FilterSection title="Formato" active={formats.length>0}>
-              <div className="chips-wrap">
-                {FORMATS.map(f=>(
-                  <button key={f.id} onClick={()=>toggle(formats,setFormats,f.id)}
-                    className={`chip${formats.includes(f.id)?" chip--on":""}`}
-                    style={formats.includes(f.id)?{borderColor:"var(--accent)",background:"var(--accent-bg)",color:"var(--accent-mid)"}:{}}>
-                    {f.label}
-                  </button>
-                ))}
-              </div>
-            </FilterSection>
 
             <FilterSection title="Tipo de prueba" active={modalParents.length>0||modalSubs.length>0}>
               <div className="chips-col">
@@ -297,9 +280,9 @@ export default function Calendario() {
             {anyFilter&&(
               <ActiveFiltersRow
                 ccaa={ccaa} modalParents={modalParents} modalSubs={modalSubs}
-                formats={formats} dateRange={dateRange} textQuery={textQuery}
+                dateRange={dateRange} textQuery={textQuery}
                 setCcaa={setCcaa} setModalParents={setModalParents}
-                setModalSubs={setModalSubs} setFormats={setFormats}
+                setModalSubs={setModalSubs}
                 setDateRange={setDateRange} setTextQuery={setTextQuery}
               />
             )}
@@ -340,7 +323,7 @@ export default function Calendario() {
       <CookieBanner/>
 
       <button className="mobile-filter-btn" onClick={()=>setSidebarOpen(o=>!o)}>
-        {sidebarOpen?"Cerrar ×":`Filtros${anyFilter?` (${[ccaa.length,modalParents.length,modalSubs.length,formats.length,(dateRange.from||dateRange.to)?1:0,textQuery?1:0].reduce((a,b)=>a+b,0)})`:"" }`}
+        {sidebarOpen?"Cerrar ×":`Filtros${anyFilter?` (${[ccaa.length,modalParents.length,modalSubs.length,(dateRange.from||dateRange.to)?1:0,textQuery?1:0].reduce((a,b)=>a+b,0)})`:"" }`}
       </button>
 
       {selectedRace&&<RaceModal race={selectedRace} onClose={()=>setSelectedRace(null)}/>}
