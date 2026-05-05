@@ -226,11 +226,16 @@ export default function BlogIndex() {
 
         @media (max-width: 720px) {
           .topbar { padding: 0 1rem; }
+          .topbar-nav { display: none; }
           .blog-hero { padding: 2rem 1rem 1.5rem; }
+          .blog-title { font-size: clamp(36px, 12vw, 60px); }
           .blog-body { padding: 1.5rem 1rem 3rem; }
-          .featured-card { grid-template-columns: 1fr; }
-          .featured-placeholder { min-height: 120px; }
+          .featured-card { grid-template-columns: 1fr; gap: 1.25rem; }
+          .featured-placeholder { min-height: 120px; font-size: 60px; }
+          .featured-post-title { font-size: clamp(20px, 6vw, 28px); }
           .posts-grid { grid-template-columns: 1fr; }
+          .post-card-title { font-size: 18px; }
+          * { min-width: 0; }
         }
       `}</style>
 
