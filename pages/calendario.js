@@ -7,7 +7,7 @@ import {
   MODALITIES, CCAA, MONTH_NAMES, formatDate,
   toggle, OcrIcon, FuncIcon, EnvelopeIcon, InstagramIcon,
   FilterSection, ActiveFiltersRow, DateRangePicker,
-  RaceCard, RaceModal, SiteFooter, CookieBanner,
+  RaceCard, RaceModal, SiteFooter, CookieBanner, SiteNav,
 } from "../lib/shared";
 
 export default function Calendario() {
@@ -27,6 +27,21 @@ export default function Calendario() {
   const [selectedRace, setSelectedRace] = useState(null);
   const [sidebarOpen, setSidebarOpen]   = useState(false);
   const [routerReady, setRouterReady]   = useState(false);
+  const [availableCcaa, setAvailableCcaa] = useState(CCAA);
+
+  /* Fetch distinct CCAAa that have at least 1 event */
+  useEffect(()=>{
+    fetch(`${SUPABASE_URL}/rest/v1/races?select=comunidad&modalidad_parent=in.(${NICHE_PARENTS.join(",")})&limit=500`,{
+      headers:{ apikey:ANON_KEY, Authorization:`Bearer ${ANON_KEY}` },
+    })
+      .then(r=>r.json())
+      .then(data=>{
+        if(!Array.isArray(data)) return;
+        const seen=new Set(data.map(r=>r.comunidad).filter(Boolean));
+        setAvailableCcaa(CCAA.filter(c=>seen.has(c)));
+      })
+      .catch(()=>{});
+  },[]);
 
   /* Read ?q param from URL on mount */
   useEffect(()=>{
@@ -172,12 +187,7 @@ export default function Calendario() {
               </div>
             </a>
           </div>
-          <nav className="nav" aria-label="Navegación principal">
-            <a href="/">Inicio</a>
-            <a href="/calendario" className="nav-active">Calendario</a>
-            <a href="/blog">Blog</a>
-            <a href="/productos">Productos</a>
-          </nav>
+          <SiteNav activePath="/calendario"/>
         </div>
       </header>
 
@@ -223,7 +233,7 @@ export default function Calendario() {
 
             <FilterSection title="Comunidad autónoma" active={ccaa.length>0}>
               <div className="chips-wrap">
-                {CCAA.map(c=>(
+                {availableCcaa.map(c=>(
                   <button key={c} onClick={()=>toggle(ccaa,setCcaa,c)}
                     className={`chip${ccaa.includes(c)?" chip--on":""}`}
                     style={ccaa.includes(c)?{borderColor:"var(--accent)",background:"var(--accent-bg)",color:"var(--accent-mid)"}:{}}>
@@ -256,7 +266,17 @@ export default function Calendario() {
             </FilterSection>
 
           </div>
+
+          {/* Apply button — mobile bottom sheet only */}
+          <div className="sidebar-apply-wrap">
+            <button className="sidebar-apply-btn" onClick={()=>setSidebarOpen(false)}>
+              Aplicar filtros
+            </button>
+          </div>
         </aside>
+
+        {/* Filter backdrop — mobile only */}
+        {sidebarOpen&&<div className="filter-backdrop" onClick={()=>setSidebarOpen(false)}/>}
 
         {/* ── MAIN ── */}
         <main className="main">

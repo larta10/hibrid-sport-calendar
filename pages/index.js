@@ -4,6 +4,7 @@ import Image from "next/image";
 import {
   SUPABASE_URL, ANON_KEY, CCAA, FORMATS,
   InstagramIcon, EnvelopeIcon, HeroStats, SiteFooter, CookieBanner, CalIcon,
+  SiteNav,
 } from "../lib/shared";
 
 /* ─── FAQ ──────────────────────────────────────────────────────────────────── */
@@ -340,13 +341,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <nav className="nav" aria-label="Navegación principal">
-            <a href="/calendario">Calendario</a>
-            <a href="/plan-entrenamiento">Plan</a>
-            <a href="/centros-entrenamiento">Centros</a>
-            <a href="/calculadora-hyrox">Calculadora</a>
-            <a href="/blog">Blog</a>
-          </nav>
+          <SiteNav activePath="/"/>
         </div>
 
         {/* Hero body */}
